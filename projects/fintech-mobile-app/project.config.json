@@ -58,7 +58,7 @@
   },
   "workflowStatus": {
     "requirementsApproved": true,
-    "assetsApproved": false,
+    "assetsApproved": true,
     "figmaDesignApproved": false,
     "codeImplementationApproved": false,
     "qaPassed": false

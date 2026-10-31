@@ -1,12 +1,12 @@
-# AI Design Asset Manifest
+# Fintech Mobile App Asset Manifest
 
-This manifest tracks all visual assets generated, reviewed, approved, and imported into Figma.
+Tracks all visual assets generated, reviewed, approved, and imported into Figma for `fintech-mobile-app`.
 
-## Approval Workflow Status Definitions
-- `PENDING_REVIEW`: Asset generated and awaiting user review.
-- `APPROVED`: User explicitly approved asset for design use and Figma import.
-- `REJECTED`: User declined asset; stored in `design-assets/rejected/` for archival.
-- `IMPORTED_TO_FIGMA`: Asset verified on the Figma canvas in target node/frame.
+## Approval Workflow Statuses
+- `PENDING_REVIEW`: Asset generated, awaiting user review.
+- `APPROVED`: Explicitly approved for design use.
+- `REJECTED`: Declined asset.
+- `IMPORTED_TO_FIGMA`: Placed on Figma canvas.
 
 ---
 
@@ -14,34 +14,34 @@ This manifest tracks all visual assets generated, reviewed, approved, and import
 
 | ID | Asset Name | Category | Intended Screen | Dimensions | Format | Tool / Source | Approval Status | Figma Node |
 |---|---|---|---|---|---|---|---|---|
-| `ONB-001A` | `hero_wallet_variant_a` | Onboarding Hero | Welcome / Onboarding | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `PENDING_REVIEW` | — |
-| `ONB-001B` | `hero_wallet_variant_b` | Onboarding Hero | Welcome / Onboarding | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `PENDING_REVIEW` | — |
-| `ONB-001C` | `hero_wallet_variant_c` | Onboarding Hero | Welcome / Onboarding | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `PENDING_REVIEW` | — |
+| `ONB-001A` | `hero_wallet_variant_a` | Onboarding Hero | `ONB-02` (Consumer / Rewards Theme) | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `IMPORTED_TO_FIGMA` | `5:2` |
+| `ONB-001B` | `hero_wallet_variant_b` | Onboarding Hero | `ONB-02` (Minimalist / Clean Theme) | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `IMPORTED_TO_FIGMA` | `5:3` |
+| `ONB-001C` | `hero_wallet_variant_c` | Onboarding Hero | `ONB-02` (Premium Wealth Theme) | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `IMPORTED_TO_FIGMA` | `5:4` |
 
 ---
 
 ## Detailed Asset Records
 
-### Record: `ONB-001A` (Variant A - 3D Isometric Character)
-- **File Location**: `design-assets/generated/onboarding/hero_wallet_variant_a.jpg`
-- **Intended Usage**: Mobile Onboarding Hero illustration representing account creation and digital wallet security.
-- **Visual Style**: 3D Isometric Geometric Character with glowing translucent payment card and floating golden coins.
-- **Palette**: Vibrant Cyan, Electric Purple, Gold accents, Clean White studio background.
-- **Licensing**: Generated via Antigravity Google DeepMind Imagen; royalty-free, commercial project eligible.
-- **Status**: `PENDING_REVIEW`
+### Record: `ONB-001A` (3D Character & Rewards Onboarding)
+- **Approved File**: `assets/approved/onboarding/hero_wallet_variant_a.jpg`
+- **Figma Placement**: Node `5:2` (`hero_wallet_variant_a`, 400×300 px frame)
+- **Theme**: Consumer Friendly / Gamified Rewards Onboarding.
+- **Visual Style**: 3D Isometric Character with glowing digital wallet card and floating coins.
+- **Palette**: Cyan `#00D2FF`, Purple, Gold, Clean White.
+- **Approval Status**: `IMPORTED_TO_FIGMA`
 
-### Record: `ONB-001B` (Variant B - Minimalist 2D Vector)
-- **File Location**: `design-assets/generated/onboarding/hero_wallet_variant_b.jpg`
-- **Intended Usage**: Mobile Onboarding Hero illustration for a clean, distraction-free product look.
-- **Visual Style**: Minimalist flat 2D vector art with clean geometric lines and pastel accents (Duolingo / Linear aesthetic).
-- **Palette**: Mint green, soft lavender, coral, gold, pure solid white background.
-- **Licensing**: Generated via Antigravity Google DeepMind Imagen; royalty-free, commercial project eligible.
-- **Status**: `PENDING_REVIEW`
+### Record: `ONB-001B` (Minimalist Flat 2D Vector)
+- **Approved File**: `assets/approved/onboarding/hero_wallet_variant_b.jpg`
+- **Figma Placement**: Node `5:3` (`hero_wallet_variant_b`, 400×300 px frame)
+- **Theme**: Clean SaaS / Accessibility / Low-bandwidth mode.
+- **Visual Style**: Flat 2D outline vector illustration of smartphone and pastel tokens.
+- **Palette**: Mint `#A8E6CF`, Lavender, Coral, Solid White.
+- **Approval Status**: `IMPORTED_TO_FIGMA`
 
-### Record: `ONB-001C` (Variant C - Premium 3D Clay & Frosted Glass)
-- **File Location**: `design-assets/generated/onboarding/hero_wallet_variant_c.jpg`
-- **Intended Usage**: Mobile Onboarding Hero for modern fintech / banking UI (Apple / Revolut product aesthetic).
-- **Visual Style**: Abstract 3D claymorphism and frosted translucent glass with light refraction, floating metallic tokens, and soft contact shadows.
-- **Palette**: Frosted crystal, iridescent reflections, metallic gold, pure solid white background.
-- **Licensing**: Generated via Antigravity Google DeepMind Imagen; royalty-free, commercial project eligible.
-- **Status**: `PENDING_REVIEW`
+### Record: `ONB-001C` (Premium 3D Clay & Frosted Glass)
+- **Approved File**: `assets/approved/onboarding/hero_wallet_variant_c.jpg`
+- **Figma Placement**: Node `5:4` (`hero_wallet_variant_c`, 400×300 px frame)
+- **Theme**: Premium Banking & Wealth Management (Primary Hero).
+- **Visual Style**: Abstract 3D clay and frosted glass with light refraction and golden tokens.
+- **Palette**: Frosted crystal, iridescent reflections, metallic gold, studio white.
+- **Approval Status**: `IMPORTED_TO_FIGMA`
