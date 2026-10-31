@@ -57,10 +57,13 @@
     "wcagCompliance": "AA"
   },
   "workflowStatus": {
-    "requirementsApproved": true,
-    "assetsApproved": true,
-    "figmaDesignApproved": false,
-    "codeImplementationApproved": false,
-    "qaPassed": false
+    "gate1_requirementsApproved": true,
+    "gate2_architectureApproved": true,
+    "gate3_visualDirectionApproved": false,
+    "gate4_assetsApproved": true,
+    "gate5_figmaDesignApproved": false,
+    "gate6_prototypeApproved": false,
+    "gate7_codeImplementationApproved": false,
+    "gate8_qaPassed": false
   }
 }

@@ -49,11 +49,13 @@ if (!fs.existsSync(configPath)) {
 const requiredDirs = [
   "requirements",
   "research",
+  "architecture",
   "assets/generated",
   "assets/approved",
   "assets/manifest",
   "figma",
   "design-system",
+  "motion",
   "qa",
 ];
 

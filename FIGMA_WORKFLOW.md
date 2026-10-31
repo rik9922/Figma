@@ -1,94 +1,83 @@
-# The 15-Step AI-First Mobile Design Workflow
+# The Canonical Production Pipeline & Design Workflow
 
-This document details the complete 15-step design lifecycle executed by you and your AI UI/UX Design Agent.
-
----
-
-## The Complete 15-Step Cycle
-
-```
-[01. Requirement Analysis] ──> [02. Product & UX Research] ──> [03. Competitor Benchmarking]
-          │
-          ▼
-[04. User Journeys] ─────────> [05. Information Architecture] ─> [06. User Flows]
-          │
-          ▼
-[07. Wireframes] ────────────> [08. Visual Direction] ─────────> [09. Design Tokens & Variables]
-          │
-          ▼
-[10. Components & Variants] ──> [11. Editable Figma Screens] ──> [12. Interactive Prototypes]
-          │
-          ▼
-[13. Accessibility Checks] ──> [14. Design QA & Audit] ───────> [15. Developer Handoff]
-```
+This document details the production lifecycle executed by you and the AI UI/UX Design Agent in this workspace. It adheres strictly to the **14-Stage Production Pipeline** and the **8 Mandatory Approval Gates** documented in [`docs/APPROVAL_WORKFLOW.md`](./docs/APPROVAL_WORKFLOW.md).
 
 ---
 
-## Detailed Step-by-Step Instructions
+## The Canonical 14-Stage Pipeline
 
-### Step 01: Requirement Analysis
+```mermaid
+flowchart TD
+    S1["1. REQUIREMENTS & PRD (Gate 1)"] --> S2["2. RESEARCH & BENCHMARKS"]
+    S2 --> S3["3. SCREEN ARCHITECTURE & USER FLOWS (Gate 2)"]
+    S3 --> S4["4. VISUAL DIRECTION & TOKENS (Gate 3)"]
+    S4 --> S5["5. AI ASSET GENERATION"]
+    S5 --> S6["6. ASSET PREVIEW & APPROVAL (Gate 4)"]
+    S6 --> S7["7. APPROVED ASSET IMPORT (MCP)"]
+    S7 --> S8["8. FIGMA NATIVE UI DESIGN"]
+    S8 --> S9["9. SCREEN CONNECTIONS & PROTOTYPE"]
+    S9 --> S10["10. MOTION & ANIMATION SPECS"]
+    S10 --> S11["11. DESIGN REVIEW & SIGN-OFF (Gate 5 & 6)"]
+    S11 --> S12["12. DEVELOPMENT HANDOFF"]
+    S12 --> S13["13. APPLICATION CODE IMPLEMENTATION (Gate 7)"]
+    S13 --> S14["14. DESIGN-TO-CODE QA & DELIVERY (Gate 8)"]
+```
 
-- Clarify business objectives, user goals, and constraints.
-- Document inputs, outputs, validation rules, and error states.
+---
 
-### Step 02: Product & UX Research
+## Detailed Stage Breakdown & Quality Rules
 
-- Identify user mental models, emotional context, and environmental factors (e.g. mobile use outdoors in bright sunlight).
+### Stage 01: Requirements & PRD (Gate 1)
+- Deeply clarify business objectives, user goals, and technical constraints.
+- Document functional user stories, data inputs/outputs, and edge cases in `requirements/PRD.md` and `requirements/FEATURE_INVENTORY.md`.
 
-### Step 03: Competitor & Reference Benchmarking
+### Stage 02: Research & Benchmarks
+- Benchmark real-world design leaders (Apple, Airbnb, Revolut, Linear).
+- Evaluate platform-specific guidelines: Apple Human Interface Guidelines (HIG) and Google Material Design 3.
 
-- Study real-world pattern implementations in top mobile apps (Apple, Airbnb, Uber, Duolingo, Revolut).
-- Benchmark against Apple Human Interface Guidelines and Material Design 3.
+### Stage 03: Screen Architecture & User Flows (Gate 2)
+- **Mandatory Pre-Design Step**: Never place frames on canvas before architecture is approved.
+- Generate complete screen inventory with standardized IDs (`AUTH-01`, `HOME-01`, `WALLET-01`).
+- Construct user-flow diagrams (Mermaid), screen connection matrices, and state inventories (Idle, Loading, Error, Empty).
 
-### Step 04: User Journeys
+### Stage 04: Visual Direction & Tokens (Gate 3)
+- Define bespoke visual identity based on project research (never hardcode generic defaults).
+- Establish semantic color variables, typography ramp, 8pt spatial scale, and elevation styles in `design-system/TOKENS.json`.
 
-- Map user steps from entry point (push notification, onboarding, home tab) to goal achievement.
+### Stage 05: AI Asset Generation
+- Generate custom illustrations, 3D elements, hero graphics, and backgrounds using free cloud engines (Antigravity Imagen 3).
+- Track explicit commercial licensing metadata (Provider, Model, Terms URL, License Status).
 
-### Step 05: Information Architecture (IA)
+### Stage 06: Asset Preview & Approval (Gate 4)
+- Present candidate preview carousels in chat/artifacts with technical specifications.
+- **Mandatory Gate**: Wait for explicit user approval before importing into Figma.
 
-- Establish content hierarchy: What information is vital? What is secondary? What belongs behind a disclosure button or bottom sheet?
+### Stage 07: Approved Asset Import (MCP)
+- Optimize approved assets (SVGO / Sharp) and upload directly to Figma using MCP `upload_assets` ($0 AI credit cost).
+- Log placed node IDs in `assets/manifest/asset-manifest.md`.
 
-### Step 06: User Flows
+### Stage 08: Figma Native UI Design
+- Construct screens using native semantic frames (`SCREEN`, `CARD`, `ROW`), native Auto Layout (`HUG`/`FILL`), variables, and components.
+- Never substitute static screenshots or flattened SVGs for editable design layers.
 
-- Diagram explicit screen-to-screen branching logic, including success paths and failure recovery loops.
+### Stage 09: Screen Connections & Prototype
+- Wire realistic click-through interactions, triggers (`On Tap`, `On Drag`), and Smart Animate transitions across the canvas.
+- Eliminate dead ends: every interactive element must have defined navigation or feedback.
 
-### Step 07: Wireframes (Low-Fidelity)
+### Stage 10: Motion & Animation Specifications
+- Document triggers, initial/final states, durations, easing curves, Spring physics, and accessible reduced-motion fallbacks in `motion/MOTION_SPECIFICATIONS.md`.
 
-- Allocate spatial budgets on a standard 393×852 pt mobile frame.
-- Validate content density and hierarchy without color distraction.
+### Stage 11: Design Review & Sign-Off (Gate 5 & 6)
+- Perform comprehensive design audit: layout completeness, touch ergonomics (≥ 44×44 pt), WCAG AA color contrast (≥ 4.5:1), and edge states.
+- Present completed Figma file to user for final design sign-off.
 
-### Step 08: Visual Direction
+### Stage 12: Development Handoff
+- Export structured tokens JSON, component property tables, and spacing documentation in `handoff/SPECIFICATIONS.md`.
 
-- Define brand personality, color palettes, typographic pairings, and corner radius language (squircle vs pill).
+### Stage 13: Application Code Implementation (Gate 7)
+- Translate approved Figma designs into target framework (SwiftUI, Jetpack Compose, React Native, or Web).
+- Keep production source code in authorized project repositories.
 
-### Step 09: Design Tokens & Variables
-
-- Create primitive and semantic tokens in Figma Local Variables (`color/surface/page`, `color/action/primary`, `radius/md`, `space/16`).
-
-### Step 10: Components & Variants
-
-- Build atomic master components (`❖`) using Auto Layout.
-- Configure component properties (Boolean toggles, text properties, instance swap properties, variant sets).
-
-### Step 11: Editable Figma Screens
-
-- Assemble screens in the target Figma file using component instances (`◇`).
-- Enforce strict Auto Layout (`FILL` on children, `HUG` on wrapping containers).
-
-### Step 12: Interactive Prototypes
-
-- Wire screen transitions (`Shift + E`): `On Tap` -> `Navigate To` or `Open Overlay`.
-- Apply realistic mobile motion curves (`Push`, `Smart Animate`, 300ms ease-out).
-
-### Step 13: Accessibility (A11y) Checks
-
-- Audit contrast ratios (WCAG 2.1 AA minimum 4.5:1 for body copy).
-- Audit touch targets (≥ 44×44 pt on iOS, ≥ 48×48 dp on Android).
-
-### Step 14: Design QA & Audit
-
-- Run the 8-point Design QA checklist. Correct any layout shift, spacing defects, or missing states.
-
-### Step 15: Developer Handoff
-
-- Document redlines, export optimized SVGs using SVGO, generate @1x/@2x/@3x raster scales, and link components in Dev Mode (`Shift + D`).
+### Stage 14: Design-to-Code QA & Delivery (Gate 8)
+- Execute Playwright and axe-core visual regression to compare rendered code against Figma reference frames.
+- Deliver verified code, updated manifests, and git-synchronized repository.

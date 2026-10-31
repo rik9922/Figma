@@ -25,8 +25,9 @@ if (!fs.existsSync(configPath)) {
 }
 
 const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
-const manifestPath = path.join(targetDir, "assets", "manifest", "asset-manifest.md");
-const manifestExists = fs.existsSync(manifestPath);
+const status = config.workflowStatus || {};
+
+const formatGate = (val) => (val ? "✅ Approved / Passed" : "⏳ Pending Approval");
 
 console.log(`
 ======================================================
@@ -38,12 +39,14 @@ console.log(`
 - Figma File:     ${config.figma?.fileUrl || config.figma?.fileKey || "Not linked"}
 - Visual Style:   ${config.visualDirection?.style || "Standard"}
 
---- Pipeline Gate Status ---
-- Requirements Approved:  ${config.workflowStatus?.requirementsApproved ? "✅ Yes" : "⏳ Pending"}
-- Assets Approved:        ${config.workflowStatus?.assetsApproved ? "✅ Yes" : "⏳ Pending"}
-- Figma Design Approved:  ${config.workflowStatus?.figmaDesignApproved ? "✅ Yes" : "⏳ Pending"}
-- Code Implementation:    ${config.workflowStatus?.codeImplementationApproved ? "✅ Yes" : "⏳ Pending"}
-- Design-to-Code QA:      ${config.workflowStatus?.qaPassed ? "✅ Passed" : "⏳ Pending"}
+--- 8 Mandatory Approval Gates ---
+- Gate 1: Requirements:        ${formatGate(status.gate1_requirementsApproved ?? status.requirementsApproved)}
+- Gate 2: Architecture:        ${formatGate(status.gate2_architectureApproved ?? status.architectureApproved)}
+- Gate 3: Visual Direction:    ${formatGate(status.gate3_visualDirectionApproved ?? status.visualDirectionApproved)}
+- Gate 4: Asset Approval:      ${formatGate(status.gate4_assetsApproved ?? status.assetsApproved)}
+- Gate 5: Figma UI Design:     ${formatGate(status.gate5_figmaDesignApproved ?? status.figmaDesignApproved)}
+- Gate 6: Prototype Studies:   ${formatGate(status.gate6_prototypeApproved ?? status.prototypeApproved)}
+- Gate 7: Development Handoff: ${formatGate(status.gate7_codeImplementationApproved ?? status.codeImplementationApproved)}
+- Gate 8: Final QA & Delivery: ${formatGate(status.gate8_qaPassed ?? status.qaPassed)}
 ======================================================
 `);
-

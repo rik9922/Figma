@@ -5,18 +5,27 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 ## Approval Workflow Statuses
 - `PENDING_REVIEW`: Asset generated, awaiting user review.
 - `APPROVED`: Explicitly approved for design use.
-- `REJECTED`: Declined asset.
-- `IMPORTED_TO_FIGMA`: Placed on Figma canvas.
+- `REJECTED`: Declined asset; stored in `assets/rejected/`.
+- `IMPORTED_TO_FIGMA`: Placed and verified on Figma canvas.
+- `REQUIRES_REVISION`: Needs parameter/prompt modifications.
+- `LICENSE_BLOCKED`: Commercial license issue detected.
+
+## Commercial License Statuses
+- `VERIFIED_COMMERCIAL_USE`: Explicitly cleared for commercial production.
+- `VERIFIED_NONCOMMERCIAL_ONLY`: Evaluation/personal use only.
+- `RESTRICTED`: Specific trademark or usage restrictions.
+- `UNKNOWN`: Unverified.
+- `PENDING_VERIFICATION`: Under review; **must NOT be treated as commercially approved**.
 
 ---
 
 ## Asset Inventory
 
-| ID | Asset Name | Category | Intended Screen | Dimensions | Format | Tool / Source | Approval Status | Figma Node |
-|---|---|---|---|---|---|---|---|---|
-| `ONB-001A` | `hero_wallet_variant_a` | Onboarding Hero | `ONB-02` (Consumer / Rewards Theme) | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `IMPORTED_TO_FIGMA` | `5:2` |
-| `ONB-001B` | `hero_wallet_variant_b` | Onboarding Hero | `ONB-02` (Minimalist / Clean Theme) | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `IMPORTED_TO_FIGMA` | `5:3` |
-| `ONB-001C` | `hero_wallet_variant_c` | Onboarding Hero | `ONB-02` (Premium Wealth Theme) | 1024×1024 | JPG | Antigravity AI (Imagen 3) | `IMPORTED_TO_FIGMA` | `5:4` |
+| ID | Asset Name | Category | Intended Screen | Dimensions | Format | Provider & Model | Approval Status | License Status | Figma Node |
+|---|---|---|---|---|---|---|---|---|---|
+| `ONB-001A` | `hero_wallet_variant_a` | Onboarding Hero | `ONB-02` (Consumer / Rewards Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_TO_FIGMA` | `VERIFIED_COMMERCIAL_USE` | `5:2` |
+| `ONB-001B` | `hero_wallet_variant_b` | Onboarding Hero | `ONB-02` (Minimalist / Clean Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_TO_FIGMA` | `VERIFIED_COMMERCIAL_USE` | `5:3` |
+| `ONB-001C` | `hero_wallet_variant_c` | Onboarding Hero | `ONB-02` (Premium Wealth Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_TO_FIGMA` | `VERIFIED_COMMERCIAL_USE` | `5:4` |
 
 ---
 
@@ -28,6 +37,14 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 - **Theme**: Consumer Friendly / Gamified Rewards Onboarding.
 - **Visual Style**: 3D Isometric Character with glowing digital wallet card and floating coins.
 - **Palette**: Cyan `#00D2FF`, Purple, Gold, Clean White.
+- **Provider**: Google DeepMind via Antigravity Cloud
+- **Model**: Imagen 3 (3.0)
+- **Generation Date**: 2026-10-31
+- **Provider Terms**: `https://policies.google.com/terms/generative-ai`
+- **Model License**: Google Generative AI Additional Terms
+- **Commercial Use Permission**: `VERIFIED_COMMERCIAL_USE`
+- **Attribution Required**: No
+- **Additional Restrictions**: Standard AUP applies; do not represent output as human photographic identity.
 - **Approval Status**: `IMPORTED_TO_FIGMA`
 
 ### Record: `ONB-001B` (Minimalist Flat 2D Vector)
@@ -36,6 +53,14 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 - **Theme**: Clean SaaS / Accessibility / Low-bandwidth mode.
 - **Visual Style**: Flat 2D outline vector illustration of smartphone and pastel tokens.
 - **Palette**: Mint `#A8E6CF`, Lavender, Coral, Solid White.
+- **Provider**: Google DeepMind via Antigravity Cloud
+- **Model**: Imagen 3 (3.0)
+- **Generation Date**: 2026-10-31
+- **Provider Terms**: `https://policies.google.com/terms/generative-ai`
+- **Model License**: Google Generative AI Additional Terms
+- **Commercial Use Permission**: `VERIFIED_COMMERCIAL_USE`
+- **Attribution Required**: No
+- **Additional Restrictions**: None.
 - **Approval Status**: `IMPORTED_TO_FIGMA`
 
 ### Record: `ONB-001C` (Premium 3D Clay & Frosted Glass)
@@ -44,4 +69,12 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 - **Theme**: Premium Banking & Wealth Management (Primary Hero).
 - **Visual Style**: Abstract 3D clay and frosted glass with light refraction and golden tokens.
 - **Palette**: Frosted crystal, iridescent reflections, metallic gold, studio white.
+- **Provider**: Google DeepMind via Antigravity Cloud
+- **Model**: Imagen 3 (3.0)
+- **Generation Date**: 2026-10-31
+- **Provider Terms**: `https://policies.google.com/terms/generative-ai`
+- **Model License**: Google Generative AI Additional Terms
+- **Commercial Use Permission**: `VERIFIED_COMMERCIAL_USE`
+- **Attribution Required**: No
+- **Additional Restrictions**: None.
 - **Approval Status**: `IMPORTED_TO_FIGMA`

@@ -10,7 +10,7 @@ Use this QA checklist to inspect every mobile screen before declaring it complet
   - iOS standard: **393 × 852 pt**
   - Android standard: **412 × 915 dp**
 - [ ] **Hardware Safe Area Insets**:
-  - Top: 54 pt reserved for status bar / dynamic island.
+  - Top: 59 pt reserved for status bar / dynamic island on modern iPhones (or 24-48 dp on Android).
   - Bottom: 34 pt reserved for home swipe indicator.
   - Actionable buttons and inputs sit strictly inside the safe zone.
 - [ ] **Spatial Grid Adherence**:

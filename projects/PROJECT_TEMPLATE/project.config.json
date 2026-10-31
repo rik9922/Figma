@@ -2,24 +2,24 @@
   "projectName": "PROJECT_NAME",
   "projectType": "mobile-app",
   "targetPlatform": "iOS",
-  "productDescription": "A modern mobile application designed with production-grade Figma UI/UX tokens and Auto Layout.",
+  "productDescription": "Project description to be defined in Stage 01 Requirements.",
   "targetUsers": [
-    "Mobile users seeking an intuitive, accessible experience"
+    "Target user personas to be defined in Stage 01 Requirements"
   ],
   "brandIdentity": {
     "name": "PROJECT_NAME",
-    "voice": "Friendly, modern, and reliable",
-    "personality": "Minimal, clean, and accessible"
+    "voice": "To be defined based on brand research",
+    "personality": "To be defined based on brand research"
   },
   "visualDirection": {
-    "style": "3D claymorphism / clean modern vector",
-    "primaryColor": "#007AFF",
-    "secondaryColor": "#5856D6",
-    "accentColor": "#FF9500",
-    "surfaceColor": "#FFFFFF",
-    "textColor": "#1C1C1E",
+    "style": "To be established during Stage 04 based on UX research and competitor benchmarks",
+    "primaryColor": "TBD",
+    "secondaryColor": "TBD",
+    "accentColor": "TBD",
+    "surfaceColor": "TBD",
+    "textColor": "TBD",
     "typography": {
-      "fontFamily": "SF Pro / System Sans",
+      "fontFamily": "Platform system font or approved brand typeface",
       "displaySize": "34px",
       "headlineSize": "20px",
       "bodySize": "16px",
@@ -32,11 +32,14 @@
     "fileKey": "",
     "activeNodeId": "0:1",
     "pages": {
-      "cover": "Cover",
-      "designSystem": "01 Design System & Foundations",
-      "screens": "02 Mobile Screens",
-      "prototypes": "03 Interactive Prototype",
-      "archive": "04 Archive & QA"
+      "cover": "00 Cover & Project Overview",
+      "research": "01 Visual Research & References",
+      "architecture": "02 User Flows & Architecture",
+      "exploration": "03 Design Exploration",
+      "approvedScreens": "04 Approved UI Screens",
+      "components": "05 Components & Design System",
+      "prototype": "06 Prototype & Interaction Studies",
+      "development": "07 Ready for Development"
     }
   },
   "development": {
@@ -57,11 +60,13 @@
     "wcagCompliance": "AA"
   },
   "workflowStatus": {
-    "requirementsApproved": false,
-    "assetsApproved": false,
-    "figmaDesignApproved": false,
-    "codeImplementationApproved": false,
-    "qaPassed": false
+    "gate1_requirementsApproved": false,
+    "gate2_architectureApproved": false,
+    "gate3_visualDirectionApproved": false,
+    "gate4_assetsApproved": false,
+    "gate5_figmaDesignApproved": false,
+    "gate6_prototypeApproved": false,
+    "gate7_codeImplementationApproved": false,
+    "gate8_qaPassed": false
   }
 }
-

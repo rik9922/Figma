@@ -3,9 +3,9 @@ import fs from "fs";
 import path from "path";
 
 /**
- * AI Asset Generation Tool
- * Manages asset generation briefs, prompt formulation, and directory placement
- * for project-specific asset workflows.
+ * AI Asset Generation & Licensing Tracking Tool
+ * Manages asset generation briefs, prompt formulation, directory placement,
+ * and strict commercial license verification for project-specific asset workflows.
  */
 
 export const ASSET_CATEGORIES = [
@@ -18,6 +18,14 @@ export const ASSET_CATEGORIES = [
   "decorative",
 ];
 
+export const LICENSE_STATUSES = [
+  "VERIFIED_COMMERCIAL_USE",
+  "VERIFIED_NONCOMMERCIAL_ONLY",
+  "RESTRICTED",
+  "UNKNOWN",
+  "PENDING_VERIFICATION",
+];
+
 export function createAssetBrief({
   id,
   name,
@@ -28,10 +36,24 @@ export function createAssetBrief({
   palette,
   dimensions = "1024x1024",
   format = "png",
+  provider = "Antigravity AI",
+  model = "Imagen 3",
+  modelVersion = "3.0",
+  providerTermsUrl = "https://cloud.google.com/terms",
+  modelLicense = "Google Terms of Service",
+  commercialStatus = "PENDING_VERIFICATION",
+  attributionRequired = false,
+  restrictions = "None verified yet",
 }) {
   if (!ASSET_CATEGORIES.includes(category)) {
     throw new Error(
       `Invalid category "${category}". Must be one of: ${ASSET_CATEGORIES.join(", ")}`,
+    );
+  }
+
+  if (!LICENSE_STATUSES.includes(commercialStatus)) {
+    throw new Error(
+      `Invalid license status "${commercialStatus}". Must be one of: ${LICENSE_STATUSES.join(", ")}`,
     );
   }
 
@@ -46,7 +68,15 @@ export function createAssetBrief({
     dimensions,
     format,
     status: "PENDING_REVIEW",
-    createdAt: new Date().toISOString(),
+    provider,
+    model,
+    modelVersion,
+    generationDate: new Date().toISOString(),
+    providerTermsUrl,
+    modelLicense,
+    commercialStatus,
+    attributionRequired,
+    restrictions,
   };
 }
 
@@ -56,9 +86,9 @@ export function logAssetToManifest(manifestPath, assetRecord) {
   }
 
   let content = fs.readFileSync(manifestPath, "utf8");
-  const tableRow = `| \`${assetRecord.id}\` | \`${assetRecord.name}\` | ${assetRecord.category} | ${assetRecord.intendedScreen} | ${assetRecord.dimensions} | ${assetRecord.format.toUpperCase()} | ${assetRecord.tool || "Antigravity AI"} | \`${assetRecord.status}\` | ${assetRecord.figmaNode || "—"} |\n`;
+  const tableRow = `| \`${assetRecord.id}\` | \`${assetRecord.name}\` | ${assetRecord.category} | ${assetRecord.intendedScreen} | ${assetRecord.dimensions} | ${assetRecord.format.toUpperCase()} | ${assetRecord.provider} (${assetRecord.model}) | \`${assetRecord.status}\` | \`${assetRecord.commercialStatus}\` | ${assetRecord.figmaNode || "—"} |\n`;
 
-  // Insert before detailed records if present
+  // Insert into table if present
   if (content.includes("## Detailed Asset Records")) {
     content = content.replace("## Detailed Asset Records", `${tableRow}\n## Detailed Asset Records`);
   } else {
@@ -71,8 +101,15 @@ export function logAssetToManifest(manifestPath, assetRecord) {
 - **Intended Usage**: ${assetRecord.intendedScreen} — ${assetRecord.description}
 - **Visual Style**: ${assetRecord.style}
 - **Palette**: ${assetRecord.palette}
-- **Licensing**: Royalty-free commercial use
-- **Status**: \`${assetRecord.status}\`
+- **Provider**: ${assetRecord.provider}
+- **Model**: ${assetRecord.model} (${assetRecord.modelVersion || "N/A"})
+- **Generation Date**: ${assetRecord.generationDate || new Date().toISOString()}
+- **Provider Terms**: ${assetRecord.providerTermsUrl || "Pending verification"}
+- **Model License**: ${assetRecord.modelLicense || "Pending verification"}
+- **Commercial Use Permission**: \`${assetRecord.commercialStatus || "PENDING_VERIFICATION"}\`
+- **Attribution Required**: ${assetRecord.attributionRequired ? "Yes" : "No"}
+- **Additional Restrictions**: ${assetRecord.restrictions || "None specified"}
+- **Workflow Approval Status**: \`${assetRecord.status}\`
 `;
   content += detailBlock;
 
@@ -82,7 +119,7 @@ export function logAssetToManifest(manifestPath, assetRecord) {
 
 // CLI info helper
 if (process.argv[1] && process.argv[1].endsWith("generate-asset.js")) {
-  console.log("AI Asset Generation Helper loaded.");
+  console.log("AI Asset Generation & Licensing Helper loaded.");
   console.log("Categories supported:", ASSET_CATEGORIES.join(", "));
+  console.log("License Statuses:", LICENSE_STATUSES.join(", "));
 }
-
