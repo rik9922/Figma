@@ -56,3 +56,4 @@ console.log("✅ generate_diagram:    VERIFIED (FigJam Mermaid rendering)");
 console.log("⚠️  use_figma:           REQUIRES Pro/Edu plan (Figma Plugin API bridge)");
 console.log("🚫 generate_image:      PROHIBITED ($0 budget / paid Figma credits)");
 console.log("======================================================\n");
+
