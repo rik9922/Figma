@@ -8,6 +8,7 @@
     "new-project": "node ./scripts/new-project",
     "validate:project": "node ./scripts/validate-project",
     "validate:assets": "node ./scripts/validate-assets",
+    "audit:architecture": "node ./scripts/audit-architecture",
     "report": "node ./scripts/generate-project-report",
     "qa": "node ./tools/design-validation/design-qa.js",
     "optimize": "node ./tools/asset-optimization/optimize.js",
