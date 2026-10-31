@@ -62,6 +62,13 @@ function copyTemplate(src, dest) {
 
 copyTemplate(TEMPLATE_DIR, targetDir);
 
+// 4. Ensure essential empty subdirectories exist
+fs.mkdirSync(path.join(targetDir, "assets", "generated"), { recursive: true });
+fs.mkdirSync(path.join(targetDir, "assets", "approved"), { recursive: true });
+fs.mkdirSync(path.join(targetDir, "assets", "rejected"), { recursive: true });
+fs.mkdirSync(path.join(targetDir, "figma"), { recursive: true });
+fs.mkdirSync(path.join(targetDir, "qa", "reports"), { recursive: true });
+
 console.log(`✅ Project created successfully at: projects/${projectName}/`);
 console.log(`
 📁 Structure Initialized:
