@@ -1,5 +1,34 @@
 # Canonical Approval Workflow & Gate Definitions
 
+## 0. Project Design Authorization vs Autonomous Preparation Policy
+
+The Smart AI Figma Helper maintains a strict separation between **autonomous workspace preparation** and **explicit design execution authorization**.
+
+### Autonomous Workspace Capabilities (No Explicit Design Gate Required)
+- Inspecting repository files, project configs, and git status.
+- Validating generic scripts, linting, and structural integrity.
+- Auditing connected Figma MCP tools and testing API response statuses.
+- Generating project scaffolding via `./scripts/new-project`.
+- Conducting background UX research, competitor audits, and platform HIG/M3 guideline evaluations.
+- Auditing design system token files and calculating mathematical WCAG contrast ratios.
+- Executing local Playwright and axe-core accessibility tests on test harnesses.
+- Updating reusable documentation, templates, and agent guidelines.
+
+### Actions Requiring Explicit User Project Authorization
+- **Starting actual UI screen design** for any project.
+- **Creating new project-specific Figma frames or layers** on a Figma canvas.
+- **Generating project-specific AI visual assets** (illustrations, icons, hero art).
+- **Importing assets or SVGs into a user's Figma file** via `upload_assets` or code bridges.
+- **Creating project-specific components, variables, or styles**.
+- **Modifying or overwriting existing project designs or user canvas work**.
+- **Wiring prototype interaction connections on canvas**.
+- **Destructive cleanup or deletion of existing canvas nodes or project assets**.
+
+> [!IMPORTANT]
+> A project folder existing in `projects/` does NOT authorize design execution. A boolean flag in `project.config.json` does NOT substitute for the user's explicit directive in chat (e.g., *"Start designing project [name]"*). Until explicitly authorized, any project remains strictly in preparation / on-hold mode.
+
+---
+
 ## The 8 Mandatory Approval Gates
 
 To maintain strict human oversight and prevent autonomous deviation, every project proceeds through 8 sequential gates. **Antigravity may research, draft, generate alternatives, and run non-destructive audits autonomously, but crossing an approval gate requires explicit user sign-off.**

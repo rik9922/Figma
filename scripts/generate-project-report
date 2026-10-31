@@ -33,6 +33,8 @@ console.log(`
 ======================================================
 📊 PROJECT STATUS REPORT: ${config.projectName}
 ======================================================
+- Status:         ${config.projectStatus || "ACTIVE"}
+- Authorization:  ${config.designAuthorization || "PENDING_EXPLICIT_APPROVAL"}
 - Type:           ${config.projectType}
 - Platform:       ${config.targetPlatform}
 - Framework:      ${config.development?.framework || "N/A"} (${config.development?.language || "N/A"})

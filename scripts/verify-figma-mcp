@@ -30,18 +30,28 @@ if (fs.existsSync(pluginConfigPath)) {
   console.log(`⚠️  Local schema directory not found at ${pluginConfigPath}`);
 }
 
-// 2. Read active project figma config
-const project = process.argv[2] || "fintech-mobile-app";
-const configPath = path.join(ROOT_DIR, "projects", project, "project.config.json");
-
-if (fs.existsSync(configPath)) {
-  const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
-  console.log("\nActive Project Target:");
-  console.log(`  - Project:    ${config.projectName}`);
-  console.log(`  - Figma File: ${config.figma?.fileUrl || "Not configured"}`);
-  console.log(`  - File Key:   ${config.figma?.fileKey || "Not configured"}`);
+// 2. Read active project figma config if specified
+const project = process.argv[2] || null;
+if (project) {
+  const configPath = path.join(ROOT_DIR, "projects", project, "project.config.json");
+  if (fs.existsSync(configPath)) {
+    const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    console.log("\nAuditing Project Target:");
+    console.log(`  - Project:    ${config.projectName}`);
+    console.log(`  - Status:     ${config.projectStatus || "ACTIVE"}`);
+    console.log(`  - Figma File: ${config.figma?.fileUrl || "Not configured"}`);
+    console.log(`  - File Key:   ${config.figma?.fileKey || "Not configured"}`);
+  } else {
+    console.log(`\n⚠️  Project "${project}" config not found at ${configPath}`);
+  }
 } else {
-  console.log(`\n⚠️  Project "${project}" config not found.`);
+  const projectsDir = path.join(ROOT_DIR, "projects");
+  const projectList = fs.readdirSync(projectsDir, { withFileTypes: true })
+    .filter(d => d.isDirectory() && d.name !== "PROJECT_TEMPLATE")
+    .map(d => d.name);
+  console.log("\nMulti-Project Workspace Status:");
+  console.log(`  - Available Projects: ${projectList.length > 0 ? projectList.join(", ") : "None"}`);
+  console.log("  - To audit a specific project: ./scripts/verify-figma-mcp <project-name>");
 }
 
 console.log("\nTool Capability Matrix (Figma Starter Tier vs Pro):");

@@ -79,7 +79,7 @@ Figma/
 │
 ├── projects/                      # Independent project workspaces
 │   ├── PROJECT_TEMPLATE/          # Complete golden template for new projects
-│   └── fintech-mobile-app/        # Active iOS digital wallet project
+│   └── fintech-mobile-app/        # Project workspace (On Hold - Pending Authorization)
 │
 └── scripts/                       # Automation CLI tools (Executable entrypoints)
     ├── new-project                # Scaffolds an isolated project from template
@@ -153,9 +153,11 @@ Run the new-project script:
 ### 4. Working with Antigravity
 In the Antigravity chat, interact naturally with the agent:
 - **To start a new project**: `"Start a new project named e-commerce-app"`
-- **To continue an existing project**: `"Continue project fintech-mobile-app"`
-- **To validate architecture**: Run `./scripts/audit-architecture fintech-mobile-app`
-- **To view status**: Run `./scripts/generate-project-report fintech-mobile-app`
+- **To continue an existing project**: `"Continue project <name>"`
+- **To authorize design**: Give an explicit prompt such as `"Start designing the <name> project"` (design work is never started autonomously without explicit instruction)
+- **To audit architecture**: Run `./scripts/audit-architecture <name>`
+- **To audit design tokens contrast**: Run `node tools/design-validation/audit-tokens-contrast.js <name>`
+- **To view status**: Run `./scripts/generate-project-report <name>`
 
 ---
 

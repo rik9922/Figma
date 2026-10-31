@@ -1,5 +1,7 @@
 {
   "projectName": "fintech-mobile-app",
+  "projectStatus": "ON_HOLD",
+  "designAuthorization": "PENDING_EXPLICIT_APPROVAL",
   "projectType": "mobile-app",
   "targetPlatform": "iOS + Android",
   "productDescription": "World-class, production-grade fintech & digital banking mobile app featuring account setup, debit card controls, instant payments, and complete platform parity across iOS (Apple HIG) and Android (Material Design 3).",

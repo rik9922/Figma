@@ -1,5 +1,7 @@
 {
   "projectName": "PROJECT_NAME",
+  "projectStatus": "INITIALIZED",
+  "designAuthorization": "PENDING_EXPLICIT_APPROVAL",
   "projectType": "mobile-app",
   "targetPlatform": "iOS",
   "productDescription": "Project description to be defined in Stage 01 Requirements.",
