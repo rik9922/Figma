@@ -124,6 +124,7 @@ const textPrimary =
 const surfacePrimary =
   colors["surface.background"] ||
   colors["paper.ground"] ||
+  colors["ground.base"] ||
   colors["surface.page"] ||
   colors["surface"] ||
   colors["background"] ||
