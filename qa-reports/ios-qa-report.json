@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-31T05:27:23.737Z",
+  "timestamp": "2026-10-31T05:56:52.217Z",
   "device": "iPhone 16 Pro (393x852 pt)",
   "minTouchTargetRequired": "44px",
-  "totalInteractives": 3,
+  "totalInteractives": 1,
   "failedTouchTargets": [],
   "accessibilityViolations": [
     {
@@ -10,7 +10,21 @@
       "impact": "serious",
       "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
-      "nodesCount": 2
+      "nodesCount": 1
+    },
+    {
+      "id": "document-title",
+      "impact": "serious",
+      "description": "Ensure each HTML document contains a non-empty <title> element",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/document-title?application=playwright",
+      "nodesCount": 1
+    },
+    {
+      "id": "html-has-lang",
+      "impact": "serious",
+      "description": "Ensure every HTML document has a lang attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=playwright",
+      "nodesCount": 1
     }
   ],
   "screenshot": "qa-reports/ios-viewport.png"
