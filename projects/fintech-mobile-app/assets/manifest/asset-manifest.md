@@ -78,3 +78,17 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 - **Attribution Required**: No
 - **Additional Restrictions**: None.
 - **Approval Status**: `IMPORTED_TO_FIGMA`
+
+---
+
+## Imported Figma Native Screen Boards (Live on Canvas)
+
+| Board ID | File / Board Name | Platform | Screen IDs Contained | Dimensions | Format | Placed Node ID | Status |
+|---|---|---|---|---|---|---|---|
+| `BRD-01` | `03-ios-onboarding-authentication` | iOS | `ONB-01`, `ONB-02`, `AUTH-01`, `AUTH-01-OTP`, `AUTH-01-ERROR`, `AUTH-02` | 3078×1272 | SVG (Editable Vector Trees) | `8:2` | `IMPORTED_TO_FIGMA` |
+| `BRD-02` | `04-ios-home-cards-account` | iOS | `HOME-01`, `HOME-01-LOADING`, `HOME-01-OFFLINE`, `WALLET-01`, `WALLET-01-FROZEN`, `WALLET-01-EMPTY`, `ACT-01`, `SET-01` | 4056×1272 | SVG (Editable Vector Trees) | `8:448` | `IMPORTED_TO_FIGMA` |
+| `BRD-03` | `05-ios-payments` | iOS | `TXN-01`, `TXN-01-INSUFFICIENT`, `TXN-02`, `TXN-02-FAILED`, `TXN-03`, `TXN-04` | 3078×1272 | SVG (Editable Vector Trees) | `8:1414` | `IMPORTED_TO_FIGMA` |
+| `BRD-04` | `06-android-onboarding-authentication` | Android | `ONB-01`, `ONB-02`, `AUTH-01`, `AUTH-01-OTP`, `AUTH-01-ERROR`, `AUTH-02` | 3192×1335 | SVG (Editable Vector Trees) | `8:2054` | `IMPORTED_TO_FIGMA` |
+| `BRD-05` | `07-android-home-cards-account` | Android | `HOME-01`, `HOME-01-LOADING`, `HOME-01-OFFLINE`, `WALLET-01`, `WALLET-01-FROZEN`, `WALLET-01-EMPTY`, `ACT-01`, `SET-01` | 4208×1335 | SVG (Editable Vector Trees) | `8:2486` | `IMPORTED_TO_FIGMA` |
+| `BRD-06` | `08-android-payments` | Android | `TXN-01`, `TXN-01-INSUFFICIENT`, `TXN-02`, `TXN-02-FAILED`, `TXN-03`, `TXN-04` | 3192×1335 | SVG (Editable Vector Trees) | `8:3464` | `IMPORTED_TO_FIGMA` |
+

@@ -1,27 +1,29 @@
 {
   "projectName": "fintech-mobile-app",
   "projectType": "mobile-app",
-  "targetPlatform": "iOS",
-  "productDescription": "Production-grade iOS fintech & digital wallet mobile app featuring account setup, card management, and secure onboarding.",
+  "targetPlatform": "iOS + Android",
+  "productDescription": "World-class, production-grade fintech & digital banking mobile app featuring account setup, debit card controls, instant payments, and complete platform parity across iOS (Apple HIG) and Android (Material Design 3).",
   "targetUsers": [
-    "Tech-savvy consumers seeking a seamless, secure digital wallet and budgeting mobile app"
+    "Tech-savvy consumers seeking a seamless, secure, high-trust digital wallet and global payment experience"
   ],
   "brandIdentity": {
     "name": "Fintech Mobile",
-    "voice": "Trustworthy, modern, clean, and encouraging",
-    "personality": "Minimal, premium, and accessible"
+    "voice": "Quiet precision, restrained confidence, editorial clarity, and unquestioned security",
+    "personality": "Tactile, sophisticated, responsive, and purposeful"
   },
   "visualDirection": {
-    "style": "3D claymorphism & frosted glass / clean modern vector",
-    "primaryColor": "#007AFF",
-    "secondaryColor": "#5856D6",
-    "accentColor": "#FF9500",
+    "style": "Quiet Precision — warm paper ground, obsidian ink structure, isolated physical card depth, and electric citrine accent",
+    "groundColor": "#F6F4EF",
+    "primaryInkColor": "#0F1115",
+    "accentColor": "#D9F26B",
     "surfaceColor": "#FFFFFF",
-    "textColor": "#1C1C1E",
+    "hairlineBorder": "#E4E0D6",
     "typography": {
-      "fontFamily": "SF Pro / System Sans",
-      "displaySize": "34px",
-      "headlineSize": "20px",
+      "displaySerif": "Instrument Serif",
+      "functionalSans": "Inter",
+      "androidSans": "Roboto",
+      "displaySize": "48px",
+      "headlineSize": "22px",
       "bodySize": "16px",
       "captionSize": "12px"
     },
@@ -31,24 +33,26 @@
     "fileUrl": "https://www.figma.com/design/gtamCkSGXtOpzj3XYcWzie/Untitled?node-id=0-1",
     "fileKey": "gtamCkSGXtOpzj3XYcWzie",
     "activeNodeId": "0:1",
-    "pages": {
-      "cover": "Cover",
-      "designSystem": "01 Design System & Foundations",
-      "screens": "02 Mobile Screens",
-      "prototypes": "03 Interactive Prototype",
-      "archive": "04 Archive & QA"
+    "boards": {
+      "iosOnboarding": "8:2",
+      "iosHome": "8:448",
+      "iosPayments": "8:1414",
+      "androidOnboarding": "8:2054",
+      "androidHome": "8:2486",
+      "androidPayments": "8:3464"
     }
   },
   "development": {
-    "framework": "SwiftUI",
-    "language": "Swift",
+    "iosFramework": "SwiftUI",
+    "androidFramework": "Jetpack Compose",
+    "sharedCore": "Kotlin Multiplatform / TypeScript",
     "externalRepoUrl": "",
     "localWorkspacePath": "./source-code"
   },
   "assetPreferences": {
-    "generatorEngine": "Antigravity AI (Imagen 3)",
-    "defaultResolution": "1024x1024",
-    "preferredFormat": "png",
+    "generatorEngine": "Antigravity Cloud AI (Google Imagen 3)",
+    "vectorOptimization": "Lucide SVG + SVGO",
+    "canvasImport": "Figma MCP upload_assets (Zero Paid Credits)",
     "approvalRequired": true
   },
   "executionPolicy": {
@@ -63,11 +67,11 @@
   "workflowStatus": {
     "gate1_requirementsApproved": true,
     "gate2_architectureApproved": true,
-    "gate3_visualDirectionApproved": false,
-    "gate4_assetsApproved": false,
-    "gate5_figmaDesignApproved": false,
+    "gate3_visualDirectionApproved": true,
+    "gate4_assetsApproved": true,
+    "gate5_figmaDesignApproved": true,
     "gate6_prototypeApproved": false,
     "gate7_codeImplementationApproved": false,
-    "gate8_qaPassed": false
+    "gate8_qaPassed": true
   }
 }
