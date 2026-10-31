@@ -21,3 +21,4 @@ This manifest tracks all visual assets generated, reviewed, approved, and import
 ## Detailed Asset Records
 
 *(Asset records appended here)*
+

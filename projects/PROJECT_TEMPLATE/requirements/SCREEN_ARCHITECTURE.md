@@ -67,3 +67,4 @@ flowchart LR
 6. `05 Components & Design System`: Master buttons, inputs, cards, list items with variant sets.
 7. `06 Prototype & Interaction Studies`: Clickable prototype connections, Smart Animate flows.
 8. `07 Ready for Development`: Dev Mode redlines, tokens JSON, asset export specifications.
+

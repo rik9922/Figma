@@ -13,3 +13,4 @@
 ├── [MAIN_CONTENT] (FILL width, HUG height)
 └── [GLOBAL_FOOTER] (FILL width, HUG height)
 ```
+

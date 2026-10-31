@@ -85,3 +85,4 @@ if (process.argv[1] && process.argv[1].endsWith("generate-asset.js")) {
   console.log("AI Asset Generation Helper loaded.");
   console.log("Categories supported:", ASSET_CATEGORIES.join(", "));
 }
+

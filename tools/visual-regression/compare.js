@@ -39,3 +39,4 @@ export async function compareScreens(figmaRefPath, codeScreenshotPath, diffOutpu
     ),
   };
 }
+

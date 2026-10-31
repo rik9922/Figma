@@ -74,3 +74,4 @@ if (issues === 0) {
   console.error(`❌ Found ${issues} asset issue(s).`);
   process.exit(1);
 }
+

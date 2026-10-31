@@ -21,3 +21,4 @@ export function parseFigmaUrl(figmaUrl) {
 export function formatTokenExport(tokens) {
   return JSON.stringify(tokens, null, 2);
 }
+

@@ -16,3 +16,4 @@ This is an isolated design-to-code workspace project generated from `PROJECT_TEM
 - **Configuration**: [`project.config.json`](./project.config.json)
 - **Figma File**: Refer to `figma.fileUrl` in `project.config.json`
 - **Asset Manifest**: [`assets/manifest/asset-manifest.md`](./assets/manifest/asset-manifest.md)
+

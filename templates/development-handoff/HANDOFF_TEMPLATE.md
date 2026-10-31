@@ -17,3 +17,4 @@ Strict 8pt/4pt spatial scale:
 
 ## 4. Asset Export Manifest
 All raster assets exported at `@1x`, `@2x`, `@3x` or optimized vector SVGs located in `assets/approved/`.
+

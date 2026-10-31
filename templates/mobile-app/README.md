@@ -25,3 +25,4 @@ Every mobile screen frame in Figma must follow this semantic layer structure:
 ├── [BOTTOM_ACTION_BAR] 393 × 80 (Auto Layout: Horizontal, FIXED height)
 └── [HOME_INDICATOR] 393 × 34 (FIXED height)
 ```
+
