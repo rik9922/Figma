@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT_DIR = path.resolve(__dirname, "..");
-const PROJECTS_DIR = path.join(ROOT_DIR, "projects");
+import { resolveProjectPath } from "../tools/common/project-utils.js";
 
 const projectName = process.argv[2];
 
@@ -16,7 +11,14 @@ if (!projectName) {
   process.exit(1);
 }
 
-const targetDir = path.join(PROJECTS_DIR, projectName);
+let targetDir;
+try {
+  targetDir = resolveProjectPath(projectName, { mustExist: true });
+} catch (err) {
+  console.error(`❌ Validation failed: ${err.message}`);
+  process.exit(1);
+}
+
 const assetsDir = path.join(targetDir, "assets");
 
 if (!fs.existsSync(assetsDir)) {
@@ -28,11 +30,9 @@ console.log(`🖼️  Validating assets for project "${projectName}"...`);
 
 const manifestPath = path.join(assetsDir, "manifest", "asset-manifest.md");
 if (!fs.existsSync(manifestPath)) {
-  console.error("❌ Error: Asset manifest missing.");
+  console.error("❌ Error: Asset manifest missing at assets/manifest/asset-manifest.md");
   process.exit(1);
 }
-
-const manifestContent = fs.readFileSync(manifestPath, "utf8");
 
 function scanDir(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -52,26 +52,25 @@ function scanDir(dir) {
 const generatedFiles = scanDir(path.join(assetsDir, "generated"));
 const approvedFiles = scanDir(path.join(assetsDir, "approved"));
 
-console.log(`- Generated Assets awaiting review: ${generatedFiles.length}`);
-console.log(`- Approved Assets ready for Figma: ${approvedFiles.length}`);
+console.log(`- Generated Assets awaiting user review: ${generatedFiles.length}`);
+console.log(`- User-Approved Assets ready for Figma:  ${approvedFiles.length}`);
 
 let issues = 0;
-const MAX_BYTES = 10 * 1024 * 1024; // 10MB Figma limit
+const MAX_BYTES = 10 * 1024 * 1024; // 10MB Figma MCP upload limit
 
 for (const f of [...generatedFiles, ...approvedFiles]) {
   const size = fs.statSync(f).size;
   const rel = path.relative(targetDir, f);
   if (size > MAX_BYTES) {
-    console.error(`❌ File exceeds 10MB Figma MCP upload limit: ${rel} (${(size / 1024 / 1024).toFixed(2)} MB)`);
+    console.error(`❌ File exceeds 10MB Figma upload limit: ${rel} (${(size / 1024 / 1024).toFixed(2)} MB)`);
     issues++;
   }
 }
 
 if (issues === 0) {
-  console.log(`✅ All ${generatedFiles.length + approvedFiles.length} project assets are valid and within Figma limits.`);
+  console.log(`✅ All ${generatedFiles.length + approvedFiles.length} project asset files are valid and within Figma upload limits.`);
   process.exit(0);
 } else {
   console.error(`❌ Found ${issues} asset issue(s).`);
   process.exit(1);
 }
-

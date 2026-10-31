@@ -1,26 +1,24 @@
 # Screen Connection Matrix: {{PROJECT_NAME}}
 
-This matrix documents the complete screen-to-screen interaction pathways for `{{PROJECT_NAME}}`. Every interactive trigger, destination, transition curve, and expected behavior is specified.
+This matrix documents screen-to-screen interaction pathways for `{{PROJECT_NAME}}`. Every interactive trigger, destination, transition curve, and expected behavior is specified.
 
-| Source Screen | Interactive Element | Action / Event | Destination Screen | Trigger | Transition Type | Expected Behavior & Feedback |
-|---|---|---|---|---|---|---|
-| `ONB-01` | Screen Canvas | Automatic timer completion | `ONB-02` | After 1500ms delay | Smart Animate (`450ms`, cubic-bezier) | Logo moves to navigation bar; hero artwork scales from 0.92 → 1.0; headlines fade in. |
-| `ONB-02` | `PrimaryButton` | Tap "Get Started" | `AUTH-01` | On Tap | Push Left (`320ms`, ease-out) | Button expands horizontally into the phone input field on the next screen. |
-| `ONB-02` | `SecondaryButton` | Tap "Already have an account? Sign In" | `AUTH-01` | On Tap | Push Left (`320ms`, ease-out) | Navigates directly into phone input with "Welcome Back" greeting text variant. |
-| `AUTH-01` | `BackButton` | Tap `<` back icon | `ONB-02` | On Tap | Pop Right (`280ms`, ease-out) | Clears any entered digits and returns to onboarding hero. |
-| `AUTH-01` | `OTPInputBlock` | Input 6th valid digit | `AUTH-02` | On Text Change (6 chars) | Push Left (`300ms`, ease-out) | Keyboard dismisses; soft haptic success tap; advances to Biometric Enrollment. |
-| `AUTH-01` | `OTPInputBlock` | Enter incorrect code | `AUTH-01-ERROR` | On Validation Failure | Micro-shake (`350ms`, spring) | Input borders turn red `#FF3B30`; subtle error haptic; countdown resets to 45s. |
-| `AUTH-02` | `EnableFaceIDButton`| Tap "Enable FaceID" | `HOME-01` | On Tap | Cross-fade (`350ms`, ease-out) | Native iOS biometric prompt appears; upon approval, enters Home Dashboard. |
-| `AUTH-02` | `GhostButton` | Tap "Set up later in Settings" | `HOME-01` | On Tap | Cross-fade (`250ms`, ease-out) | Sets local preference to passcode fallback; advances to Home Dashboard. |
-| `HOME-01` | `QuickSendPill` | Tap "Send" action pill | `TXN-01` | On Tap | Slide Up Sheet (`300ms`, spring) | Background dashboard blurs (8px) and dims to 40% opacity; payee drawer opens. |
-| `HOME-01` | `BottomNavBar` | Tap "Cards" tab icon | `WALLET-01` | On Tap | Instant Tab Switch (`0ms`) | Active indicator pill transitions under Cards icon; reveals virtual cards carousel. |
-| `HOME-01` | `BalanceCard` | Tap "Eye" hide/reveal icon | `HOME-01` (In-place) | On Tap | Smart Animate (`200ms`, ease-in-out) | Balance toggles between `$24,850.40` and `••••••••`; preserves balance privacy. |
-| `WALLET-01` | `CardFreezeSwitch` | Toggle "Freeze Card" switch | `WALLET-01` (In-place) | On Tap | Smart Animate (`250ms`, ease-out) | Card visual changes from glossy frosted glass to monochrome translucent ice tint. |
-| `WALLET-01` | `EmptyCTA` | Tap "Request Virtual Card" (when 0 cards) | `WALLET-01` | On Tap | Scale Fade (`300ms`) | Spawns card generation modal, animates new 3D card into user's wallet carousel. |
-| `TXN-01` | `CloseSheetButton` | Tap "Cancel" or swipe down | `HOME-01` | On Tap / Drag Down | Slide Down Sheet (`280ms`) | Dismisses payee drawer; removes background blur and restores dashboard focus. |
-| `TXN-01` | `KeypadDigit` | Tap numeric keypad buttons | `TXN-01` (In-place) | On Tap | Haptic feedback (`50ms`) | Appends digit to amount display; calculates real-time currency conversion below. |
-| `TXN-01` | `ReviewButton` | Tap "Review Transfer" | `TXN-02` | On Tap | Push Left inside Sheet (`250ms`) | Sheet expands to large detent; reveals fee breakdown, delivery time, and FaceID button. |
-| `TXN-02` | `BackButton` | Tap `<` back arrow | `TXN-01` | On Tap | Pop Right inside Sheet (`250ms`) | Preserves entered amount and recipient; returns to keypad adjustment. |
-| `TXN-02` | `BiometricConfirm` | Double-click side button / FaceID | `TXN-03` | Biometric Event | Morph / Smart Animate (`550ms`) | Progress spinner snaps into celebratory green checkmark; displays transaction ID. |
-| `TXN-02` | `BiometricConfirm` | Insufficient funds / Timeout | `TXN-02-FAILED` | Error Event | Shake & Red Alert (`350ms`) | Displays error modal with "Try Again" or "Top Up Account" CTA buttons. |
-| `TXN-03` | `PrimaryButton` | Tap "Done" | `HOME-01` | On Tap | Fade to Root (`300ms`, ease-out) | Closes all modal sheets; returns to `HOME-01` with newly updated transaction item at top. |
+| Source Screen | Interactive Element   | Action / Event             | Destination Screen | Trigger               | Transition Type                   | Expected Behavior & Feedback                                    |
+| ------------- | --------------------- | -------------------------- | ------------------ | --------------------- | --------------------------------- | --------------------------------------------------------------- |
+| `ONB-01`      | Screen Canvas         | Automatic timer completion | `ONB-02`           | After 1500ms delay    | Smart Animate (`450ms`, ease-out) | Logo moves to header; hero visual scales in; headline fades in. |
+| `ONB-02`      | `PrimaryButton`       | Tap "Get Started"          | `AUTH-01`          | On Tap                | Push Left (`320ms`, ease-out)     | Navigates to authentication entry view.                         |
+| `ONB-02`      | `SecondaryButton`     | Tap "Sign In"              | `AUTH-01`          | On Tap                | Push Left (`320ms`, ease-out)     | Navigates to authentication with login tab selected.            |
+| `AUTH-01`     | `BackButton`          | Tap `<` back icon          | `ONB-02`           | On Tap                | Pop Right (`280ms`, ease-out)     | Returns to onboarding hero view.                                |
+| `AUTH-01`     | `SubmitButton`        | Submit valid credentials   | `AUTH-02`          | On Tap                | Push Left (`300ms`, ease-out)     | Advances to verification / confirmation view.                   |
+| `AUTH-01`     | `InputField`          | Submit invalid input       | `AUTH-01-ERROR`    | On Validation Failure | Micro-shake (`300ms`, spring)     | Input borders highlight in error tint; helper message appears.  |
+| `AUTH-02`     | `VerifyButton`        | Complete verification      | `MAIN-01`          | On Tap                | Cross-fade (`350ms`, ease-out)    | Transitions into the primary application hub.                   |
+| `MAIN-01`     | `ItemCard`            | Tap content item           | `DETAIL-01`        | On Tap                | Push Left (`300ms`, ease-out)     | Opens comprehensive item inspection view.                       |
+| `MAIN-01`     | `PrimaryActionButton` | Tap primary action         | `ACT-01`           | On Tap                | Slide Up Sheet (`300ms`, spring)  | Modal sheet slides up with background scrim dimming.            |
+| `MAIN-01`     | `SettingsButton`      | Tap profile / settings     | `SET-01`           | On Tap                | Push Left (`300ms`, ease-out)     | Opens settings and profile view.                                |
+| `DETAIL-01`   | `BackButton`          | Tap `<` back icon          | `MAIN-01`          | On Tap                | Pop Right (`280ms`, ease-out)     | Returns to main hub.                                            |
+| `ACT-01`      | `CloseButton`         | Tap "Cancel" or swipe down | `MAIN-01`          | On Tap / Drag Down    | Slide Down Sheet (`280ms`)        | Dismisses modal sheet and restores hub focus.                   |
+| `ACT-01`      | `ContinueButton`      | Tap "Review & Continue"    | `ACT-02`           | On Tap                | Push Left inside Sheet (`250ms`)  | Advances to confirmation review summary.                        |
+| `ACT-02`      | `BackButton`          | Tap `<` back icon          | `ACT-01`           | On Tap                | Pop Right inside Sheet (`250ms`)  | Returns to edit action parameters.                              |
+| `ACT-02`      | `ConfirmButton`       | Confirm action             | `ACT-03`           | On Tap                | Morph / Smart Animate (`450ms`)   | Progress spinner transitions into success celebration.          |
+| `ACT-02`      | `ConfirmButton`       | Action failure / timeout   | `ACT-02-FAILED`    | On Failure Event      | Shake & Alert (`300ms`)           | Displays error notification with retry CTA.                     |
+| `ACT-03`      | `DoneButton`          | Tap "Done"                 | `MAIN-01`          | On Tap                | Fade to Root (`300ms`, ease-out)  | Closes modal and returns to main hub with updated data.         |
+| `SET-01`      | `BackButton`          | Tap `<` back icon          | `MAIN-01`          | On Tap                | Pop Right (`280ms`, ease-out)     | Returns to main hub.                                            |

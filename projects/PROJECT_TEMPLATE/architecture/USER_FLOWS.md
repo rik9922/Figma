@@ -1,58 +1,57 @@
-# Complete User Flow Diagrams: {{PROJECT_NAME}}
+# User Flow Diagrams: {{PROJECT_NAME}}
 
-## 1. First-Time User Onboarding & Registration Journey
-
-```mermaid
-flowchart TD
-    Launch([App Launch]) --> ONB01["ONB-01 Splash Screen\n(Logo scale & ambient glow)"]
-    ONB01 -->|1.5s Auto Advance| ONB02["ONB-02 Onboarding Hero\n(Hero artwork & value prop)"]
-    ONB02 -->|Tap 'Create Account'| AUTH01["AUTH-01 Phone & OTP\n(Enter mobile number)"]
-    AUTH01 -->|SMS Code Received| OTPInput{Valid 6-digit Code?}
-    OTPInput -->|No / Expired| AUTH01ERR["AUTH-01-ERROR\n(Shake animation + countdown)"]
-    AUTH01ERR -->|Resend Code| AUTH01
-    OTPInput -->|Yes| AUTH02["AUTH-02 Biometric Setup\n(Enroll FaceID)"]
-    AUTH02 -->|Allow FaceID| HOME01["HOME-01 Main Dashboard\n(Active Account View)"]
-    AUTH02 -->|Skip| HOME01
-```
-
----
-
-## 2. Returning User & Quick Biometric Auth Flow
-
-```mermaid
-flowchart LR
-    LaunchReturn([App Launch]) --> QuickBio{FaceID Enrolled?}
-    QuickBio -->|Yes| ScanFace[FaceID Prompt]
-    ScanFace -->|Success| HOME01["HOME-01 Dashboard"]
-    ScanFace -->|Fail 3x| AUTH01["AUTH-01 Fallback Phone Auth"]
-    QuickBio -->|No| AUTH01
-```
-
----
-
-## 3. Peer-to-Peer Transfer & Payment Flow
+## 1. First-Time User Onboarding & Authentication Journey
 
 ```mermaid
 flowchart TD
-    HOME01["HOME-01 Dashboard"] -->|Tap 'Send' Action| TXN01["TXN-01 Payee & Amount\n(Frequent payees + numeric keypad)"]
-    TXN01 -->|Enter Amount & Tap 'Review'| BalCheck{Sufficient Balance?}
-    BalCheck -->|No| TXN02FAIL["TXN-02-FAILED\n(Insufficient funds warning)"]
-    TXN02FAIL -->|Top Up| HOME01
-    BalCheck -->|Yes| TXN02["TXN-02 Confirm Sheet\n(Fee breakdown + exchange rate)"]
-    TXN02 -->|Double-Click Side Button + FaceID| SignCheck{Signed?}
-    SignCheck -->|Success| TXN03["TXN-03 Success Receipt\n(Animated checkmark + ID)"]
-    TXN03 -->|Tap 'Done'| HOME01
-    SignCheck -->|Network Error| TXN02FAIL
+    Launch([App Launch]) --> ONB01["ONB-01 Splash Screen\n(Brand logo & initialization)"]
+    ONB01 -->|1.5s Auto Advance| ONB02["ONB-02 Welcome & Value Prop\n(Hero artwork & entry CTAs)"]
+    ONB02 -->|Tap 'Get Started'| AUTH01["AUTH-01 Sign In / Register\n(Credentials or identifier entry)"]
+    AUTH01 -->|Valid Input| AuthCheck{Verification Needed?}
+    AuthCheck -->|Yes| AUTH02["AUTH-02 Security Verification\n(Confirmation code or MFA)"]
+    AuthCheck -->|No| MAIN01["MAIN-01 Primary Dashboard\n(Main application hub)"]
+    AUTH02 -->|Verified| MAIN01
+    AUTH01 -->|Validation Error| AUTH01ERR["AUTH-01-ERROR\n(Inline helper & retry)"]
+    AUTH01ERR -->|Retry| AUTH01
 ```
 
 ---
 
-## 4. Digital Cards Management & Edge States
+## 2. Returning User Experience Flow
 
 ```mermaid
 flowchart LR
-    HOME01["HOME-01 Dashboard"] -->|Tap 'Cards' Tab| CardCheck{Cards Exist?}
-    CardCheck -->|No| WALLET01EMPTY["WALLET-01-EMPTY\n(3D card outline + CTA)"]
-    WALLET01EMPTY -->|Request Card| WALLET01["WALLET-01 Cards Hub"]
-    CardCheck -->|Yes| WALLET01["WALLET-01 Cards Hub\n(Freeze toggle, reveal CVV)"]
+    LaunchReturn([App Launch]) --> SessionCheck{Active Session?}
+    SessionCheck -->|Valid| MAIN01["MAIN-01 Dashboard Hub"]
+    SessionCheck -->|Expired| AUTH01["AUTH-01 Re-Authentication"]
+    AUTH01 -->|Success| MAIN01
+```
+
+---
+
+## 3. Core Task Execution Journey
+
+```mermaid
+flowchart TD
+    MAIN01["MAIN-01 Main Hub"] -->|Trigger Primary Action| ACT01["ACT-01 Action Parameters Form\n(Data entry & options)"]
+    ACT01 -->|Submit Form| ValCheck{Inputs Valid?}
+    ValCheck -->|No| ACT01ERR["ACT-01 Form Error\n(Field highlights)"]
+    ACT01ERR -->|Correct| ACT01
+    ValCheck -->|Yes| ACT02["ACT-02 Review & Confirm Sheet\n(Summary breakdown)"]
+    ACT02 -->|Confirm| ExecCheck{Execution Succeeded?}
+    ExecCheck -->|Yes| ACT03["ACT-03 Success Celebration\n(Confirmation receipt)"]
+    ExecCheck -->|Network/System Error| ACT02FAIL["ACT-02-FAILED\n(Error explanation & retry)"]
+    ACT02FAIL -->|Retry| ACT02
+    ACT03 -->|Tap 'Done'| MAIN01
+```
+
+---
+
+## 4. Item Detail & Content Exploration Flow
+
+```mermaid
+flowchart LR
+    MAIN01["MAIN-01 Dashboard"] -->|Select Content Item| DETAIL01["DETAIL-01 Item Detail View\n(Full attributes & secondary actions)"]
+    DETAIL01 -->|Tap Back| MAIN01
+    DETAIL01 -->|Contextual Action| ACT01["ACT-01 Action Flow"]
 ```

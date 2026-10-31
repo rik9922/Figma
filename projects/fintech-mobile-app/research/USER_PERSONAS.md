@@ -1,6 +1,7 @@
 # User Personas: Fintech Mobile App
 
 ## Persona 1: Alex Rivera — The Busy Tech Consultant
+
 - **Age**: 29
 - **Occupation**: Senior Cloud Consultant
 - **Location**: New York, NY
@@ -17,6 +18,7 @@
 ---
 
 ## Persona 2: Maya Patel — The Remote Entrepreneur
+
 - **Age**: 34
 - **Occupation**: Digital Agency Founder
 - **Location**: Austin, TX / Remote
@@ -28,4 +30,3 @@
   - Hidden banking margins and surprise international wire fees.
   - Complex multi-step verification prompts when moving money quickly.
 - **Key UX Need**: Clear fee transparency, real-time rate locks, and verified receipt generation.
-

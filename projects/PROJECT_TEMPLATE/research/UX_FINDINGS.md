@@ -1,14 +1,23 @@
-# UX Findings & Friction-Reduction Heuristics
+# UX Research Findings & Usability Heuristics: {{PROJECT_NAME}}
 
-## 1. Friction Points Discovered in Mobile Fintech
-1. **The "Where is my money?" Anxiety**: When users open a financial app, cognitive load spikes if the primary liquid balance is hidden behind accounts or carousels.
-   - *Design Response*: Screen `HOME-01` features an anchored hero card presenting total converted liquid assets with an instant currency toggle.
-2. **Keypad Ergonomics & Fat-Finger Errors**: Entering transfer amounts on tiny text fields leads to miskeyed digits.
-   - *Design Response*: Screen `TXN-01` uses custom 48×48 pt numeric buttons adhering to natural one-handed thumb reach (bottom 40% of the viewport).
-3. **Modal Confirmation Fatigue**: Multi-page checkout screens cause abandonment.
-   - *Design Response*: Screen `TXN-02` employs a slide-up bottom sheet with clear line-item fee breakdowns and inline FaceID trigger, keeping the user in their visual context.
+This document details domain-specific UX findings, heuristics, and platform ergonomics for `{{PROJECT_NAME}}`.
 
-## 2. Accessibility & Ergonomics Heuristics
-- **Thumb Zone Compliance**: Primary action buttons ("Get Started", "Send", "Confirm") are placed strictly in the natural thumb sweep zone (bottom 120 pt of screen).
-- **Dynamic Type & Scaling**: All typography scales with system font settings without clipping parent containers.
-- **Color Independence**: Every success state features an icon checkmark + green badge; every error state features an alert triangle + red badge.
+---
+
+## 1. Domain Usability Insights
+
+1. **Cognitive Load & Information Density**:
+   - [Document how information should be structured to prevent user overwhelm]
+2. **Key Task Ergonomics**:
+   - [Document optimal input methods, thumb reachability, and touch sizing]
+3. **Modal & Feedback Clarity**:
+   - [Document user feedback requirements during critical workflows]
+
+---
+
+## 2. Platform Ergonomics & Accessibility Heuristics
+
+- **Thumb Zone Compliance**: Primary action buttons placed in natural reach zones.
+- **Dynamic Type Scaling**: Layouts accommodate user text-size preferences without clipping.
+- **Color Independence**: Status, confirmation, and error states accompanied by explicit icons and text labels.
+- **Contrast Ratios**: WCAG 2.1 AA compliance across all light and dark themes.

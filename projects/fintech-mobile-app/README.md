@@ -1,9 +1,11 @@
 # Project: fintech-mobile-app
 
 ## Overview
+
 This is an isolated design-to-code workspace project generated from `PROJECT_TEMPLATE`.
 
 ## Pipeline Progress
+
 - [ ] **1. Requirements & User Stories** (`requirements/PRD.md`)
 - [ ] **2. Research & Benchmarks** (`research/BENCHMARKS.md`)
 - [ ] **3. User Flows** (`user-flows/USER_JOURNEY.md`)
@@ -13,6 +15,7 @@ This is an isolated design-to-code workspace project generated from `PROJECT_TEM
 - [ ] **7. Design-to-Code QA** (`qa/REPORTS.md`)
 
 ## Project References
+
 - **Configuration**: [`project.config.json`](./project.config.json)
 - **Figma File**: Refer to `figma.fileUrl` in `project.config.json`
 - **Asset Manifest**: [`assets/manifest/asset-manifest.md`](./assets/manifest/asset-manifest.md)

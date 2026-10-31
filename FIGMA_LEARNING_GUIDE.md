@@ -22,15 +22,18 @@ This comprehensive companion reference bridges your manual and automation softwa
 ## 2. Core Mental Models for Figma Mastery
 
 ### Mental Model 1: "Everything is a Frame, Nothing is a Group"
+
 - In QA automation, a container is a `<div>` with styling and layout rules.
 - In Figma, a **Frame** is a `<div>`. It has width, height, background fill, border, corner radius, clipping, and Auto Layout.
 - A **Group** is merely a selection marquee that distorts when resized. Always press `F` for Frame; avoid `Cmd + G` for UI containers.
 
 ### Mental Model 2: "Hug vs. Fill"
+
 - **Hug**: "I shrink-wrap tightly around my children." (Buttons hug their text + padding).
 - **Fill**: "I stretch to take all available parent space." (Form fields expand to 100% card width).
 
 ### Mental Model 3: "Tokens over Raw Hex"
+
 - Just as hardcoded strings in test scripts create maintenance nightmares, hardcoding `#007AFF` across 50 screens is an anti-pattern.
 - Bind fills to semantic variables like `color/action/primary`. When branding shifts or dark mode activates, 1 change updates every screen instantly.
 
@@ -89,6 +92,7 @@ Figma's workspace is organized into four distinct functional zones:
 Auto Layout turns static drawing layers into dynamic, responsive web/mobile flexbox containers. When text changes or buttons expand, Auto Layout handles spacing automatically.
 
 ### Key Auto Layout Properties (Right Panel)
+
 1. **Direction**:
    - Vertical (`↓`): Stacks items in a column (e.g., forms, lists).
    - Horizontal (`→`): Stacks items in a row (e.g., buttons with icons, navbars).
@@ -109,10 +113,12 @@ Auto Layout turns static drawing layers into dynamic, responsive web/mobile flex
 ## 6. Components, Instances & Modern Properties
 
 ### Reusable Architecture
+
 - **Master Component (`❖`)**: The single source of truth. Created with `Cmd + Option + K`. Changes made to the master immediately propagate to all instances.
 - **Component Instance (`◇`)**: Created by duplicating the master (`Cmd + D` or dragging from Assets panel). Instances allow content overrides (text, colors, icon swaps) while maintaining structural layout links.
 
 ### Component Properties (Right Panel `+`)
+
 1. **Boolean Property**: Shows or hides a layer with a toggle switch (e.g., `hasIconLeft: true / false`).
 2. **Text Property**: Exposes an editable text label in the right sidebar without deep clicking.
 3. **Instance Swap Property**: Allows swapping nested icons (e.g., changing search icon to checkmark) directly from a dropdown.
@@ -126,6 +132,7 @@ Auto Layout turns static drawing layers into dynamic, responsive web/mobile flex
 ## 7. Figma Variables & Design Tokens
 
 Figma Variables enable design-system tokenization with multi-theme support:
+
 1. **Color Variables**: Primitive color ramps mapped to semantic palettes (`color/primary`, `color/background/page`, `color/text/muted`). Supports **Modes** (e.g., Light Mode vs Dark Mode switching with 1 click).
 2. **Number Variables**: Spacing units and corner radiuses (`radius/sm = 4px`, `radius/md = 8px`, `radius/pill = 999px`).
 3. **String Variables**: Reusable localized copy and brand strings.
@@ -136,11 +143,14 @@ Figma Variables enable design-system tokenization with multi-theme support:
 ## 8. Mobile UI/UX Fundamentals & Safe Areas
 
 ### Standard Screen Dimensions
+
 - **iOS Standard (iPhone 16 / 15 / 14 Pro)**: **393 × 852 pt**
 - **Android Standard**: **360 × 800 dp** or **412 × 915 dp** (Pixel 8)
 
 ### Safe Area Insets (Crucial for Mobile QA)
+
 Mobile phones have hardware camera notches, Dynamic Islands, and software home swipe bars:
+
 - **Top Safe Area**: Reserve **54–59 pt** for the iOS Status Bar (clock, Wi-Fi, battery).
 - **Bottom Safe Area**: Reserve **34 pt** for the iOS Home Indicator swipe bar.
 - **Interactive Thumb Zone**: Keep high-priority interactive elements (primary action buttons, tab bars) in the lower half of the screen where one-handed thumb reach is natural.
@@ -164,6 +174,7 @@ Mobile phones have hardware camera notches, Dynamic Islands, and software home s
 ## 10. Mobile Prototyping & Motion
 
 Transform static screens into functional click-through apps for usability testing:
+
 1. **Switch to Prototype Tab**: Click **Prototype** in the top of the right sidebar (`Shift + E`).
 2. **Create Connection**: Select an interactive element → hover over its edge → drag the blue circular handle `+` to the destination screen.
 3. **Trigger**:

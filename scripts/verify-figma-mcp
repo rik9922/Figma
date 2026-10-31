@@ -1,69 +1,132 @@
 #!/usr/bin/env node
 /**
  * Figma MCP Capability & Verification Runner
- * Verifies active MCP connection, file access permissions, and available tools.
+ *
+ * Implements truthful, accurate reporting by strictly separating:
+ * 1. Configuration detected (local schema & settings)
+ * 2. Authentication confirmed (user credentials / session)
+ * 3. Figma MCP connection confirmed (live endpoint connectivity)
+ * 4. Available tools discovered (registered tool signatures)
+ * 5. Target Figma file readable (fileKey linked & readable)
+ * 6. Target Figma file editable (write permission confirmed)
+ * 7. Design creation operation executed (actual canvas operations performed)
+ *
+ * SAFETY RULE: Never fabricates successful Figma operations or claims
+ * live verification merely because a local directory or JSON file exists.
  */
 
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT_DIR = path.resolve(__dirname, "..");
+import { resolveProjectPath, loadProjectConfig, listProjects } from "../tools/common/project-utils.js";
+import { parseFigmaUrl } from "../tools/figma-integration/figma-client.js";
 
 console.log("======================================================");
-console.log("🔍 FIGMA MCP CONNECTION & TOOLING AUDIT");
+console.log("🎨 FIGMA INTEGRATION & MCP STATUS AUDIT");
 console.log("======================================================");
 
-// 1. Check MCP configuration
+// 1. Configuration Detected
 const homeDir = process.env.HOME || "/Users/ritik";
-const pluginConfigPath = path.join(homeDir, ".gemini", "antigravity", "mcp", "figma_figma");
+const mcpConfigDir = path.join(homeDir, ".gemini", "antigravity", "mcp", "figma_figma");
+let configDetected = false;
+let registeredTools = [];
 
-console.log(`Checking local Figma MCP tool definitions at:`);
-console.log(`  ${pluginConfigPath}`);
-
-if (fs.existsSync(pluginConfigPath)) {
-  const toolFiles = fs.readdirSync(pluginConfigPath).filter((f) => f.endsWith(".json"));
-  console.log(`✅ Found ${toolFiles.length} registered tool definitions in Figma MCP.`);
-} else {
-  console.log(`⚠️  Local schema directory not found at ${pluginConfigPath}`);
+if (fs.existsSync(mcpConfigDir)) {
+  const toolFiles = fs.readdirSync(mcpConfigDir).filter((f) => f.endsWith(".json"));
+  configDetected = toolFiles.length > 0;
+  registeredTools = toolFiles.map((f) => path.basename(f, ".json"));
 }
 
-// 2. Read active project figma config if specified
-const project = process.argv[2] || null;
-if (project) {
-  const configPath = path.join(ROOT_DIR, "projects", project, "project.config.json");
-  if (fs.existsSync(configPath)) {
-    const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
-    console.log("\nAuditing Project Target:");
-    console.log(`  - Project:    ${config.projectName}`);
-    console.log(`  - Status:     ${config.projectStatus || "ACTIVE"}`);
-    console.log(`  - Figma File: ${config.figma?.fileUrl || "Not configured"}`);
-    console.log(`  - File Key:   ${config.figma?.fileKey || "Not configured"}`);
-  } else {
-    console.log(`\n⚠️  Project "${project}" config not found at ${configPath}`);
+console.log("\n1. CONFIGURATION DETECTED:");
+if (configDetected) {
+  console.log(`  [OK] Local Figma MCP schema found at: ${mcpConfigDir}`);
+  console.log(`  [OK] ${registeredTools.length} tool definitions registered locally:`);
+  console.log(`       ${registeredTools.join(", ")}`);
+} else {
+  console.log(`  [WARN] Local schema directory not found at: ${mcpConfigDir}`);
+  console.log("         Tools may be dynamically provided by active Antigravity session.");
+}
+
+// 2. Authentication & Connection Status
+console.log("\n2. AUTHENTICATION & MCP CONNECTION STATUS:");
+console.log("  - MCP Endpoint:     https://mcp.figma.com/mcp (Remote MCP)");
+console.log("  - Auth Mechanism:   OAuth token managed by Antigravity runtime");
+console.log("  - Note:             Live authentication is confirmed in session via 'whoami' tool call.");
+
+// 3. Tool Capability Matrix (Figma Starter Tier vs Pro)
+console.log("\n3. TOOL CAPABILITY STATUS (Plan Tier Distinction):");
+console.log("  - whoami:              Available for identity confirmation");
+console.log("  - create_session:      Available for session UUID generation");
+console.log("  - get_metadata:        Available for canvas node inspection (Read)");
+console.log("  - get_screenshot:      Available for visual inspection capture (Read)");
+console.log("  - upload_assets:       Available on Starter/Pro for direct canvas imports ($0 credit cost)");
+console.log("  - send_code_to_figma:  Available on Starter/Pro for runnable Code Layers / Make");
+console.log("  - generate_diagram:    Available on Starter/Pro for FigJam Mermaid rendering");
+console.log("  - use_figma:           Restricted by Figma to Pro/Education/Enterprise accounts");
+console.log("  - generate_image:      PROHIBITED by workspace $0 budget policy (Paid credits)");
+
+// 4. Project-Specific Audit
+const requestedProject = process.argv[2] || null;
+
+console.log("\n4. TARGET PROJECT & CANVAS STATUS:");
+if (requestedProject) {
+  try {
+    const projectDir = resolveProjectPath(requestedProject, { mustExist: true });
+    const config = loadProjectConfig(requestedProject);
+
+    console.log(`  - Project:           ${config.projectName}`);
+    console.log(`  - Lifecycle State:   ${config.status || config.projectStatus || "DISCOVERING"}`);
+    console.log(`  - Target Platform:   ${config.targetPlatform || "Not specified"}`);
+
+    const fileUrl = config.figma?.fileUrl || "";
+    const fileKey = config.figma?.fileKey || "";
+
+    if (fileUrl || fileKey) {
+      let parsedKey = fileKey;
+      let parsedNode = config.figma?.activeNodeId || null;
+      if (fileUrl) {
+        try {
+          const parsed = parseFigmaUrl(fileUrl);
+          parsedKey = parsed.fileKey;
+          parsedNode = parsed.nodeId || parsedNode;
+        } catch {
+          // keep existing key if url parsing fails
+        }
+      }
+
+      console.log(`  - Figma File URL:    ${fileUrl || "N/A"}`);
+      console.log(`  - Figma File Key:    ${parsedKey || "N/A"}`);
+      console.log(`  - Active Node:       ${parsedNode || "0:1 (Root)"}`);
+
+      // Check asset manifest for executed operations
+      const manifestPath = path.join(projectDir, "assets", "manifest", "asset-manifest.md");
+      let uploadedCount = 0;
+      if (fs.existsSync(manifestPath)) {
+        const manifestText = fs.readFileSync(manifestPath, "utf8");
+        const nodeMatches = manifestText.match(/\|\s*`[0-9]+:[0-9]+`\s*\|/g);
+        if (nodeMatches) uploadedCount = nodeMatches.length;
+      }
+
+      console.log("\n5. LIVE VERIFICATION STATUS (Honest Reporting):");
+      console.log(`  - File Key Linked:   [YES] (${parsedKey})`);
+      console.log("  - File Readable:     [Pending Live Verification] (Requires live get_metadata execution)");
+      console.log("  - File Editable:     [Pending Live Verification] (Requires authorized upload_assets call)");
+      console.log(`  - Recorded Uploads:  ${uploadedCount} canvas node(s) documented in project manifest`);
+
+      if (config.status === "ON_HOLD" || config.projectStatus === "ON_HOLD") {
+        console.log("\n  ⚠️  PROJECT IS CURRENTLY ON HOLD: No canvas operations permitted without explicit user instruction.");
+      }
+    } else {
+      console.log("  - Figma File:        [NOT LINKED] Set figma.fileUrl in project.config.json");
+      console.log("  - File Readable:     [N/A - No file key]");
+      console.log("  - File Editable:     [N/A - No file key]");
+    }
+  } catch (err) {
+    console.error(`  ❌ Project error: ${err.message}`);
   }
 } else {
-  const projectsDir = path.join(ROOT_DIR, "projects");
-  const projectList = fs.readdirSync(projectsDir, { withFileTypes: true })
-    .filter(d => d.isDirectory() && d.name !== "PROJECT_TEMPLATE")
-    .map(d => d.name);
-  console.log("\nMulti-Project Workspace Status:");
-  console.log(`  - Available Projects: ${projectList.length > 0 ? projectList.join(", ") : "None"}`);
+  const allProjects = listProjects();
+  console.log(`  - Available Projects: ${allProjects.length > 0 ? allProjects.join(", ") : "None"}`);
   console.log("  - To audit a specific project: ./scripts/verify-figma-mcp <project-name>");
 }
 
-console.log("\nTool Capability Matrix (Figma Starter Tier vs Pro):");
-console.log("------------------------------------------------------");
-console.log("✅ whoami:              VERIFIED (Identity & role check)");
-console.log("✅ create_session:      VERIFIED (Session UUID generation)");
-console.log("✅ get_metadata:        VERIFIED (Canvas tree inspection)");
-console.log("✅ get_screenshot:      VERIFIED (Visual frame capture)");
-console.log("✅ upload_assets:       VERIFIED (Direct canvas placement at $0 cost)");
-console.log("✅ send_code_to_figma:  VERIFIED (Code layer & Make import)");
-console.log("✅ generate_diagram:    VERIFIED (FigJam Mermaid rendering)");
-console.log("⚠️  use_figma:           REQUIRES Pro/Edu plan (Figma Plugin API bridge)");
-console.log("🚫 generate_image:      PROHIBITED ($0 budget / paid Figma credits)");
 console.log("======================================================\n");
-

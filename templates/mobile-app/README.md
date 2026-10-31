@@ -1,6 +1,7 @@
 # Mobile Application Design Template
 
 ## Platform Standards & Viewport Targets
+
 - **iOS Viewport**: iPhone 16 Pro (`393 × 852 pt` @3x)
   - Top Safe Area (Dynamic Island / Status Bar): `59 pt`
   - Bottom Safe Area (Home Indicator): `34 pt`
@@ -13,7 +14,9 @@
   - Typography: Roboto / Google Sans
 
 ## Mobile Container Hierarchy
+
 Every mobile screen frame in Figma must follow this semantic layer structure:
+
 ```text
 [SCREEN] 393 × 852 (Auto Layout: Vertical)
 ├── [STATUS_BAR] 393 × 59 (FIXED height)
@@ -25,4 +28,3 @@ Every mobile screen frame in Figma must follow this semantic layer structure:
 ├── [BOTTOM_ACTION_BAR] 393 × 80 (Auto Layout: Horizontal, FIXED height)
 └── [HOME_INDICATOR] 393 × 34 (FIXED height)
 ```
-

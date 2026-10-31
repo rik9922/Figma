@@ -90,7 +90,10 @@ export function logAssetToManifest(manifestPath, assetRecord) {
 
   // Insert into table if present
   if (content.includes("## Detailed Asset Records")) {
-    content = content.replace("## Detailed Asset Records", `${tableRow}\n## Detailed Asset Records`);
+    content = content.replace(
+      "## Detailed Asset Records",
+      `${tableRow}\n## Detailed Asset Records`,
+    );
   } else {
     content += `\n${tableRow}`;
   }

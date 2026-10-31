@@ -1,22 +1,21 @@
-# Competitive Research & Mobile Benchmarks
+# Competitive Research & UX Benchmarks: {{PROJECT_NAME}}
 
-We analyzed five leading mobile finance and productivity applications to identify UX strengths, layout conventions, and differentiation opportunities for `{{PROJECT_NAME}}`.
-
----
-
-## 1. Competitive Matrix
-
-| App | Strengths | Weaknesses | Takeaway for {{PROJECT_NAME}} |
-|---|---|---|---|
-| **Apple Wallet / Apple Pay** | Unmatched visual hierarchy, tactile card stacking, seamless FaceID confirmation. | Minimal financial management insights; strictly a card passbook. | Adopt the tactile card carousel and double-click / FaceID signing pattern. |
-| **Revolut** | Powerful multi-currency switching, prominent quick action pills, instant card freeze. | Visual overload; excessive promotions, crypto banners, and dense tabs. | Keep the multi-currency toggle and freeze switch, but strip away clutter. |
-| **Cash App** | Clean, minimal green keypad; zero friction P2P transfer; bold typography. | Feels too casual for wealth management or large international transfers. | Combine Cash App's fast amount keypad with high-trust frosted glass styling. |
-| **Monzo** | Transparent fee breakdowns, friendly budgeting pots, clear categorization. | Conservative visual style; standard flat white cards lack tactile delight. | Use tactile depth, frosted glass materials, and refined micro-interactions. |
-| **Linear Mobile** | Exceptional typography hierarchy, keyboard shortcuts, fluid 60fps animations. | Not a fintech app; developer-focused. | Emulate Linear's crisp typography, dark mode contrast, and spring animation curves. |
+This document benchmarks relevant market leaders and comparable applications to identify design patterns, strengths, weaknesses, and differentiation opportunities for `{{PROJECT_NAME}}`.
 
 ---
 
-## 2. Key UX Differentiators for Our App
-1. **Frictionless Biometric Handoff**: Signing transactions takes < 2 seconds via integrated FaceID modal sheet without jumping across full screens.
-2. **Tactile Frosted Glass Aesthetics**: High-end depth and subtle light refraction make virtual cards feel physically tangible.
-3. **Transparent Fee Clarity**: Always display $0 hidden fees, guaranteed exchange rates, and expected arrival timestamps before the user confirms.
+## 1. Competitive Benchmarking Matrix
+
+| Competitor / Product | Key UX Strengths                                           | UX Weaknesses / Gaps                                            | Actionable Opportunity for {{PROJECT_NAME}}         |
+| -------------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------- |
+| **Benchmark 1**      | [Identify clear strengths, layout conventions, and polish] | [Identify user friction, cognitive overload, or visual clutter] | [How our design will improve upon this pattern]     |
+| **Benchmark 2**      | [Identify navigation patterns and interaction feedback]    | [Identify missing edge cases or accessibility gaps]             | [Specific architectural pattern to adopt or refine] |
+| **Benchmark 3**      | [Identify visual hierarchy and typography clarity]         | [Identify complex multi-step bottlenecks]                       | [Design response for our workflow]                  |
+
+---
+
+## 2. Key UX Differentiators & Product Positioning
+
+1. **Friction Reduction**: [Describe where competitors create friction and how our design eliminates it]
+2. **Visual Distinction**: [Describe the aesthetic positioning that sets this application apart]
+3. **Platform Adherence**: [Describe how native conventions (HIG / Material 3 / Modern Web) are leveraged]

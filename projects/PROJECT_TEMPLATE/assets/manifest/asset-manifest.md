@@ -3,6 +3,7 @@
 Tracks all visual assets generated, reviewed, approved, and imported into Figma for {{PROJECT_NAME}}.
 
 ## Approval Workflow Statuses
+
 - `PENDING_REVIEW`: Asset generated, awaiting user review.
 - `APPROVED`: Explicitly approved for design use.
 - `REJECTED`: Declined asset; moved to `assets/rejected/`.
@@ -11,6 +12,7 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 - `LICENSE_BLOCKED`: Commercial license issue detected.
 
 ## Commercial License Statuses
+
 - `VERIFIED_COMMERCIAL_USE`: Explicitly cleared for commercial production.
 - `VERIFIED_NONCOMMERCIAL_ONLY`: Evaluation/personal use only.
 - `RESTRICTED`: Specific trademark or usage restrictions.
@@ -21,8 +23,9 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 
 ## Asset Inventory
 
-| ID | Asset Name | Category | Intended Screen | Dimensions | Format | Provider & Model | Approval Status | License Status | Figma Node |
-|---|---|---|---|---|---|---|---|---|---|
+| ID  | Asset Name | Category | Intended Screen | Dimensions | Format | Provider & Model | Approval Status | License Status | Figma Node |
+| --- | ---------- | -------- | --------------- | ---------- | ------ | ---------------- | --------------- | -------------- | ---------- |
+
 <!-- Asset rows inserted here -->
 
 ---

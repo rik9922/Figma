@@ -1,43 +1,59 @@
 #!/usr/bin/env node
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import {
+  resolveProjectPath,
+  TEMPLATE_DIR,
+  getPlatformDefaults,
+} from "../tools/common/project-utils.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT_DIR = path.resolve(__dirname, "..");
-const TEMPLATE_DIR = path.join(ROOT_DIR, "projects", "PROJECT_TEMPLATE");
-const PROJECTS_DIR = path.join(ROOT_DIR, "projects");
+/**
+ * Smart AI Figma Helper — Project Initializer
+ * Scaffolds an isolated project workspace from the neutral PROJECT_TEMPLATE.
+ *
+ * Guarantees:
+ * - Mobile projects get mobile config (iOS HIG / Android Material 3)
+ * - Web projects get web config (Responsive breakpoints, modern CSS)
+ * - Framework and language match the technology
+ * - Path traversal protection and zero accidental overwrite
+ * - Strict project isolation with zero cross-project data leakage
+ */
 
 const projectName = process.argv[2];
 
 if (!projectName) {
   console.error("❌ Error: Project name is required.");
   console.log("Usage: ./scripts/new-project <project-name> [platform] [framework]");
-  console.log("Example: ./scripts/new-project crypto-wallet ios swiftui");
+  console.log("Examples:");
+  console.log("  ./scripts/new-project health-fitness ios swiftui");
+  console.log("  ./scripts/new-project ride-sharing android compose");
+  console.log("  ./scripts/new-project saas-dashboard web react");
+  console.log("  ./scripts/new-project courier-app cross-platform react-native");
   process.exit(1);
 }
 
-// 1. Validate project name
-if (!/^[a-zA-Z0-9_-]+$/.test(projectName)) {
-  console.error("❌ Error: Invalid project name. Use only letters, numbers, hyphens, and underscores.");
+const platformInput = process.argv[3] || "ios";
+const frameworkInput = process.argv[4] || null;
+
+let targetDir;
+try {
+  targetDir = resolveProjectPath(projectName, { mustNotExist: true });
+} catch (err) {
+  console.error(`❌ Project initialization failed: ${err.message}`);
   process.exit(1);
 }
 
-const targetDir = path.join(PROJECTS_DIR, projectName);
-
-// 2. Prevent overwriting
-if (fs.existsSync(targetDir)) {
-  console.error(`❌ Error: Project "${projectName}" already exists at ${targetDir}`);
-  process.exit(1);
-}
-
-const platform = process.argv[3] || "iOS";
-const framework = process.argv[4] || (platform.toLowerCase() === "ios" ? "SwiftUI" : "React Native");
+const platformConfig = getPlatformDefaults(platformInput, frameworkInput);
+const now = new Date();
+const isoTimestamp = now.toISOString();
+const dateStr = now.toISOString().split("T")[0];
 
 console.log(`🚀 Initializing new project: "${projectName}"...`);
+console.log(`- Platform:  ${platformConfig.targetPlatform}`);
+console.log(`- Framework: ${platformConfig.development.framework} (${platformConfig.development.language})`);
+console.log(`- Type:      ${platformConfig.projectType}`);
 
-// 3. Recursive copy function with placeholder replacement
+// Recursive copy function with placeholder replacement
 function copyTemplate(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
   const entries = fs.readdirSync(src, { withFileTypes: true });
@@ -50,11 +66,18 @@ function copyTemplate(src, dest) {
       copyTemplate(srcPath, destPath);
     } else {
       let content = fs.readFileSync(srcPath, "utf8");
-      // Replace placeholders
+
+      // Replace template placeholders
       content = content.replace(/\{\{PROJECT_NAME\}\}/g, projectName);
-      content = content.replace(/"PROJECT_NAME"/g, `"${projectName}"`);
-      content = content.replace(/"targetPlatform": "iOS"/g, `"targetPlatform": "${platform}"`);
-      content = content.replace(/"framework": "SwiftUI"/g, `"framework": "${framework}"`);
+      content = content.replace(/\{\{PROJECT_TYPE\}\}/g, platformConfig.projectType);
+      content = content.replace(/\{\{TARGET_PLATFORM\}\}/g, platformConfig.targetPlatform);
+      content = content.replace(/\{\{FRAMEWORK\}\}/g, platformConfig.development.framework);
+      content = content.replace(/\{\{LANGUAGE\}\}/g, platformConfig.development.language);
+      content = content.replace(/\{\{DISPLAY_FONT\}\}/g, platformConfig.visualDirection.typography.displayFamily);
+      content = content.replace(/\{\{BODY_FONT\}\}/g, platformConfig.visualDirection.typography.bodyFamily);
+      content = content.replace(/\{\{TIMESTAMP\}\}/g, isoTimestamp);
+      content = content.replace(/\{\{DATE\}\}/g, dateStr);
+
       fs.writeFileSync(destPath, content, "utf8");
     }
   }
@@ -62,28 +85,31 @@ function copyTemplate(src, dest) {
 
 copyTemplate(TEMPLATE_DIR, targetDir);
 
-// 4. Ensure essential empty subdirectories exist
+// Ensure essential subdirectories exist
 fs.mkdirSync(path.join(targetDir, "assets", "generated"), { recursive: true });
 fs.mkdirSync(path.join(targetDir, "assets", "approved"), { recursive: true });
 fs.mkdirSync(path.join(targetDir, "assets", "rejected"), { recursive: true });
 fs.mkdirSync(path.join(targetDir, "figma"), { recursive: true });
-fs.mkdirSync(path.join(targetDir, "qa", "reports"), { recursive: true });
+fs.mkdirSync(path.join(targetDir, "revisions"), { recursive: true });
+fs.mkdirSync(path.join(targetDir, "source-code"), { recursive: true });
 
-console.log(`✅ Project created successfully at: projects/${projectName}/`);
+console.log(`✅ Project successfully scaffolded at: projects/${projectName}/`);
 console.log(`
 📁 Structure Initialized:
-  - projects/${projectName}/project.config.json
+  - projects/${projectName}/project.config.json    (State: DISCOVERING)
+  - projects/${projectName}/README.md
   - projects/${projectName}/requirements/PRD.md
-  - projects/${projectName}/assets/generated/ & approved/
-  - projects/${projectName}/assets/manifest/asset-manifest.md
-  - projects/${projectName}/figma/
+  - projects/${projectName}/research/
+  - projects/${projectName}/architecture/
   - projects/${projectName}/design-system/TOKENS.json
-  - projects/${projectName}/source-code/
-  - projects/${projectName}/qa/
+  - projects/${projectName}/assets/generated/ & approved/
+  - projects/${projectName}/figma/
+  - projects/${projectName}/revisions/REVISION_HISTORY.md
 
 👉 Next Steps:
-  1. Open projects/${projectName}/project.config.json and set your Figma file reference.
-  2. Tell Antigravity: "Continue project ${projectName}".
-  3. Start the production pipeline: Requirements → Assets → Figma → Code → QA.
+  1. Link your Figma file in projects/${projectName}/project.config.json:
+     "figma": { "fileUrl": "https://www.figma.com/design/<fileKey>/<fileName>" }
+  2. Research the actual business requirements, target users, and user journeys.
+  3. Create real, editable Figma designs and present them for user review.
+  4. The human user is the sole design reviewer and approval authority.
 `);
-

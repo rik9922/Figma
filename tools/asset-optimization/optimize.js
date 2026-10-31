@@ -5,14 +5,41 @@ import { optimize } from "svgo";
 import sharp from "sharp";
 
 /**
- * Mobile Asset Optimizer Tool
+ * Safe Asset Optimizer Tool
  * - Cleans and optimizes SVG assets exported from Figma using SVGO
  * - Generates @1x, @2x, and @3x mobile assets using Sharp
  * - Converts and compresses raster images (JPG/PNG to WebP/PNG)
+ *
+ * SAFETY GUARANTEE: Never overwrites source assets by default.
+ * Separate input and output paths are strictly required unless explicit
+ * authorization (--allow-overwrite) is granted.
  */
 
-export async function optimizeSvg(inputSvgPath, outputSvgPath) {
-  const rawSvg = fs.readFileSync(inputSvgPath, "utf8");
+export async function optimizeSvg(
+  inputSvgPath,
+  outputSvgPath,
+  { allowOverwrite = false } = {},
+) {
+  if (!fs.existsSync(inputSvgPath)) {
+    throw new Error(`Input SVG file does not exist: ${inputSvgPath}`);
+  }
+
+  if (!outputSvgPath) {
+    throw new Error(
+      "Output path is required. Overwriting source assets by default is strictly prohibited.",
+    );
+  }
+
+  const resolvedInput = path.resolve(inputSvgPath);
+  const resolvedOutput = path.resolve(outputSvgPath);
+
+  if (resolvedInput === resolvedOutput && !allowOverwrite) {
+    throw new Error(
+      `Destructive overwrite blocked: Output path matches source asset "${inputSvgPath}". To authorize overwriting, explicitly pass { allowOverwrite: true } or --allow-overwrite.`,
+    );
+  }
+
+  const rawSvg = fs.readFileSync(resolvedInput, "utf8");
   const result = optimize(rawSvg, {
     multipass: true,
     plugins: [
@@ -25,11 +52,13 @@ export async function optimizeSvg(inputSvgPath, outputSvgPath) {
     ],
   });
 
-  const outDir = path.dirname(outputSvgPath);
+  const outDir = path.dirname(resolvedOutput);
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-  fs.writeFileSync(outputSvgPath, result.data, "utf8");
+  fs.writeFileSync(resolvedOutput, result.data, "utf8");
   return {
+    source: resolvedInput,
+    output: resolvedOutput,
     originalSize: rawSvg.length,
     optimizedSize: result.data.length,
     savings: `${Math.round((1 - result.data.length / rawSvg.length) * 100)}%`,
@@ -43,6 +72,16 @@ export async function generateMobileRasterScales(
   baseWidth = 24,
   baseHeight = 24,
 ) {
+  if (!fs.existsSync(inputSvgOrImgPath)) {
+    throw new Error(`Input asset file does not exist: ${inputSvgOrImgPath}`);
+  }
+
+  if (!outputDir) {
+    throw new Error(
+      "Output directory is required for multi-scale asset generation.",
+    );
+  }
+
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
@@ -74,11 +113,34 @@ export async function generateMobileRasterScales(
   return results;
 }
 
-export async function compressRaster(inputPath, outputPath, { quality = 85, format = "webp" } = {}) {
-  const outDir = path.dirname(outputPath);
+export async function compressRaster(
+  inputPath,
+  outputPath,
+  { quality = 85, format = "webp", allowOverwrite = false } = {},
+) {
+  if (!fs.existsSync(inputPath)) {
+    throw new Error(`Input raster file does not exist: ${inputPath}`);
+  }
+
+  if (!outputPath) {
+    throw new Error(
+      "Output path is required. Overwriting source assets by default is strictly prohibited.",
+    );
+  }
+
+  const resolvedInput = path.resolve(inputPath);
+  const resolvedOutput = path.resolve(outputPath);
+
+  if (resolvedInput === resolvedOutput && !allowOverwrite) {
+    throw new Error(
+      `Destructive overwrite blocked: Output path matches source asset "${inputPath}". To authorize overwriting, explicitly pass { allowOverwrite: true } or --allow-overwrite.`,
+    );
+  }
+
+  const outDir = path.dirname(resolvedOutput);
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-  let transformer = sharp(inputPath);
+  let transformer = sharp(resolvedInput);
   if (format === "webp") {
     transformer = transformer.webp({ quality });
   } else if (format === "png") {
@@ -87,11 +149,13 @@ export async function compressRaster(inputPath, outputPath, { quality = 85, form
     transformer = transformer.jpeg({ quality });
   }
 
-  await transformer.toFile(outputPath);
-  const originalSize = fs.statSync(inputPath).size;
-  const optimizedSize = fs.statSync(outputPath).size;
+  await transformer.toFile(resolvedOutput);
+  const originalSize = fs.statSync(resolvedInput).size;
+  const optimizedSize = fs.statSync(resolvedOutput).size;
 
   return {
+    source: resolvedInput,
+    output: resolvedOutput,
     originalSize,
     optimizedSize,
     savings: `${Math.round((1 - optimizedSize / originalSize) * 100)}%`,
@@ -100,23 +164,49 @@ export async function compressRaster(inputPath, outputPath, { quality = 85, form
 
 // CLI Execution support
 if (process.argv[1] && process.argv[1].endsWith("optimize.js")) {
-  const [,, command, input, output] = process.argv;
+  const args = process.argv.slice(2);
+  const allowOverwrite = args.includes("--allow-overwrite");
+  const nonFlagArgs = args.filter((a) => !a.startsWith("--"));
+  const [command, input, output] = nonFlagArgs;
+
   if (!command || !input) {
-    console.log("Usage: node optimize.js <svg|raster|scales> <input-file> [output-file]");
+    console.log(
+      "Usage: node optimize.js <svg|raster|scales> <input-file> <output-file-or-dir> [--allow-overwrite]",
+    );
+    console.log(
+      "Note: Source assets are protected against destructive overwriting by default.",
+    );
     process.exit(0);
   }
+
   (async () => {
     try {
       if (command === "svg") {
-        const res = await optimizeSvg(input, output || input);
+        if (!output) {
+          console.error(
+            "❌ Error: Output path required. Overwriting source assets is blocked by default.",
+          );
+          process.exit(1);
+        }
+        const res = await optimizeSvg(input, output, { allowOverwrite });
         console.log("SVG Optimized:", res);
       } else if (command === "raster") {
-        const res = await compressRaster(input, output || input);
+        if (!output) {
+          console.error(
+            "❌ Error: Output path required. Overwriting source assets is blocked by default.",
+          );
+          process.exit(1);
+        }
+        const res = await compressRaster(input, output, { allowOverwrite });
         console.log("Raster Compressed:", res);
       } else if (command === "scales") {
+        const outDir = output || "./scales";
         const baseName = path.basename(input, path.extname(input));
-        const res = await generateMobileRasterScales(input, output || "./scales", baseName);
+        const res = await generateMobileRasterScales(input, outDir, baseName);
         console.log("Scales Generated:", res);
+      } else {
+        console.error(`Unknown command: ${command}`);
+        process.exit(1);
       }
     } catch (err) {
       console.error("Optimization failed:", err.message);
@@ -124,4 +214,3 @@ if (process.argv[1] && process.argv[1].endsWith("optimize.js")) {
     }
   })();
 }
-

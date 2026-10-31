@@ -1,24 +1,48 @@
 /**
  * Figma Integration Helper
- * Provides standardized wrappers for interacting with Figma MCP tools:
+ * Provides URL parsing, node referencing, and payload formatters
+ * for Figma MCP tools:
  * - upload_assets
- * - get_design_context
  * - get_metadata
- * - get_variable_defs
+ * - get_screenshot
+ * - generate_diagram
+ * - send_code_to_figma
  */
 
+/**
+ * Parses any standard Figma file or design URL to extract fileKey and nodeId.
+ * Supports /design/ and /file/ URL formats.
+ *
+ * @param {string} figmaUrl
+ * @returns {{ fileKey: string, nodeId: string|null }}
+ */
 export function parseFigmaUrl(figmaUrl) {
-  const match = figmaUrl.match(/figma\.com\/design\/([a-zA-Z0-9]+)/);
-  if (!match) {
-    throw new Error(`Invalid Figma Design URL: ${figmaUrl}`);
+  if (typeof figmaUrl !== "string" || !figmaUrl.trim()) {
+    throw new Error("Invalid Figma URL: URL must be a non-empty string.");
   }
+
+  const match = figmaUrl.match(/figma\.com\/(?:design|file)\/([a-zA-Z0-9_-]+)/);
+  if (!match) {
+    throw new Error(
+      `Invalid Figma URL format: "${figmaUrl}". Expected https://www.figma.com/design/<fileKey>/...`,
+    );
+  }
+
   const fileKey = match[1];
-  const nodeMatch = figmaUrl.match(/node-id=([0-9]+)[-:]?([0-9]+)?/);
-  const nodeId = nodeMatch ? `${nodeMatch[1]}:${nodeMatch[2] || "0"}` : null;
+  const nodeMatch = figmaUrl.match(/node-id=([0-9]+)(?:[-:]([0-9]+))?/);
+  let nodeId = null;
+  if (nodeMatch) {
+    nodeId = nodeMatch[2]
+      ? `${nodeMatch[1]}:${nodeMatch[2]}`
+      : `${nodeMatch[1]}:0`;
+  }
+
   return { fileKey, nodeId };
 }
 
+/**
+ * Formats design tokens for export or inspection.
+ */
 export function formatTokenExport(tokens) {
   return JSON.stringify(tokens, null, 2);
 }
-

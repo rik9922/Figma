@@ -1,6 +1,19 @@
 {
   "projectName": "fintech-mobile-app",
+  "status": "ON_HOLD",
   "projectStatus": "ON_HOLD",
+  "lifecycle": {
+    "state": "ON_HOLD",
+    "history": [
+      {
+        "from": "DESIGN_IN_PROGRESS",
+        "to": "ON_HOLD",
+        "timestamp": "2026-10-31T09:00:00.000Z",
+        "note": "Project placed ON_HOLD pending explicit user authorization"
+      }
+    ],
+    "userSignOff": null
+  },
   "designAuthorization": "PENDING_EXPLICIT_APPROVAL",
   "projectType": "mobile-app",
   "targetPlatform": "iOS + Android",
@@ -58,22 +71,10 @@
     "approvalRequired": true
   },
   "executionPolicy": {
-    "autonomousFigmaExecution": true,
-    "requireApprovalBeforeImport": true,
-    "requireApprovalBeforeDestructiveAction": true,
-    "inspectBeforeWrite": true,
+    "autonomousPreparation": true,
+    "requireApprovalBeforeCanvasWrite": true,
     "preserveExistingUserWork": true,
     "zeroPaidCreditsEnforced": true,
-    "wcagCompliance": "AA"
-  },
-  "workflowStatus": {
-    "gate1_requirementsApproved": true,
-    "gate2_architectureApproved": true,
-    "gate3_visualDirectionApproved": true,
-    "gate4_assetsApproved": true,
-    "gate5_figmaDesignApproved": true,
-    "gate6_prototypeApproved": false,
-    "gate7_codeImplementationApproved": false,
-    "gate8_qaPassed": true
+    "humanApprovalSoleAuthority": true
   }
 }

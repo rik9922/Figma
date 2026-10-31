@@ -1,30 +1,31 @@
-# User Personas: {{PROJECT_NAME}}
+# Target User Personas: {{PROJECT_NAME}}
 
-## Persona 1: Alex Rivera — The Busy Tech Consultant
-- **Age**: 29
-- **Occupation**: Senior Cloud Consultant
-- **Location**: New York, NY
-- **Tech Savviness**: Advanced (iPhone 16 Pro user, uses Apple Pay daily)
-- **Goals**:
-  - Send instant payments to friends and subcontractors without foreign transaction fees.
-  - Keep virtual cards separate for subscriptions to prevent unapproved renewals.
-  - Glance at total multi-currency liquid balance in < 3 seconds.
-- **Pain Points**:
-  - Cluttered legacy banking apps that require 4 taps just to view card CVV or freeze a lost card.
-  - Slow OTP delivery and clunky password reset flows.
-- **Key UX Need**: Instant biometric login, prominent quick-send pills, and one-tap card freeze.
+This document details verified user personas, behavioral drivers, and critical needs for `{{PROJECT_NAME}}`.
 
 ---
 
-## Persona 2: Maya Patel — The Remote Entrepreneur
-- **Age**: 34
-- **Occupation**: Digital Agency Founder
-- **Location**: Austin, TX / Remote
-- **Tech Savviness**: High
-- **Goals**:
-  - Hold and exchange USD, EUR, and GBP with transparent, guaranteed conversion rates.
-  - Export professional PDF transfer receipts immediately after signing transactions.
-- **Pain Points**:
-  - Hidden banking margins and surprise international wire fees.
-  - Complex multi-step verification prompts when moving money quickly.
-- **Key UX Need**: Clear fee transparency, real-time rate locks, and verified receipt generation.
+## Persona 1: Primary User
+
+- **Profile**: [Name, archetype, age range, role/occupation]
+- **Context & Habits**: [When and where they interact with the product; devices used]
+- **Core Goals**:
+  - [Primary goal 1]
+  - [Primary goal 2]
+- **Current Pain Points**:
+  - [Friction in existing solutions]
+  - [Time or cognitive overhead barrier]
+- **Key UX Requirements**:
+  - [Essential workflow or feature required to make this user successful]
+
+---
+
+## Persona 2: Secondary / Edge User
+
+- **Profile**: [Name, archetype, role/occupation]
+- **Context & Habits**: [Frequency of usage; specific constraints]
+- **Core Goals**:
+  - [Secondary goal 1]
+- **Current Pain Points**:
+  - [Specific edge-case friction or accessibility barrier]
+- **Key UX Requirements**:
+  - [Design consideration required for this user persona]

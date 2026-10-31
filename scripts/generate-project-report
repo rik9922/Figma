@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT_DIR = path.resolve(__dirname, "..");
-const PROJECTS_DIR = path.join(ROOT_DIR, "projects");
+import { resolveProjectPath, loadProjectConfig } from "../tools/common/project-utils.js";
 
 const projectName = process.argv[2];
 
@@ -16,39 +11,66 @@ if (!projectName) {
   process.exit(1);
 }
 
-const targetDir = path.join(PROJECTS_DIR, projectName);
-const configPath = path.join(targetDir, "project.config.json");
-
-if (!fs.existsSync(configPath)) {
-  console.error(`❌ Error: project.config.json missing for project: ${projectName}`);
+let targetDir;
+let config;
+try {
+  targetDir = resolveProjectPath(projectName, { mustExist: true });
+  config = loadProjectConfig(projectName);
+} catch (err) {
+  console.error(`❌ Error: ${err.message}`);
   process.exit(1);
 }
 
-const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
-const status = config.workflowStatus || {};
+const currentState = config.status || config.projectStatus || "DISCOVERING";
+const history = config.lifecycle?.history || [];
+const userSignOff = config.lifecycle?.userSignOff || null;
 
-const formatGate = (val) => (val ? "✅ Approved / Passed" : "⏳ Pending Approval");
+// Screen inventory count
+const archPath = path.join(targetDir, "requirements", "SCREEN_ARCHITECTURE.md");
+let screenCount = 0;
+if (fs.existsSync(archPath)) {
+  const content = fs.readFileSync(archPath, "utf8");
+  const matches = content.match(/\|\s*`[A-Z0-9_-]+`\s*\|/g);
+  if (matches) screenCount = matches.length;
+}
+
+// Assets count
+function countFiles(dir) {
+  if (!fs.existsSync(dir)) return 0;
+  return fs.readdirSync(dir, { withFileTypes: true }).filter((d) => !d.isDirectory() && !d.name.startsWith(".")).length;
+}
+const generatedCount = countFiles(path.join(targetDir, "assets", "generated"));
+const approvedCount = countFiles(path.join(targetDir, "assets", "approved"));
 
 console.log(`
 ======================================================
 📊 PROJECT STATUS REPORT: ${config.projectName}
 ======================================================
-- Status:         ${config.projectStatus || "ACTIVE"}
-- Authorization:  ${config.designAuthorization || "PENDING_EXPLICIT_APPROVAL"}
-- Type:           ${config.projectType}
-- Platform:       ${config.targetPlatform}
-- Framework:      ${config.development?.framework || "N/A"} (${config.development?.language || "N/A"})
-- Figma File:     ${config.figma?.fileUrl || config.figma?.fileKey || "Not linked"}
-- Visual Style:   ${config.visualDirection?.style || "Standard"}
+- Lifecycle State:       ${currentState}
+- Human Design Approval: ${currentState === "USER_APPROVED" ? "✅ Explicit User Approval Granted" : currentState === "AWAITING_USER_REVIEW" ? "⏳ Awaiting User Review" : currentState === "ON_HOLD" ? "⏸️  Project On Hold" : "In Progress (Pending User Review)"}
+- Project Type:          ${config.projectType || "mobile-app"}
+- Target Platform:       ${config.targetPlatform || "iOS"}
+- Target Framework:      ${config.development?.framework || "N/A"} (${config.development?.language || "N/A"})
+- Figma File:            ${config.figma?.fileUrl || config.figma?.fileKey || "Not linked"}
+- Visual Style:          ${config.visualDirection?.style || "Standard"}
 
---- 8 Mandatory Approval Gates ---
-- Gate 1: Requirements:        ${formatGate(status.gate1_requirementsApproved ?? status.requirementsApproved)}
-- Gate 2: Architecture:        ${formatGate(status.gate2_architectureApproved ?? status.architectureApproved)}
-- Gate 3: Visual Direction:    ${formatGate(status.gate3_visualDirectionApproved ?? status.visualDirectionApproved)}
-- Gate 4: Asset Approval:      ${formatGate(status.gate4_assetsApproved ?? status.assetsApproved)}
-- Gate 5: Figma UI Design:     ${formatGate(status.gate5_figmaDesignApproved ?? status.figmaDesignApproved)}
-- Gate 6: Prototype Studies:   ${formatGate(status.gate6_prototypeApproved ?? status.prototypeApproved)}
-- Gate 7: Development Handoff: ${formatGate(status.gate7_codeImplementationApproved ?? status.codeImplementationApproved)}
-- Gate 8: Final QA & Delivery: ${formatGate(status.gate8_qaPassed ?? status.qaPassed)}
+--- Project Inventories ---
+- Screen & State IDs:    ${screenCount > 0 ? `${screenCount} documented` : "Pending architecture"}
+- Assets Awaiting Review:${generatedCount}
+- User-Approved Assets:  ${approvedCount}
+
+--- Recent Lifecycle Transitions ---
+${
+  history.length > 0
+    ? history
+        .slice(-4)
+        .map((h) => `  [${h.timestamp ? h.timestamp.split("T")[0] : "—"}] ${h.from} → ${h.to}: ${h.note || ""}`)
+        .join("\n")
+    : "  No state transitions recorded."
+}
+
+------------------------------------------------------
+ℹ️  Authority Note: The human user is the sole design
+    reviewer and approval authority.
 ======================================================
 `);
