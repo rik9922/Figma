@@ -20,3 +20,4 @@ We analyzed five leading mobile finance and productivity applications to identif
 1. **Frictionless Biometric Handoff**: Signing transactions takes < 2 seconds via integrated FaceID modal sheet without jumping across full screens.
 2. **Tactile Frosted Glass Aesthetics**: High-end depth and subtle light refraction make virtual cards feel physically tangible.
 3. **Transparent Fee Clarity**: Always display $0 hidden fees, guaranteed exchange rates, and expected arrival timestamps before the user confirms.
+

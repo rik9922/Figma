@@ -78,3 +78,4 @@ flowchart LR
 - **Review Criteria**: Zero critical WCAG violations, visual diff tolerance < 2%, git commit history clean.
 - **Required Action**: Final delivery sign-off.
 - **State Transition**: `workflowStatus.qaPassed: true`.
+

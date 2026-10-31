@@ -12,3 +12,4 @@
 | `FEAT-08` | **Quick Send & Payee Select** | P1 (Must) | `TXN-01` | Horizontal avatar list of frequent payees, numeric amount keypad, note input. | Touch target ≥ 44pt keypad |
 | `FEAT-09` | **Transfer Confirmation Sheet** | P1 (Must) | `TXN-02` | Modal sheet showing fee breakdown ($0 fee), exchange rate, and FaceID signing button. | Spring modal transition `MOT-03` |
 | `FEAT-10` | **Success Receipt & Celebration** | P1 (Must) | `TXN-03` | Animated checkmark draw, transaction ID, PDF receipt export, and return home CTA. | Celebration micro-interaction `MOT-04` |
+

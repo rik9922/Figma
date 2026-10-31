@@ -24,3 +24,4 @@ This matrix documents the complete screen-to-screen interaction pathways for `fi
 | `TXN-02` | `BiometricConfirm` | Double-click side button / FaceID | `TXN-03` | Biometric Event | Morph / Smart Animate (`550ms`) | Progress spinner snaps into celebratory green checkmark; displays transaction ID. |
 | `TXN-02` | `BiometricConfirm` | Insufficient funds / Timeout | `TXN-02-FAILED` | Error Event | Shake & Red Alert (`350ms`) | Displays error modal with "Try Again" or "Top Up Account" CTA buttons. |
 | `TXN-03` | `PrimaryButton` | Tap "Done" | `HOME-01` | On Tap | Fade to Root (`300ms`, ease-out) | Closes all modal sheets; returns to `HOME-01` with newly updated transaction item at top. |
+

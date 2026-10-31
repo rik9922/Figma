@@ -77,3 +77,4 @@ Each project in `projects/<name>/` is completely self-contained:
 - **`qa/`**: Project-scoped accessibility and touch-target reports.
 
 A project **NEVER** inherits or leaks assets, colors, or Figma node IDs from another project.
+

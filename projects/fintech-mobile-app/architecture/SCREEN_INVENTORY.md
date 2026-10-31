@@ -15,3 +15,4 @@
 | `TXN-02-FAILED` | Transfer Error Modal | Payments | Account Holder | Failure state & retry handling | `TXN-02` | `TXN-01` | "Try Again", "Choose Card" | Planned |
 | `TXN-03` | Success Receipt | Payments | Account Holder | Confirmation & micro-celebration | `TXN-02` | `HOME-01` | "Done", "Share Receipt" | Planned |
 | `AUTH-01-ERROR` | OTP Error State | Authentication | Guest | Invalid OTP countdown state | `AUTH-01` | `AUTH-01` | "Resend Code" | Planned |
+

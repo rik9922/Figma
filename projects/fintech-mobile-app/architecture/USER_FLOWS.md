@@ -56,3 +56,4 @@ flowchart LR
     WALLET01EMPTY -->|Request Card| WALLET01["WALLET-01 Cards Hub"]
     CardCheck -->|Yes| WALLET01["WALLET-01 Cards Hub\n(Freeze toggle, reveal CVV)"]
 ```
+

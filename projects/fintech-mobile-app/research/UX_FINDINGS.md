@@ -12,3 +12,4 @@
 - **Thumb Zone Compliance**: Primary action buttons ("Get Started", "Send", "Confirm") are placed strictly in the natural thumb sweep zone (bottom 120 pt of screen).
 - **Dynamic Type & Scaling**: All typography scales with system font settings without clipping parent containers.
 - **Color Independence**: Every success state features an icon checkmark + green badge; every error state features an alert triangle + red badge.
+

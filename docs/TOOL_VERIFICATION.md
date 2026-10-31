@@ -34,3 +34,4 @@
 2. **Local Heavy Weight Models (ComfyUI / Local SDXL checkpoints)**:
    - **Reason**: Excessive VRAM/storage load (10GB+ per model), excessive battery drain on MacBook Air.
    - **Enforcement**: Documented as not recommended; cloud-first free AI is prioritized.
+

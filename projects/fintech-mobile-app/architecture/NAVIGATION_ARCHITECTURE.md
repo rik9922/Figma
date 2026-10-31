@@ -28,3 +28,4 @@ The application utilizes a hybrid navigation model:
 | `TXN-01` | `HOME-01` | Tap Top Left `Cancel` or Swipe Down | Sheet Slide Down 300ms |
 | `TXN-02` | `TXN-01` | Tap `< Back` | Push Right 250ms |
 | `TXN-03` | `HOME-01` | Tap `Done` (Root Reset) | Fade to Root 300ms |
+

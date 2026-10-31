@@ -10,3 +10,4 @@
 | `MOT-06` | Component Feedback | `WALLET-01` Freeze Switch | Toggle switch | Card texture desaturates from frosted gloss to icy monochrome. | Instant color switch |
 | `MOT-07` | Loading State | `HOME-01-LOADING` | Feed fetch trigger | Continuous 1.2s shimmer pulse across card and row skeletons. | Static opacity 0.6 |
 | `MOT-08` | Error Feedback | `AUTH-01-ERROR` | Invalid code submit | 350ms horizontal spring shake with border color tint. | Static red border without shake |
+
