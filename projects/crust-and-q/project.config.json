@@ -1,0 +1,84 @@
+{
+  "projectName": "crust-and-q",
+  "status": "DISCOVERING",
+  "lifecycle": {
+    "state": "DISCOVERING",
+    "history": [
+      {
+        "from": "INITIALIZED",
+        "to": "DISCOVERING",
+        "timestamp": "2026-10-31T12:44:51.969Z",
+        "note": "Project scaffolded from neutral template"
+      }
+    ],
+    "userSignOff": null
+  },
+  "projectType": "mobile-app",
+  "targetPlatform": "Cross-Platform (iOS + Android)",
+  "platformDetails": {
+    "type": "mobile",
+    "canonicalViewport": "393x852 pt (iOS canonical, adapts to 412x915 dp Android)",
+    "minTouchTarget": "44x44 pt (iOS) / 48x48 dp (Android)",
+    "guidelines": "Canonical screen architecture with platform-specific safe area adaptations"
+  },
+  "productDescription": "To be defined during Stage 01 Requirements discovery based on actual product objectives.",
+  "targetUsers": [
+    "To be identified and documented during user persona research"
+  ],
+  "brandIdentity": {
+    "name": "Crust & Q",
+    "voice": "To be defined based on brand research",
+    "personality": "To be defined based on brand research"
+  },
+  "visualDirection": {
+    "style": "To be established based on product UX research and competitor benchmarks",
+    "primaryColor": "TBD",
+    "secondaryColor": "TBD",
+    "accentColor": "TBD",
+    "surfaceColor": "TBD",
+    "textColor": "TBD",
+    "typography": {
+      "displayFamily": "System Font, sans-serif",
+      "bodyFamily": "System Font, sans-serif",
+      "displaySize": "34px",
+      "headlineSize": "20px",
+      "bodySize": "16px",
+      "captionSize": "12px"
+    },
+    "spatialGrid": "8pt"
+  },
+  "figma": {
+    "fileUrl": "https://www.figma.com/design/E65NxrHoQQXipS7twBs9sl",
+    "fileKey": "E65NxrHoQQXipS7twBs9sl",
+    "activeNodeId": "0:1",
+    "pages": {
+      "overview": "00 Cover & Project Overview",
+      "research": "01 Visual Research & References",
+      "architecture": "02 User Flows & Architecture",
+      "exploration": "03 Design Exploration",
+      "approvedScreens": "04 Approved UI Screens",
+      "components": "05 Components & Design System",
+      "prototype": "06 Prototype & Interaction Studies",
+      "development": "07 Ready for Development"
+    }
+  },
+  "development": {
+    "framework": "react-native",
+    "language": "TypeScript",
+    "externalRepoUrl": "",
+    "localWorkspacePath": "./source-code"
+  },
+  "assetPreferences": {
+    "generatorEngine": "Antigravity Cloud AI",
+    "defaultResolution": "1024x1024",
+    "preferredFormat": "png",
+    "approvalRequired": true
+  },
+  "executionPolicy": {
+    "autonomousPreparation": true,
+    "requireApprovalBeforeCanvasWrite": true,
+    "preserveExistingUserWork": true,
+    "zeroPaidCreditsEnforced": true,
+    "humanApprovalSoleAuthority": true
+  }
+}
