@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, "..");
+const PROJECTS_DIR = path.join(ROOT_DIR, "projects");
+
+const projectName = process.argv[2];
+
+if (!projectName) {
+  console.error("❌ Error: Project name is required.");
+  console.log("Usage: ./scripts/generate-project-report <project-name>");
+  process.exit(1);
+}
+
+const targetDir = path.join(PROJECTS_DIR, projectName);
+const configPath = path.join(targetDir, "project.config.json");
+
+if (!fs.existsSync(configPath)) {
+  console.error(`❌ Error: project.config.json missing for project: ${projectName}`);
+  process.exit(1);
+}
+
+const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+const manifestPath = path.join(targetDir, "assets", "manifest", "asset-manifest.md");
+const manifestExists = fs.existsSync(manifestPath);
+
+console.log(`
+======================================================
+📊 PROJECT STATUS REPORT: ${config.projectName}
+======================================================
+- Type:           ${config.projectType}
+- Platform:       ${config.targetPlatform}
+- Framework:      ${config.development?.framework || "N/A"} (${config.development?.language || "N/A"})
+- Figma File:     ${config.figma?.fileUrl || config.figma?.fileKey || "Not linked"}
+- Visual Style:   ${config.visualDirection?.style || "Standard"}
+
+--- Pipeline Gate Status ---
+- Requirements Approved:  ${config.workflowStatus?.requirementsApproved ? "✅ Yes" : "⏳ Pending"}
+- Assets Approved:        ${config.workflowStatus?.assetsApproved ? "✅ Yes" : "⏳ Pending"}
+- Figma Design Approved:  ${config.workflowStatus?.figmaDesignApproved ? "✅ Yes" : "⏳ Pending"}
+- Code Implementation:    ${config.workflowStatus?.codeImplementationApproved ? "✅ Yes" : "⏳ Pending"}
+- Design-to-Code QA:      ${config.workflowStatus?.qaPassed ? "✅ Passed" : "⏳ Pending"}
+======================================================
+`);

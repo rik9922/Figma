@@ -1,0 +1,66 @@
+{
+  "projectName": "fintech-mobile-app",
+  "projectType": "mobile-app",
+  "targetPlatform": "iOS",
+  "productDescription": "Production-grade iOS fintech & digital wallet mobile app featuring account setup, card management, and secure onboarding.",
+  "targetUsers": [
+    "Tech-savvy consumers seeking a seamless, secure digital wallet and budgeting mobile app"
+  ],
+  "brandIdentity": {
+    "name": "Fintech Mobile",
+    "voice": "Trustworthy, modern, clean, and encouraging",
+    "personality": "Minimal, premium, and accessible"
+  },
+  "visualDirection": {
+    "style": "3D claymorphism & frosted glass / clean modern vector",
+    "primaryColor": "#007AFF",
+    "secondaryColor": "#5856D6",
+    "accentColor": "#FF9500",
+    "surfaceColor": "#FFFFFF",
+    "textColor": "#1C1C1E",
+    "typography": {
+      "fontFamily": "SF Pro / System Sans",
+      "displaySize": "34px",
+      "headlineSize": "20px",
+      "bodySize": "16px",
+      "captionSize": "12px"
+    },
+    "spatialGrid": "8pt"
+  },
+  "figma": {
+    "fileUrl": "https://www.figma.com/design/gtamCkSGXtOpzj3XYcWzie/Untitled?node-id=0-1",
+    "fileKey": "gtamCkSGXtOpzj3XYcWzie",
+    "activeNodeId": "0:1",
+    "pages": {
+      "cover": "Cover",
+      "designSystem": "01 Design System & Foundations",
+      "screens": "02 Mobile Screens",
+      "prototypes": "03 Interactive Prototype",
+      "archive": "04 Archive & QA"
+    }
+  },
+  "development": {
+    "framework": "SwiftUI",
+    "language": "Swift",
+    "externalRepoUrl": "",
+    "localWorkspacePath": "./source-code"
+  },
+  "assetPreferences": {
+    "generatorEngine": "Antigravity AI (Imagen 3)",
+    "defaultResolution": "1024x1024",
+    "preferredFormat": "png",
+    "approvalRequired": true
+  },
+  "restrictions": {
+    "noPaidApis": true,
+    "noAutomaticFigmaWrites": true,
+    "wcagCompliance": "AA"
+  },
+  "workflowStatus": {
+    "requirementsApproved": true,
+    "assetsApproved": false,
+    "figmaDesignApproved": false,
+    "codeImplementationApproved": false,
+    "qaPassed": false
+  }
+}

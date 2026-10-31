@@ -1,17 +1,28 @@
 {
-  "name": "FigmaPractice",
-  "version": "1.0.0",
-  "description": "",
+  "name": "figma-workspace",
+  "version": "2.0.0",
+  "description": "Reusable AI-Powered Multi-Project Figma Design-to-Code Workspace",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "qa": "node ./scripts/design-qa.js",
-    "optimize": "node ./scripts/optimize-assets.js",
+    "new-project": "node ./scripts/new-project",
+    "validate:project": "node ./scripts/validate-project",
+    "validate:assets": "node ./scripts/validate-assets",
+    "report": "node ./scripts/generate-project-report",
+    "qa": "node ./tools/design-validation/design-qa.js",
+    "optimize": "node ./tools/asset-optimization/optimize.js",
     "format": "prettier --write \"**/*.{js,json,md}\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "figma",
+    "mcp",
+    "design-to-code",
+    "design-system",
+    "mobile-ui",
+    "qa-testing"
+  ],
+  "author": "Ritik Thakre",
   "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
     "@phosphor-icons/core": "^2.1.1",

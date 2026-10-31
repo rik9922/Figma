@@ -1,0 +1,81 @@
+#!/usr/bin/env node
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, "..");
+const TEMPLATE_DIR = path.join(ROOT_DIR, "projects", "PROJECT_TEMPLATE");
+const PROJECTS_DIR = path.join(ROOT_DIR, "projects");
+
+const projectName = process.argv[2];
+
+if (!projectName) {
+  console.error("❌ Error: Project name is required.");
+  console.log("Usage: ./scripts/new-project <project-name> [platform] [framework]");
+  console.log("Example: ./scripts/new-project crypto-wallet ios swiftui");
+  process.exit(1);
+}
+
+// 1. Validate project name
+if (!/^[a-zA-Z0-9_-]+$/.test(projectName)) {
+  console.error("❌ Error: Invalid project name. Use only letters, numbers, hyphens, and underscores.");
+  process.exit(1);
+}
+
+const targetDir = path.join(PROJECTS_DIR, projectName);
+
+// 2. Prevent overwriting
+if (fs.existsSync(targetDir)) {
+  console.error(`❌ Error: Project "${projectName}" already exists at ${targetDir}`);
+  process.exit(1);
+}
+
+const platform = process.argv[3] || "iOS";
+const framework = process.argv[4] || (platform.toLowerCase() === "ios" ? "SwiftUI" : "React Native");
+
+console.log(`🚀 Initializing new project: "${projectName}"...`);
+
+// 3. Recursive copy function with placeholder replacement
+function copyTemplate(src, dest) {
+  fs.mkdirSync(dest, { recursive: true });
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+
+    if (entry.isDirectory()) {
+      copyTemplate(srcPath, destPath);
+    } else {
+      let content = fs.readFileSync(srcPath, "utf8");
+      // Replace placeholders
+      content = content.replace(/\{\{PROJECT_NAME\}\}/g, projectName);
+      content = content.replace(/"PROJECT_NAME"/g, `"${projectName}"`);
+      content = content.replace(/"targetPlatform": "iOS"/g, `"targetPlatform": "${platform}"`);
+      content = content.replace(/"framework": "SwiftUI"/g, `"framework": "${framework}"`);
+      fs.writeFileSync(destPath, content, "utf8");
+    }
+  }
+}
+
+copyTemplate(TEMPLATE_DIR, targetDir);
+
+console.log(`✅ Project created successfully at: projects/${projectName}/`);
+console.log(`
+📁 Structure Initialized:
+  - projects/${projectName}/project.config.json
+  - projects/${projectName}/requirements/PRD.md
+  - projects/${projectName}/assets/generated/ & approved/
+  - projects/${projectName}/assets/manifest/asset-manifest.md
+  - projects/${projectName}/figma/
+  - projects/${projectName}/design-system/TOKENS.json
+  - projects/${projectName}/source-code/
+  - projects/${projectName}/qa/
+
+👉 Next Steps:
+  1. Open projects/${projectName}/project.config.json and set your Figma file reference.
+  2. Tell Antigravity: "Continue project ${projectName}".
+  3. Start the production pipeline: Requirements → Assets → Figma → Code → QA.
+`);

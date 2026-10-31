@@ -1,0 +1,85 @@
+#!/usr/bin/env node
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, "..");
+const PROJECTS_DIR = path.join(ROOT_DIR, "projects");
+
+const projectName = process.argv[2];
+
+if (!projectName) {
+  console.error("❌ Error: Project name is required.");
+  console.log("Usage: ./scripts/validate-project <project-name>");
+  process.exit(1);
+}
+
+const targetDir = path.join(PROJECTS_DIR, projectName);
+
+if (!fs.existsSync(targetDir)) {
+  console.error(`❌ Error: Project directory not found: ${targetDir}`);
+  process.exit(1);
+}
+
+console.log(`🔍 Validating project "${projectName}"...`);
+const errors = [];
+const warnings = [];
+
+// 1. Validate project.config.json
+const configPath = path.join(targetDir, "project.config.json");
+if (!fs.existsSync(configPath)) {
+  errors.push("Missing project.config.json");
+} else {
+  try {
+    const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    if (!config.projectName) errors.push("config missing 'projectName'");
+    if (!config.targetPlatform) errors.push("config missing 'targetPlatform'");
+    if (!config.figma) errors.push("config missing 'figma' block");
+    if (!config.figma?.fileKey && !config.figma?.fileUrl) {
+      warnings.push("Figma file URL / Key not yet linked in project.config.json");
+    }
+  } catch (err) {
+    errors.push(`Invalid JSON in project.config.json: ${err.message}`);
+  }
+}
+
+// 2. Validate essential directories
+const requiredDirs = [
+  "requirements",
+  "research",
+  "assets/generated",
+  "assets/approved",
+  "assets/manifest",
+  "figma",
+  "design-system",
+  "qa",
+];
+
+for (const dir of requiredDirs) {
+  const fullPath = path.join(targetDir, dir);
+  if (!fs.existsSync(fullPath)) {
+    errors.push(`Missing directory: ${dir}`);
+  }
+}
+
+// 3. Validate asset manifest
+const manifestPath = path.join(targetDir, "assets", "manifest", "asset-manifest.md");
+if (!fs.existsSync(manifestPath)) {
+  errors.push("Missing assets/manifest/asset-manifest.md");
+}
+
+console.log("-----------------------------------------");
+if (errors.length === 0) {
+  console.log(`✅ Project "${projectName}" structure is VALID.`);
+  if (warnings.length > 0) {
+    console.log("⚠️  Warnings:");
+    warnings.forEach((w) => console.log(`   - ${w}`));
+  }
+  process.exit(0);
+} else {
+  console.error(`❌ Project "${projectName}" has ${errors.length} validation errors:`);
+  errors.forEach((e) => console.error(`   - ${e}`));
+  process.exit(1);
+}

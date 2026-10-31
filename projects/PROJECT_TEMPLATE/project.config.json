@@ -1,0 +1,66 @@
+{
+  "projectName": "PROJECT_NAME",
+  "projectType": "mobile-app",
+  "targetPlatform": "iOS",
+  "productDescription": "A modern mobile application designed with production-grade Figma UI/UX tokens and Auto Layout.",
+  "targetUsers": [
+    "Mobile users seeking an intuitive, accessible experience"
+  ],
+  "brandIdentity": {
+    "name": "PROJECT_NAME",
+    "voice": "Friendly, modern, and reliable",
+    "personality": "Minimal, clean, and accessible"
+  },
+  "visualDirection": {
+    "style": "3D claymorphism / clean modern vector",
+    "primaryColor": "#007AFF",
+    "secondaryColor": "#5856D6",
+    "accentColor": "#FF9500",
+    "surfaceColor": "#FFFFFF",
+    "textColor": "#1C1C1E",
+    "typography": {
+      "fontFamily": "SF Pro / System Sans",
+      "displaySize": "34px",
+      "headlineSize": "20px",
+      "bodySize": "16px",
+      "captionSize": "12px"
+    },
+    "spatialGrid": "8pt"
+  },
+  "figma": {
+    "fileUrl": "",
+    "fileKey": "",
+    "activeNodeId": "0:1",
+    "pages": {
+      "cover": "Cover",
+      "designSystem": "01 Design System & Foundations",
+      "screens": "02 Mobile Screens",
+      "prototypes": "03 Interactive Prototype",
+      "archive": "04 Archive & QA"
+    }
+  },
+  "development": {
+    "framework": "SwiftUI",
+    "language": "Swift",
+    "externalRepoUrl": "",
+    "localWorkspacePath": "./source-code"
+  },
+  "assetPreferences": {
+    "generatorEngine": "Antigravity AI (Imagen 3)",
+    "defaultResolution": "1024x1024",
+    "preferredFormat": "png",
+    "approvalRequired": true
+  },
+  "restrictions": {
+    "noPaidApis": true,
+    "noAutomaticFigmaWrites": true,
+    "wcagCompliance": "AA"
+  },
+  "workflowStatus": {
+    "requirementsApproved": false,
+    "assetsApproved": false,
+    "figmaDesignApproved": false,
+    "codeImplementationApproved": false,
+    "qaPassed": false
+  }
+}

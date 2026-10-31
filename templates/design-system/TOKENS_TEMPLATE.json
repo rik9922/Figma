@@ -1,0 +1,41 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "color": {
+    "brand": {
+      "primary": { "value": "#007AFF", "type": "color" },
+      "secondary": { "value": "#5856D6", "type": "color" },
+      "accent": { "value": "#FF9500", "type": "color" }
+    },
+    "surface": {
+      "background": { "value": "#FFFFFF", "type": "color" },
+      "card": { "value": "#F2F2F7", "type": "color" },
+      "elevated": { "value": "#FFFFFF", "type": "color" }
+    },
+    "text": {
+      "primary": { "value": "#000000", "type": "color" },
+      "secondary": { "value": "#8E8E93", "type": "color" },
+      "tertiary": { "value": "#C7C7CC", "type": "color" },
+      "inverse": { "value": "#FFFFFF", "type": "color" }
+    },
+    "feedback": {
+      "success": { "value": "#34C759", "type": "color" },
+      "warning": { "value": "#FF9500", "type": "color" },
+      "error": { "value": "#FF3B30", "type": "color" }
+    }
+  },
+  "spacing": {
+    "4": { "value": "4px", "type": "dimension" },
+    "8": { "value": "8px", "type": "dimension" },
+    "12": { "value": "12px", "type": "dimension" },
+    "16": { "value": "16px", "type": "dimension" },
+    "24": { "value": "24px", "type": "dimension" },
+    "32": { "value": "32px", "type": "dimension" },
+    "48": { "value": "48px", "type": "dimension" }
+  },
+  "radius": {
+    "sm": { "value": "6px", "type": "dimension" },
+    "md": { "value": "12px", "type": "dimension" },
+    "lg": { "value": "20px", "type": "dimension" },
+    "full": { "value": "9999px", "type": "dimension" }
+  }
+}
