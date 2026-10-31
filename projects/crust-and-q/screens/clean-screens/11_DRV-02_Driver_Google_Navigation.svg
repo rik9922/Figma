@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 852" width="393" height="852" fill="none">
+  <defs>
+    <filter id="s10_shadow3D" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.06"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <filter id="s10_shadowElevated" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.09"/>
+      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="#0F172A" flood-opacity="0.05"/>
+    </filter>
+
+    <linearGradient id="s10_btnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E6441F"/>
+      <stop offset="100%" stop-color="#CA3212"/>
+    </linearGradient>
+
+    <linearGradient id="s10_goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <g id="SCREEN_DRV-02">
+    <rect width="393" height="852" rx="44" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+    <rect x="1" y="1" width="391" height="850" rx="43" fill="#E5E7EB"/>
+
+    <!-- Daylight Navigation Canvas -->
+    <g id="DriverGoogleNav">
+      <line x1="196" y1="0" x2="196" y2="852" stroke="#FFFFFF" stroke-width="36"/>
+      <line x1="196" y1="0" x2="196" y2="852" stroke="#FFE082" stroke-width="26"/>
+      
+      <line x1="0" y1="360" x2="393" y2="360" stroke="#FFFFFF" stroke-width="34"/>
+      <line x1="0" y1="360" x2="393" y2="360" stroke="#FFE082" stroke-width="24"/>
+
+      <!-- Navigation Turn Route -->
+      <path d="M 196 680 L 196 360 L 320 360" stroke="#1A73E8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+      <!-- Driver Vehicle Arrow -->
+      <g transform="translate(196, 500)">
+        <circle cx="0" cy="0" r="22" fill="#1A73E8" stroke="#FFFFFF" stroke-width="3"/>
+        <g transform="translate(-5, -6)"><polygon points="6,1 1,7 5.5,7 5,11 10,5 5.5,5" fill="#FFFFFF"/></g>
+      </g>
+    </g>
+
+    
+  <g id="StatusBar">
+    <rect x="0" y="0" width="393" height="54" fill="transparent"/>
+    <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#111827">9:41</text>
+    <rect x="134" y="11" width="125" height="34" rx="17" fill="#000000"/>
+    <circle cx="238" cy="28" r="5.5" fill="#141312"/>
+    <circle cx="238" cy="28" r="2.5" fill="#1A2035"/>
+    <g transform="translate(325, 26)">
+      <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#111827"/>
+      <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#111827"/>
+      <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#111827"/>
+      <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#111827"/>
+      <rect x="22" y="1" width="22" height="11" rx="3" stroke="#111827" stroke-width="1.5" fill="none"/>
+      <rect x="24" y="3" width="16" height="7" rx="1.5" fill="#111827"/>
+      <path d="M45 4.5 C45.5 4.5 46 5 46 5.5 V7.5 C46 8 45.5 8.5 45 8.5 Z" fill="#111827"/>
+    </g>
+  </g>
+
+    <!-- Turn Banner (Google Maps Green #15803D) -->
+    <g transform="translate(16, 54)" filter="url(#s10_shadowElevated)">
+      <rect width="361" height="92" rx="18" fill="#15803D"/>
+      <g transform="translate(24, 26)">
+        <path d="M22 10 L10 10 L10 2 M10 10 L2 2 M10 10 L10 30" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </g>
+      <text x="64" y="42" font-family="-apple-system, sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">In 400 ft</text>
+      <text x="64" y="62" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#DCFCE7">Turn Left on E Robinson St</text>
+      <text x="64" y="80" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#BBF7D0">Destination will be on the right</text>
+    </g>
+
+    <!-- Speed Limit Badge -->
+    <g transform="translate(24, 158)" filter="url(#s10_shadow3D)">
+      <rect width="46" height="54" rx="9" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+      <text x="23" y="18" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="900" fill="#000000" text-anchor="middle">SPEED</text>
+      <text x="23" y="29" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="900" fill="#000000" text-anchor="middle">LIMIT</text>
+      <text x="23" y="46" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#000000" text-anchor="middle">30</text>
+    </g>
+
+    <!-- Bottom Driver Sheet -->
+    <g transform="translate(0, 560)" filter="url(#s10_shadowElevated)">
+      <rect width="393" height="292" rx="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+      <rect x="176" y="10" width="40" height="5" rx="2.5" fill="#9CA3AF" opacity="0.4"/>
+
+      <!-- Customer -->
+      <g transform="translate(24, 26)">
+        <circle cx="22" cy="22" r="22" fill="#FFF1EE" stroke="#D93B18" stroke-width="1.5"/>
+        <text x="22" y="28" font-family="-apple-system, sans-serif" font-size="15" font-weight="900" fill="#D93B18" text-anchor="middle">SJ</text>
+
+        <text x="56" y="20" font-family="-apple-system, sans-serif" font-size="15.5" font-weight="900" fill="#111827">Sarah Jenkins</text>
+        <text x="56" y="36" font-family="-apple-system, sans-serif" font-size="12" fill="#4B5563">200 E Robinson St, Apt 402</text>
+
+        <circle cx="280" cy="22" r="17" fill="#F1F3F5"/>
+        <g transform="translate(269, 11)" color="#111827"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="currentColor"/></g>
+
+        <circle cx="325" cy="22" r="17" fill="url(#s10_btnGrad)"/>
+        <g transform="translate(314, 11)" color="#FFFFFF"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" fill="currentColor"/></g>
+      </g>
+
+      <!-- Note -->
+      <g transform="translate(24, 82)">
+        <rect width="345" height="50" rx="14" fill="#F1F3F5" stroke="#E5E7EB" stroke-width="1"/>
+        <text x="14" y="22" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="800" fill="#D93B18">DELIVERY INSTRUCTION:</text>
+        <text x="14" y="38" font-family="-apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#111827">"Apt 4B, please dial #0412 at callbox or leave at door"</text>
+      </g>
+
+      <!-- CTA -->
+      <g transform="translate(24, 146)" filter="url(#s10_shadow3D)">
+        <rect width="345" height="54" rx="16" fill="url(#s10_btnGrad)"/>
+        <text x="172.5" y="33" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">I Have Arrived at Location</text>
+      </g>
+    </g>
+
+    
+  <g id="HomeIndicator">
+    <rect x="120" y="838" width="153" height="5" rx="2.5" fill="#111827" opacity="0.3"/>
+  </g>
+  </g></svg>
