@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="none">
+  <defs>
+    <filter id="driverGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <linearGradient id="driverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5C1A"/>
+      <stop offset="100%" stop-color="#E04606"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Animated Radar Pulse Rings -->
+  <circle cx="50" cy="50" r="44" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <circle cx="50" cy="50" r="34" fill="#FF5C1A" fill-opacity="0.12"/>
+  <circle cx="50" cy="50" r="26" fill="#FF5C1A" fill-opacity="0.22"/>
+
+  <!-- Vehicle Main Body (Top-down view) -->
+  <g transform="rotate(-45 50 50)" filter="url(#driverGlow)">
+    <!-- Base Shadow -->
+    <rect x="39" y="32" width="22" height="36" rx="8" fill="#141312" stroke="#FFFFFF" stroke-width="2.5"/>
+    <rect x="41" y="34" width="18" height="32" rx="6" fill="url(#driverGrad)"/>
+    
+    <!-- Windshields & Roof -->
+    <rect x="43" y="38" width="14" height="7" rx="2" fill="#1E1B18"/>
+    <rect x="44" y="48" width="12" height="11" rx="2" fill="#141312"/>
+    <rect x="43" y="61" width="14" height="3" rx="1" fill="#1E1B18"/>
+    
+    <!-- Headlights -->
+    <circle cx="43" cy="34" r="1.5" fill="#FFF275"/>
+    <circle cx="57" cy="34" r="1.5" fill="#FFF275"/>
+  </g>
+</svg>

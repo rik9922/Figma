@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 852" width="393" height="852" fill="none">
+  <rect width="393" height="852" fill="#141312"/>
+  
+  <!-- iOS Dynamic Island & Status Bar -->
+  <g id="StatusBar">
+    <rect x="0" y="0" width="393" height="54" fill="#141312"/>
+    <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">9:41</text>
+    <rect x="134" y="11" width="125" height="34" rx="17" fill="#000000"/>
+    <circle cx="238" cy="28" r="5.5" fill="#141312"/>
+    <circle cx="238" cy="28" r="2.5" fill="#1A2035"/>
+    <g transform="translate(325, 26)">
+      <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#FFFFFF"/>
+      <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#FFFFFF"/>
+      <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#FFFFFF"/>
+      <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#FFFFFF"/>
+      <rect x="22" y="1" width="22" height="11" rx="3" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+      <rect x="24" y="3" width="16" height="7" rx="1.5" fill="#FFFFFF"/>
+      <path d="M45 4.5 C45.5 4.5 46 5 46 5.5 V7.5 C46 8 45.5 8.5 45 8.5 Z" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(20, 64)">
+    <text x="0" y="24" font-family="-apple-system, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">Kitchen Pickup: Order #CQ-8492</text>
+  </g>
+
+  <!-- Restaurant Details Card -->
+  <g transform="translate(20, 110)">
+    <rect width="353" height="100" rx="16" fill="#26221E" stroke="#332D27" stroke-width="1.5"/>
+    <text x="18" y="28" font-family="-apple-system, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">Crust &amp; Q - Downtown Orlando</text>
+    <text x="18" y="48" font-family="-apple-system, sans-serif" font-size="12" fill="#B8B0A6">120 S Orange Ave, Orlando, FL 32801</text>
+    <text x="18" y="78" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#F2A93B">📍 Pickup at Counter 2 (Hearth Section)</text>
+  </g>
+
+  <!-- Checklist Verification -->
+  <g transform="translate(20, 230)">
+    <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">Order Checklist Verification</text>
+
+    <!-- Item 1 -->
+    <g transform="translate(0, 12)">
+      <rect width="353" height="52" rx="12" fill="#1E1B18" stroke="#332D27" stroke-width="1"/>
+      <circle cx="24" cy="26" r="10" fill="#2E7D32"/>
+      <text x="24" y="30" font-family="-apple-system, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">✓</text>
+      <text x="44" y="31" font-family="-apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#FFFFFF">1x Smoked Truffle Pizza (14")</text>
+    </g>
+
+    <!-- Item 2 -->
+    <g transform="translate(0, 72)">
+      <rect width="353" height="52" rx="12" fill="#1E1B18" stroke="#332D27" stroke-width="1"/>
+      <circle cx="24" cy="26" r="10" fill="#2E7D32"/>
+      <text x="24" y="30" font-family="-apple-system, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">✓</text>
+      <text x="44" y="31" font-family="-apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#FFFFFF">1x Double Brisket Smash Burger</text>
+    </g>
+
+    <!-- Item 3 -->
+    <g transform="translate(0, 132)">
+      <rect width="353" height="52" rx="12" fill="#1E1B18" stroke="#332D27" stroke-width="1"/>
+      <circle cx="24" cy="26" r="10" fill="#2E7D32"/>
+      <text x="24" y="30" font-family="-apple-system, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">✓</text>
+      <text x="44" y="31" font-family="-apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#FFFFFF">Thermal Insulated Bag Verified</text>
+    </g>
+  </g>
+
+  <!-- Swipe to Start Delivery -->
+  <g transform="translate(20, 560)">
+    <rect width="353" height="60" rx="30" fill="#2E2A25" stroke="#FF5C1A" stroke-width="2"/>
+    <circle cx="34" cy="30" r="24" fill="#FF5C1A"/>
+    <text x="34" y="36" font-family="-apple-system, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">&gt;&gt;</text>
+    <text x="200" y="36" font-family="-apple-system, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">Swipe to Start Delivery Navigation</text>
+  </g>
+
+  
+  <!-- iOS Home Indicator -->
+  <g id="HomeIndicator">
+    <rect x="120" y="838" width="153" height="5" rx="2.5" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+</svg>

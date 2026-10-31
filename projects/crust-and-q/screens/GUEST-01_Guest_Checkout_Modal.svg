@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 852" width="393" height="852" fill="none">
+  <rect width="393" height="852" fill="#000000" fill-opacity="0.85"/>
+  
+  <!-- iOS Dynamic Island & Status Bar -->
+  <g id="StatusBar">
+    <rect x="0" y="0" width="393" height="54" fill="#141312"/>
+    <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">9:41</text>
+    <rect x="134" y="11" width="125" height="34" rx="17" fill="#000000"/>
+    <circle cx="238" cy="28" r="5.5" fill="#141312"/>
+    <circle cx="238" cy="28" r="2.5" fill="#1A2035"/>
+    <g transform="translate(325, 26)">
+      <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#FFFFFF"/>
+      <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#FFFFFF"/>
+      <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#FFFFFF"/>
+      <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#FFFFFF"/>
+      <rect x="22" y="1" width="22" height="11" rx="3" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+      <rect x="24" y="3" width="16" height="7" rx="1.5" fill="#FFFFFF"/>
+      <path d="M45 4.5 C45.5 4.5 46 5 46 5.5 V7.5 C46 8 45.5 8.5 45 8.5 Z" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Modal Bottom Sheet -->
+  <g transform="translate(0, 420)">
+    <rect width="393" height="432" rx="28" fill="#2E2A25" stroke="#332D27" stroke-width="1.5"/>
+    <rect x="176" y="12" width="40" height="5" rx="2.5" fill="#7D756D" opacity="0.5"/>
+
+    <!-- Chef / Padlock Icon -->
+    <circle cx="196.5" cy="65" r="32" fill="#382318" stroke="#FF5C1A" stroke-width="2"/>
+    <text x="196.5" y="74" font-family="-apple-system, sans-serif" font-size="28" text-anchor="middle">🔥</text>
+
+    <text x="196.5" y="130" font-family="-apple-system, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF" text-anchor="middle">Sign In to Place Your Order</text>
+    <text x="196.5" y="158" font-family="-apple-system, sans-serif" font-size="13.5" fill="#B8B0A6" text-anchor="middle">Log in or create an account to save delivery addresses,</text>
+    <text x="196.5" y="176" font-family="-apple-system, sans-serif" font-size="13.5" fill="#B8B0A6" text-anchor="middle">track your driver live on Google Maps, and earn points.</text>
+
+    <!-- Sign In Button -->
+    <rect x="24" y="210" width="345" height="54" rx="16" fill="#FF5C1A"/>
+    <text x="196.5" y="243" font-family="-apple-system, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Sign In to Continue</text>
+
+    <!-- Create Account Button -->
+    <rect x="24" y="276" width="345" height="52" rx="16" fill="#26221E" stroke="#332D27" stroke-width="1.5"/>
+    <text x="196.5" y="308" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle">Create New Account</text>
+
+    <!-- Dismiss -->
+    <text x="196.5" y="360" font-family="-apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#7D756D" text-anchor="middle">Continue browsing menu</text>
+  </g>
+
+  
+  <!-- iOS Home Indicator -->
+  <g id="HomeIndicator">
+    <rect x="120" y="838" width="153" height="5" rx="2.5" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+</svg>

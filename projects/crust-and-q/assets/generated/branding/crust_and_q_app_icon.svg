@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B18"/>
+      <stop offset="100%" stop-color="#141312"/>
+    </linearGradient>
+    <linearGradient id="flameGradIcon" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#FF5C1A"/>
+      <stop offset="50%" stop-color="#FF7A3D"/>
+      <stop offset="100%" stop-color="#F2A93B"/>
+    </linearGradient>
+    <linearGradient id="goldGradIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2A93B"/>
+      <stop offset="100%" stop-color="#D98A26"/>
+    </linearGradient>
+    <filter id="iconGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- App Icon Squircle Background -->
+  <rect x="0" y="0" width="512" height="512" rx="115" fill="url(#bgGrad)"/>
+  <rect x="6" y="6" width="500" height="500" rx="110" stroke="#3A342E" stroke-width="4" fill="none"/>
+
+  <!-- Subtle Radial Hearth Glow in Center -->
+  <circle cx="256" cy="240" r="160" fill="#FF5C1A" opacity="0.12" filter="url(#iconGlow)"/>
+
+  <!-- Center Artwork -->
+  <g transform="translate(256, 230) scale(3.2)">
+    <!-- Peel & Fork crossing -->
+    <g transform="rotate(-30)">
+      <rect x="-3" y="-55" width="6" height="110" rx="3" fill="#B8B0A6"/>
+      <path d="M-15 -55 C-15 -46 -8 -40 0 -39 L0 -39 C8 -40 15 -46 15 -55 Z" fill="url(#goldGradIcon)"/>
+    </g>
+    <g transform="rotate(30)">
+      <rect x="-3" y="-55" width="6" height="110" rx="3" fill="#8C827A"/>
+      <path d="M-8 -54 L-8 -44 C-8 -41 -3 -39 0 -39 C3 -39 8 -41 8 -44 L8 -54 M-4 -54 L-4 -45 M4 -54 L4 -45" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- Leaping Flame Core -->
+    <path d="M0 -38 C-9 -24 -12 -12 -7 -2 C-5 1 -2 3 0 3 C2 3 5 1 7 -2 C12 -12 9 -24 0 -38 Z" fill="url(#flameGradIcon)" filter="url(#iconGlow)"/>
+    <path d="M0 -24 C-4 -17 -5 -10 -3 -4 C-2 -2 0 0 0 0 C0 0 2 -2 3 -4 C5 -10 4 -17 0 -24 Z" fill="#FFF275"/>
+
+    <!-- Sparks -->
+    <circle cx="-16" cy="-28" r="2" fill="#FF5C1A"/>
+    <circle cx="18" cy="-24" r="2.5" fill="#F2A93B"/>
+    <circle cx="2" cy="-44" r="2" fill="#FF7A3D"/>
+  </g>
+
+  <!-- Typography at Bottom of Icon -->
+  <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="900" letter-spacing="2" fill="#FFFFFF" text-anchor="middle">CRUST <tspan fill="url(#flameGradIcon)">&amp;</tspan> Q</text>
+</svg>
