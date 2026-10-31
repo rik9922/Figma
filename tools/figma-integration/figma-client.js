@@ -21,7 +21,9 @@ export function parseFigmaUrl(figmaUrl) {
     throw new Error("Invalid Figma URL: URL must be a non-empty string.");
   }
 
-  const match = figmaUrl.match(/figma\.com\/(?:design|file)\/([a-zA-Z0-9_-]+)/);
+  const match = figmaUrl.match(
+    /figma\.com\/(?:design|file|board|deck|slides|proto)\/([a-zA-Z0-9_-]+)/,
+  );
   if (!match) {
     throw new Error(
       `Invalid Figma URL format: "${figmaUrl}". Expected https://www.figma.com/design/<fileKey>/...`,
@@ -29,7 +31,8 @@ export function parseFigmaUrl(figmaUrl) {
   }
 
   const fileKey = match[1];
-  const nodeMatch = figmaUrl.match(/node-id=([0-9]+)(?:[-:]([0-9]+))?/);
+  const decoded = decodeURIComponent(figmaUrl);
+  const nodeMatch = decoded.match(/node-id=([0-9]+)(?:[-:]([0-9]+))?/);
   let nodeId = null;
   if (nodeMatch) {
     nodeId = nodeMatch[2]

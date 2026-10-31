@@ -69,8 +69,8 @@ export async function generateMobileRasterScales(
   inputSvgOrImgPath,
   outputDir,
   baseName,
-  baseWidth = 24,
-  baseHeight = 24,
+  baseWidth = null,
+  baseHeight = null,
 ) {
   if (!fs.existsSync(inputSvgOrImgPath)) {
     throw new Error(`Input asset file does not exist: ${inputSvgOrImgPath}`);
@@ -86,6 +86,20 @@ export async function generateMobileRasterScales(
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
+  let width = baseWidth;
+  let height = baseHeight;
+
+  if (!width || !height) {
+    try {
+      const meta = await sharp(inputSvgOrImgPath).metadata();
+      width = width || meta.width || 24;
+      height = height || meta.height || 24;
+    } catch {
+      width = width || 24;
+      height = height || 24;
+    }
+  }
+
   const scales = [
     { scale: 1, suffix: "@1x" },
     { scale: 2, suffix: "@2x" },
@@ -94,8 +108,8 @@ export async function generateMobileRasterScales(
 
   const results = [];
   for (const { scale, suffix } of scales) {
-    const targetWidth = baseWidth * scale;
-    const targetHeight = baseHeight * scale;
+    const targetWidth = Math.round(width * scale);
+    const targetHeight = Math.round(height * scale);
     const outPath = path.join(outputDir, `${baseName}${suffix}.png`);
 
     await sharp(inputSvgOrImgPath)
@@ -171,7 +185,7 @@ if (process.argv[1] && process.argv[1].endsWith("optimize.js")) {
 
   if (!command || !input) {
     console.log(
-      "Usage: node optimize.js <svg|raster|scales> <input-file> <output-file-or-dir> [--allow-overwrite]",
+      "Usage: node optimize.js <svg|raster|scales> <input-file> <output-file-or-dir> [baseWidth] [baseHeight] [--allow-overwrite]",
     );
     console.log(
       "Note: Source assets are protected against destructive overwriting by default.",
@@ -202,7 +216,15 @@ if (process.argv[1] && process.argv[1].endsWith("optimize.js")) {
       } else if (command === "scales") {
         const outDir = output || "./scales";
         const baseName = path.basename(input, path.extname(input));
-        const res = await generateMobileRasterScales(input, outDir, baseName);
+        const widthArg = nonFlagArgs[3] ? parseInt(nonFlagArgs[3], 10) : null;
+        const heightArg = nonFlagArgs[4] ? parseInt(nonFlagArgs[4], 10) : null;
+        const res = await generateMobileRasterScales(
+          input,
+          outDir,
+          baseName,
+          widthArg,
+          heightArg,
+        );
         console.log("Scales Generated:", res);
       } else {
         console.error(`Unknown command: ${command}`);

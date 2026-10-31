@@ -67,63 +67,171 @@ function contrastRatio(hex1, hex2) {
 console.log(`🎨 Calculating token contrast ratios for "${projectName}"...`);
 const raw = JSON.parse(fs.readFileSync(tokensPath, "utf8"));
 
-// Extract all color values
+// Extract all color values (supports strings, objects, and aliases)
 function extractColors(obj, prefix = "") {
   let colors = {};
   for (const [k, v] of Object.entries(obj)) {
     if (v && typeof v === "object") {
-      if (v.value && (v.type === "color" || v.value.startsWith("#"))) {
+      if (typeof v.value === "string") {
         colors[`${prefix}${k}`] = v.value;
       } else {
         Object.assign(colors, extractColors(v, `${prefix}${k}.`));
       }
+    } else if (typeof v === "string") {
+      colors[`${prefix}${k}`] = v;
     }
   }
   return colors;
 }
 
-const colors = extractColors(raw.color || raw);
+const rawColors = extractColors(raw.color || raw);
+
+// Resolve aliases (e.g. "{color.brand.primary}" or "brand.primary")
+function resolveColor(val, depth = 0) {
+  if (!val || depth > 5) return val;
+  if (typeof val !== "string") return val;
+  if (val.startsWith("#")) return val;
+  const cleaned = val.replace(/^\{/, "").replace(/\}$/, "");
+  if (rawColors[cleaned]) return resolveColor(rawColors[cleaned], depth + 1);
+  const withoutPrefix = cleaned.replace(/^color\./, "");
+  if (rawColors[withoutPrefix])
+    return resolveColor(rawColors[withoutPrefix], depth + 1);
+  return val;
+}
+
+const colors = {};
+for (const [k, v] of Object.entries(rawColors)) {
+  const resolved = resolveColor(v);
+  if (typeof resolved === "string" && resolved.startsWith("#")) {
+    colors[k] = resolved;
+  }
+}
+
 console.log(
-  `- Discovered ${Object.keys(colors).length} color token definitions.`,
+  `- Discovered ${Object.keys(colors).length} resolved color token definitions.`,
 );
+
+// Generic Semantic Role Discovery
+const textPrimary =
+  colors["text.primary"] ||
+  colors["text.base"] ||
+  colors["text.default"] ||
+  colors["ink.base"] ||
+  colors["color.text"] ||
+  colors["text"] ||
+  "#000000";
+
+const surfacePrimary =
+  colors["surface.background"] ||
+  colors["paper.ground"] ||
+  colors["surface.page"] ||
+  colors["surface"] ||
+  colors["background"] ||
+  "#FFFFFF";
+
+const textSecondary =
+  colors["text.secondary"] ||
+  colors["text.muted"] ||
+  colors["text.subtle"] ||
+  colors["ink.secondary"] ||
+  colors["text.caption"];
+
+const brandPrimary =
+  colors["brand.primary"] ||
+  colors["accent.citrine"] ||
+  colors["accent"] ||
+  colors["brand"] ||
+  colors["color.primary"];
+
+const darkSurface =
+  colors["ink.base"] ||
+  colors["surface.dark"] ||
+  colors["background.dark"] ||
+  colors["surface.inverse"];
+
+const textInverse =
+  colors["text.inverse"] ||
+  colors["text.white"] ||
+  colors["text.onBrand"] ||
+  colors["text.light"];
+
+const feedbackError =
+  colors["feedback.error"] ||
+  colors["color.error"] ||
+  colors["error.base"] ||
+  colors["error"];
 
 // Check common contrast pairs if present
 const testPairs = [];
-const textCol =
-  colors["text.primary"] ||
-  colors["text.primary.value"] ||
-  colors["text"] ||
-  "#000000";
-const bgCol =
-  colors["paper.ground"] ||
-  colors["surface.background"] ||
-  colors["surface"] ||
-  "#FFFFFF";
 
+// 1. Primary Text vs Primary Surface (WCAG AA Body text: 4.5:1)
 testPairs.push({
   name: "Primary Text vs Primary Surface",
-  fg: textCol,
-  bg: bgCol,
+  fg: textPrimary,
+  bg: surfacePrimary,
   req: 4.5,
 });
 
-if (
-  colors["text.secondary"] &&
-  (colors["surface.background"] || colors["surface"])
-) {
+// 2. Secondary Text vs Primary Surface (WCAG AA Body text: 4.5:1)
+if (textSecondary) {
   testPairs.push({
-    name: "Secondary Text vs Surface",
-    fg: colors["text.secondary"],
-    bg: colors["surface.background"] || colors["surface"] || "#FFFFFF",
+    name: "Secondary Text vs Primary Surface",
+    fg: textSecondary,
+    bg: surfacePrimary,
     req: 4.5,
   });
 }
 
-if (colors["accent.citrine"] && colors["ink.base"]) {
+// 3. Brand / Accent vs Dark Surface or Primary Surface (UI components / graphics: 3.0:1)
+if (brandPrimary) {
+  if (darkSurface && darkSurface !== surfacePrimary) {
+    testPairs.push({
+      name: "Accent / Brand vs Dark Surface",
+      fg: brandPrimary,
+      bg: darkSurface,
+      req: 3.0,
+    });
+  } else {
+    testPairs.push({
+      name: "Accent / Brand vs Primary Surface",
+      fg: brandPrimary,
+      bg: surfacePrimary,
+      req: 3.0,
+    });
+  }
+}
+
+// 4. Text on Brand / Accent
+if (brandPrimary) {
+  const brandLum = luminance(hexToRgb(brandPrimary));
+  const isBrandDark = brandLum < 0.4;
+  const onBrandText = isBrandDark ? textInverse || "#FFFFFF" : textPrimary;
   testPairs.push({
-    name: "Citrine Accent vs Obsidian Ink",
-    fg: colors["accent.citrine"],
-    bg: colors["ink.base"],
+    name: isBrandDark
+      ? "Inverse Text vs Dark Brand"
+      : "Dark Text vs Light Brand",
+    fg: onBrandText,
+    bg: brandPrimary,
+    req: 4.5,
+  });
+}
+
+// 5. Inverse Text vs Dark Surface
+if (textInverse && darkSurface && darkSurface !== brandPrimary) {
+  testPairs.push({
+    name: "Inverse Text vs Dark Container / Surface",
+    fg: textInverse,
+    bg: darkSurface,
+    req: 4.5,
+  });
+}
+
+// 6. Feedback Error vs Surface (WCAG AA: 3.0:1 for graphical/boundary, 4.5:1 for text)
+if (feedbackError) {
+  testPairs.push({
+    name: "Feedback Error vs Primary Surface",
+    fg: feedbackError,
+    bg: surfacePrimary,
     req: 3.0,
   });
 }

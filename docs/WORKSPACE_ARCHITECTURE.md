@@ -43,6 +43,7 @@ Figma/
 │   └── fintech-mobile-app/         # Existing project (Status: ON_HOLD)
 └── scripts/                        # Root CLI commands
     ├── new-project                 # Safe platform-aware project initializer
+    ├── set-project-state           # Authoritative lifecycle transition with sign-off tracking
     ├── validate-project            # Structure & config validator
     ├── validate-assets             # Asset size & manifest auditor
     ├── audit-architecture          # Screen inventory & navigation validator

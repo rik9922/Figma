@@ -34,6 +34,7 @@ Route specialized design tasks to the appropriate modular skill:
 
 - **Research & Requirements** → `figma-research`
 - **Mobile UX, Safe Areas & Ergonomics** → `mobile-ui-design`
+- **Responsive Web & Desktop Layouts** → `web-ui-design`
 - **Component Architecture & Variants** → `figma-components`
 - **Auto Layout & Responsive Sizing** → `figma-auto-layout`
 - **Variables, Tokens & Color Modes** → `figma-design-systems`

@@ -60,6 +60,7 @@ Figma/
 │   ├── figma-design-systems/      # Variables, tokens, and color themes
 │   ├── figma-accessibility/       # WCAG 2.1 AA audit protocols
 │   ├── mobile-ui-design/          # Safe areas, thumb zones, viewports
+│   ├── web-ui-design/             # Responsive breakpoints, 12-column grid, web layouts
 │   ├── figma-research/            # Competitor benchmarking & UX heuristics
 │   ├── figma-prototyping/         # Interactive connections & Smart Animate
 │   ├── figma-tool-guide/          # Exact Figma UI paths & shortcuts
@@ -87,6 +88,7 @@ Figma/
 │
 └── scripts/                       # Executable CLI tools
     ├── new-project                # Platform-aware safe project initializer
+    ├── set-project-state          # Authoritative lifecycle transition with sign-off tracking
     ├── validate-project           # Structure & config validator
     ├── validate-assets            # Asset size & manifest auditor
     ├── audit-architecture         # Screen inventory & navigation validator
@@ -154,16 +156,18 @@ In the chat, use natural language:
 
 ## 🛠️ CLI Tooling & Technical Diagnostics
 
-| Command                                                    | Purpose                                                                     |
-| ---------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `./scripts/new-project <name> [platform] [framework]`      | Scaffolds an isolated project from the neutral template                     |
-| `./scripts/validate-project <name>`                        | Validates directory structure, config JSON, and lifecycle state             |
-| `./scripts/validate-assets <name>`                         | Verifies asset formats, file sizes (< 10MB), and manifest records           |
-| `./scripts/audit-architecture <name>`                      | Verifies screen IDs, navigation matrix, flows, and edge states              |
-| `pnpm run audit:contrast <name>`                           | Mathematically evaluates color token contrast ratios (WCAG 2.1 AA)          |
-| `./scripts/verify-figma-mcp <name>`                        | Reports honest Figma MCP connection status, registered tools, and file link |
-| `./scripts/generate-project-report <name>`                 | Displays authoritative lifecycle state, inventories, and history            |
-| `pnpm run optimize <svg\|raster\|scales> <input> <output>` | Safe SVGO optimization or Sharp mobile `@1x/@2x/@3x` generation             |
+| Command                                                             | Purpose                                                                     |
+| ------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `pnpm test`                                                         | Executes comprehensive technical test suite verifying utilities and safety  |
+| `./scripts/new-project <name> [platform] [framework]`               | Scaffolds an isolated project from the neutral template                     |
+| `./scripts/set-project-state <name> <state> [note] [--approved-by]` | Updates project lifecycle state with user sign-off tracking                 |
+| `./scripts/validate-project <name>`                                 | Validates directory structure, config JSON, and lifecycle state             |
+| `./scripts/validate-assets <name>`                                  | Verifies asset formats, file sizes (< 10MB), and manifest records           |
+| `./scripts/audit-architecture <name>`                               | Verifies screen IDs, navigation matrix, flows, and edge states              |
+| `pnpm run audit:contrast <name>`                                    | Mathematically evaluates color token contrast ratios (WCAG 2.1 AA)          |
+| `./scripts/verify-figma-mcp <name>`                                 | Reports honest Figma MCP connection status, registered tools, and file link |
+| `./scripts/generate-project-report <name>`                          | Displays authoritative lifecycle state, inventories, and history            |
+| `pnpm run optimize <svg\|raster\|scales> <input> <output>`          | Safe SVGO optimization or Sharp mobile `@1x/@2x/@3x` generation             |
 
 ---
 

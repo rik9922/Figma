@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test": "node ./tools/technical-validation/test-suite.js",
     "new-project": "node ./scripts/new-project",
+    "state": "node ./scripts/set-project-state",
     "validate:project": "node ./scripts/validate-project",
     "validate:assets": "node ./scripts/validate-assets",
     "audit:architecture": "node ./scripts/audit-architecture",

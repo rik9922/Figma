@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 import fs from "fs";
 import path from "path";
-import { resolveProjectPath, loadProjectConfig } from "../tools/common/project-utils.js";
+import {
+  resolveProjectPath,
+  loadProjectConfig,
+  extractScreenIds,
+} from "../tools/common/project-utils.js";
 
 const projectName = process.argv[2];
 
@@ -30,8 +34,8 @@ const archPath = path.join(targetDir, "requirements", "SCREEN_ARCHITECTURE.md");
 let screenCount = 0;
 if (fs.existsSync(archPath)) {
   const content = fs.readFileSync(archPath, "utf8");
-  const matches = content.match(/\|\s*`[A-Z0-9_-]+`\s*\|/g);
-  if (matches) screenCount = matches.length;
+  const discovered = extractScreenIds(content);
+  screenCount = discovered.length;
 }
 
 // Assets count

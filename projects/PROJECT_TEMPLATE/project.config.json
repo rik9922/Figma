@@ -15,6 +15,10 @@
   },
   "projectType": "{{PROJECT_TYPE}}",
   "targetPlatform": "{{TARGET_PLATFORM}}",
+  "platformDetails": {
+    "type": "{{PROJECT_TYPE}}",
+    "guidelines": "Refer to target platform design standards"
+  },
   "productDescription": "To be defined during Stage 01 Requirements discovery based on actual product objectives.",
   "targetUsers": [
     "To be identified and documented during user persona research"

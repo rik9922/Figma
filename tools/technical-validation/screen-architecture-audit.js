@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 import fs from "fs";
 import path from "path";
-import { resolveProjectPath } from "../common/project-utils.js";
+import {
+  resolveProjectPath,
+  extractScreenIds,
+} from "../common/project-utils.js";
 
 /**
  * Technical Screen Architecture Auditor
@@ -46,40 +49,25 @@ const errors = [];
 const warnings = [];
 
 // 1. Extract Screen IDs from markdown tables: e.g. `ONB-01`, `AUTH-01`, `MAIN-01`, `SCR-01`
-const screenIdRegex = /\|\s*`([A-Z0-9_-]+)`\s*\|/g;
-const discoveredIds = new Set();
-let match;
-while ((match = screenIdRegex.exec(content)) !== null) {
-  const id = match[1];
-  // Filter out non-screen ID table cells (e.g. MOT-01, FEAT-01)
-  if (
-    !id.startsWith("MOT-") &&
-    !id.startsWith("FEAT-") &&
-    !id.startsWith("REQ-")
-  ) {
-    discoveredIds.add(id);
-  }
-}
+const discoveredIds = extractScreenIds(content);
 
 console.log(
-  `- Discovered ${discoveredIds.size} Screen & State IDs:`,
-  Array.from(discoveredIds).join(", "),
+  `- Discovered ${discoveredIds.length} Screen & State IDs:`,
+  discoveredIds.join(", "),
 );
 
-if (discoveredIds.size === 0) {
+if (discoveredIds.length === 0) {
   errors.push(
     "No standardized Screen IDs (e.g. `ONB-01`, `MAIN-01`) found in tables.",
   );
 }
 
 // 2. Check for documented edge states
-const hasEmptyState = Array.from(discoveredIds).some((id) =>
-  id.includes("EMPTY"),
-);
-const hasLoadingState = Array.from(discoveredIds).some(
+const hasEmptyState = discoveredIds.some((id) => id.includes("EMPTY"));
+const hasLoadingState = discoveredIds.some(
   (id) => id.includes("LOADING") || id.includes("SKELETON"),
 );
-const hasErrorState = Array.from(discoveredIds).some(
+const hasErrorState = discoveredIds.some(
   (id) => id.includes("ERROR") || id.includes("FAILED"),
 );
 

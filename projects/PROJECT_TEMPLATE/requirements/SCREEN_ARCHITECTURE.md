@@ -8,18 +8,18 @@ Define the project objective, target audience, primary user outcomes, and target
 
 ## 2. Complete Screen & State Inventory
 
-| Screen ID   | Screen Name            | Module / Flow   | Viewport          | Primary Purpose                                     | Entry Point | Primary Action            |
-| ----------- | ---------------------- | --------------- | ----------------- | --------------------------------------------------- | ----------- | ------------------------- |
-| `ONB-01`    | Splash Screen          | Onboarding      | Standard Viewport | Ambient brand reveal & application initialization   | App Launch  | Auto-advance (1.5s delay) |
-| `ONB-02`    | Value Prop & Welcome   | Onboarding      | Standard Viewport | Introduce core value proposition and entry CTAs     | `ONB-01`    | Tap "Get Started"         |
-| `AUTH-01`   | Sign In / Registration | Authentication  | Standard Viewport | User identity entry with active focus state         | `ONB-02`    | Tap "Continue"            |
-| `AUTH-02`   | Verification / MFA     | Authentication  | Standard Viewport | Verification code entry or biometric setup          | `AUTH-01`   | Submit verification       |
-| `MAIN-01`   | Primary Dashboard      | Core Experience | Standard Viewport | Primary hub, overview cards, and activity stream    | `AUTH-02`   | Select primary action     |
-| `DETAIL-01` | Item / Content Detail  | Core Experience | Standard Viewport | Comprehensive item inspection and secondary actions | `MAIN-01`   | Tap item card             |
-| `ACT-01`    | Primary Action Flow    | Key Action      | Standard Viewport | Input parameters, form fields, and validation       | `MAIN-01`   | Tap "Review"              |
-| `ACT-02`    | Confirmation Review    | Key Action      | Standard Viewport | Summary breakdown, fee/detail confirmation          | `ACT-01`    | Confirm action            |
-| `ACT-03`    | Success Celebration    | Key Action      | Standard Viewport | Confirmation state, receipt details, and exit CTA   | `ACT-02`    | Tap "Done" (→ `MAIN-01`)  |
-| `SET-01`    | Settings & Profile     | Account         | Standard Viewport | User profile, preferences, and security switches    | `MAIN-01`   | Modify settings           |
+| Screen ID   | Screen Name            | Module / Flow   | Viewport          | Primary Purpose                                      | Entry Point | Primary Action            |
+| ----------- | ---------------------- | --------------- | ----------------- | ---------------------------------------------------- | ----------- | ------------------------- |
+| `ONB-01`    | Splash Screen          | Onboarding      | Standard Viewport | Ambient brand reveal & application initialization    | App Launch  | Auto-advance (1.5s delay) |
+| `ONB-02`    | Value Prop & Welcome   | Onboarding      | Standard Viewport | Introduce core value proposition and entry CTAs      | `ONB-01`    | Tap "Get Started"         |
+| `AUTH-01`   | Sign In / Registration | Authentication  | Standard Viewport | User identity entry with active focus state          | `ONB-02`    | Tap "Continue"            |
+| `AUTH-02`   | Verification / MFA     | Authentication  | Standard Viewport | Verification code entry or multi-factor confirmation | `AUTH-01`   | Submit verification       |
+| `MAIN-01`   | Primary Dashboard      | Core Experience | Standard Viewport | Primary hub, overview cards, and activity stream     | `AUTH-02`   | Select primary action     |
+| `DETAIL-01` | Item / Content Detail  | Core Experience | Standard Viewport | Comprehensive item inspection and secondary actions  | `MAIN-01`   | Tap item card             |
+| `ACT-01`    | Primary Action Flow    | Key Action      | Standard Viewport | Input parameters, form fields, and validation        | `MAIN-01`   | Tap "Review"              |
+| `ACT-02`    | Confirmation Review    | Key Action      | Standard Viewport | Summary breakdown, fee/detail confirmation           | `ACT-01`    | Confirm action            |
+| `ACT-03`    | Success Celebration    | Key Action      | Standard Viewport | Confirmation state, receipt details, and exit CTA    | `ACT-02`    | Tap "Done" (→ `MAIN-01`)  |
+| `SET-01`    | Settings & Profile     | Account         | Standard Viewport | User profile, preferences, and security switches     | `MAIN-01`   | Modify settings           |
 
 ---
 

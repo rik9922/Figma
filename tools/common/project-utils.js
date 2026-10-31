@@ -126,13 +126,47 @@ export function saveProjectConfig(projectName, config) {
 }
 
 /**
+ * Extracts unique standardized Screen and State IDs from markdown tables.
+ * Filters out non-screen ID table cells (e.g. MOT-01, FEAT-01, REQ-01, REV-01).
+ *
+ * @param {string} content
+ * @returns {string[]} Discovered unique screen & state IDs
+ */
+export function extractScreenIds(content) {
+  if (typeof content !== "string" || !content.trim()) return [];
+  const screenIdRegex = /\|\s*`([A-Z0-9_-]+)`\s*\|/g;
+  const discovered = new Set();
+  let match;
+  while ((match = screenIdRegex.exec(content)) !== null) {
+    const id = match[1];
+    if (
+      !id.startsWith("MOT-") &&
+      !id.startsWith("FEAT-") &&
+      !id.startsWith("REQ-") &&
+      !id.startsWith("REV-")
+    ) {
+      discovered.add(id);
+    }
+  }
+  return Array.from(discovered);
+}
+
+/**
  * Transitions a project to a new lifecycle state with timestamped history.
  * @param {string} projectName
  * @param {string} newState
  * @param {string} [note=""]
+ * @param {object} [options={}]
+ * @param {object|null} [options.userSignOff=null] Explicit user sign-off details
+ * @param {boolean} [options.allowResume=false] Authorizes resuming an ON_HOLD project
  * @returns {object} Updated config
  */
-export function updateProjectState(projectName, newState, note = "") {
+export function updateProjectState(
+  projectName,
+  newState,
+  note = "",
+  { userSignOff = null, allowResume = false } = {},
+) {
   if (!PROJECT_LIFECYCLE_STATES.includes(newState)) {
     throw new Error(
       `Invalid lifecycle state "${newState}". Allowed states: ${PROJECT_LIFECYCLE_STATES.join(", ")}`,
@@ -141,6 +175,12 @@ export function updateProjectState(projectName, newState, note = "") {
 
   const config = loadProjectConfig(projectName);
   const previousState = config.status || config.projectStatus || "DISCOVERING";
+
+  if (previousState === "ON_HOLD" && newState !== "ON_HOLD" && !allowResume) {
+    throw new Error(
+      `Project "${projectName}" is currently ON_HOLD. Resumption requires explicit user instruction. Pass { allowResume: true } or --resume.`,
+    );
+  }
 
   config.status = newState;
   config.projectStatus = newState;
@@ -154,6 +194,17 @@ export function updateProjectState(projectName, newState, note = "") {
   }
 
   config.lifecycle.state = newState;
+
+  if (newState === "USER_APPROVED") {
+    config.lifecycle.userSignOff = userSignOff || {
+      approvedBy: "user",
+      timestamp: new Date().toISOString(),
+      note: note || "User explicitly approved design",
+    };
+  } else if (newState === "REVISION_REQUESTED") {
+    config.lifecycle.userSignOff = null;
+  }
+
   config.lifecycle.history.push({
     from: previousState,
     to: newState,

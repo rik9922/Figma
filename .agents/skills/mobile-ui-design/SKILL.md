@@ -13,11 +13,11 @@ Always use current standard production mobile viewports:
 - **iOS Max**: **430 × 932 pt** (iPhone 16 Pro Max / Plus).
 - **Android Standard**: **412 × 915 dp** (Google Pixel 8) or **360 × 800 dp**.
 
-## 2. Hardware Safe Area Insets (Critical for QA)
+## 2. Hardware Safe Area Insets (Platform Ergonomics)
 
 Modern smartphones have edge-to-edge displays with camera notches/islands and software navigation bars:
 
-- **iOS Top Inset**: Reserve **54 pt** for the Dynamic Island / Status Bar (Clock left, Wi-Fi & Battery right).
+- **iOS Top Inset**: Reserve **59 pt** for the Dynamic Island / Status Bar (Clock left, Wi-Fi & Battery right).
 - **iOS Bottom Inset**: Reserve **34 pt** for the Home Indicator swipe bar.
 - **Android Top Inset**: Reserve **40–48 dp** for the Status Bar.
 - **Android Bottom Inset**: Reserve **24–48 dp** for system gesture navigation.
@@ -36,7 +36,7 @@ Every mobile screen must follow this layer hierarchy:
 
 ```
 [FRAME: Screen_Name] (393x852 pt, Clip content: ON)
-  ├── [FRAME: Top_Safe_Area] (393x54 pt, FIXED)
+  ├── [FRAME: Top_Safe_Area] (393x59 pt, FIXED)
   ├── [FRAME: Navigation_Bar] (393x44 pt, FIXED or HUG)
   ├── [FRAME: Scrollable_Content] (393xFILL, Auto Layout Vertical, overflow scroll)
   │     ├── Hero / Title Section

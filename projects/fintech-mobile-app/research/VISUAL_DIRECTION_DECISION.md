@@ -2,7 +2,7 @@
 
 - **Date**: 2026-10-31
 - **Decided by**: Antigravity (lead product designer), per user instruction to decide independently
-- **Status**: Recommended direction, applied to the iOS + Android screen set. Gate 3 sign-off still belongs to the user (review, not selection).
+- **Status**: Recommended direction, applied to the iOS + Android screen set. Visual direction review and approval still belongs to the user.
 
 ---
 

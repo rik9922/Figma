@@ -26,7 +26,7 @@ pnpm run optimize
 pnpm exec svgo input.svg -o output.svg --multipass
 
 # 3. Generate @1x, @2x, @3x PNGs via sharp:
-node ./scripts/optimize-assets.js
+node ./tools/asset-optimization/optimize.js scales input.png ./output-dir
 ```
 
 ## 3. Platform Code Translation Cheat Sheet

@@ -5,6 +5,8 @@ import {
   resolveProjectPath,
   TEMPLATE_DIR,
   getPlatformDefaults,
+  loadProjectConfig,
+  saveProjectConfig,
 } from "../tools/common/project-utils.js";
 
 /**
@@ -84,6 +86,19 @@ function copyTemplate(src, dest) {
 }
 
 copyTemplate(TEMPLATE_DIR, targetDir);
+
+// Inject full dynamic platform configuration into project.config.json
+const scaffoldedConfig = loadProjectConfig(projectName);
+scaffoldedConfig.platformDetails = platformConfig.platformDetails;
+scaffoldedConfig.development = {
+  ...scaffoldedConfig.development,
+  ...platformConfig.development,
+};
+scaffoldedConfig.visualDirection.typography = {
+  ...scaffoldedConfig.visualDirection.typography,
+  ...platformConfig.visualDirection.typography,
+};
+saveProjectConfig(projectName, scaffoldedConfig);
 
 // Ensure essential subdirectories exist
 fs.mkdirSync(path.join(targetDir, "assets", "generated"), { recursive: true });
