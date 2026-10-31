@@ -38,3 +38,4 @@ processImages().catch(err => {
   console.error("Error processing thumbnails:", err);
   process.exit(1);
 });
+

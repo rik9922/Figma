@@ -1,131 +1,104 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1020" width="960" height="1020" fill="none">
     
   <defs>
-    <!-- Realistic 3D Soft Shadow for Cards -->
+    <!-- Multi-level diffuse ambient shadow -->
     <filter id="shadow3D" x="-15%" y="-15%" width="130%" height="140%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
       <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.04"/>
     </filter>
 
-    <!-- Deep Elevation Shadow for Modals & Floating Pills -->
     <filter id="shadowElevated" x="-20%" y="-20%" width="140%" height="150%">
       <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.10"/>
       <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#0F172A" flood-opacity="0.06"/>
     </filter>
 
-    <!-- 3D Car Marker Drop Shadow -->
     <filter id="carShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.25"/>
     </filter>
 
-    <!-- Primary Button 3D Gradient -->
     <linearGradient id="btnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#E6441F"/>
       <stop offset="100%" stop-color="#CA3212"/>
     </linearGradient>
 
-    <!-- Gold Accent 3D Gradient -->
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FBBF24"/>
       <stop offset="100%" stop-color="#D97706"/>
     </linearGradient>
 
-    <!-- Clip Paths for Rounded Images -->
     <clipPath id="heroClip"><rect width="353" height="150" rx="18"/></clipPath>
     <clipPath id="dishCardClip"><rect width="170" height="100" rx="14"/></clipPath>
     <clipPath id="dishListClip"><rect width="76" height="76" rx="12"/></clipPath>
     <clipPath id="dishModalClip"><rect width="353" height="170" rx="18"/></clipPath>
+    <clipPath id="circleDishClip"><circle cx="28" cy="28" r="24"/></clipPath>
   </defs>
     <rect width="960" height="1020" fill="#F1F5F9"/>
 
     <g transform="translate(40, 32)">
-      <rect width="250" height="26" rx="8" fill="#D93B18"/>
-      <text x="125" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="900" fill="#FFFFFF" text-anchor="middle">SECTION 03: LIVE GOOGLE MAPS</text>
-      <text x="0" y="56" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#111827">Bi-Directional Live Tracking (Customer &amp; Driver)</text>
+      <rect width="260" height="26" rx="8" fill="#D93B18"/>
+      <text x="130" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="900" fill="#FFFFFF" text-anchor="middle">SECTION 03: LIVE GOOGLE MAPS</text>
+      <text x="0" y="56" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#111827">Bi-Directional Real-Time Cartography</text>
     </g>
 
-    <!-- Screen 5: TRACK-01 (x: 40, y: 110) -->
     <g transform="translate(40, 110)">
-      <text x="0" y="-12" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#4B5563">05 | TRACK-01 • Customer Live Map Tracking</text>
+      <text x="0" y="-12" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#4B5563">05 | TRACK-01 • Customer Live Google Maps Tracking</text>
       
   <g id="SCREEN_TRACK-01">
-    <rect width="393" height="852" rx="44" fill="#FFFFFF" stroke="#CED4DA" stroke-width="2"/>
-    <rect x="1" y="1" width="391" height="850" rx="43" fill="#E8ECE9"/>
+    <rect width="393" height="852" rx="44" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+    <rect x="1" y="1" width="391" height="850" rx="43" fill="#E5E7EB"/>
 
-    <!-- REALISTIC GOOGLE MAPS LIGHT THEME CARTOGRAPHY -->
-    <!-- City Residential & Commercial Blocks -->
-    <g fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5">
-      <rect x="15" y="70" width="95" height="120" rx="8"/>
-      <rect x="125" y="70" width="135" height="80" rx="8"/>
-      <rect x="275" y="70" width="100" height="100" rx="8"/>
+    <!-- Daylight Real Google Maps Canvas -->
+    <g id="DaylightGoogleMap">
+      <!-- Water: Lake Eola -->
+      <path d="M 120 220 C 180 180, 280 200, 330 250 C 370 290, 340 370, 270 380 C 200 390, 130 350, 110 300 Z" fill="#AADAFF"/>
+      <text x="220" y="295" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#1565C0" opacity="0.6">Lake Eola</text>
 
-      <rect x="15" y="210" width="130" height="95" rx="8"/>
-      <rect x="160" y="170" width="100" height="135" rx="8"/>
-      <rect x="275" y="190" width="100" height="160" rx="8"/>
-    </g>
+      <!-- Park Turf -->
+      <path d="M 80 190 C 140 150, 320 170, 360 230 L 370 280 C 390 350, 350 410, 250 410 C 160 410, 80 370, 70 280 Z" fill="#DCFCE7" opacity="0.4"/>
 
-    <!-- Lake Eola (Realistic Google Maps Soft Blue Water) -->
-    <path d="M140 230 C185 210 235 225 250 260 C265 295 245 320 205 325 C165 330 125 305 120 275 Z" fill="#AADAFF" stroke="#90CAF9" stroke-width="2"/>
-    <!-- Lake Eola Park (Green Belt) -->
-    <path d="M130 220 C185 195 245 215 260 255 C275 305 255 330 200 335 C150 340 115 315 110 270 Z" fill="#C8E6C9" opacity="0.35"/>
-    <text x="185" y="278" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#1565C0" text-anchor="middle">LAKE EOLA PARK</text>
+      <!-- Arterials & Streets -->
+      <line x1="0" y1="180" x2="393" y2="180" stroke="#FFE082" stroke-width="12"/>
+      <line x1="0" y1="180" x2="393" y2="180" stroke="#FFFFFF" stroke-width="8"/>
+      <text x="24" y="174" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#78716C">E ROBINSON ST</text>
 
-    <!-- Google Maps Street Network (Crisp White with Soft Borders) -->
-    <g stroke="#CBD5E1" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="115" y1="0" x2="115" y2="520"/>
-      <line x1="0" y1="460" x2="393" y2="460"/>
-      <line x1="265" y1="0" x2="265" y2="520"/>
-    </g>
-    <!-- Highway Yellow for Central Blvd -->
-    <g stroke="#FFE082" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="0" y1="460" x2="393" y2="460"/>
-    </g>
-    <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="115" y1="0" x2="115" y2="520"/>
-      <line x1="265" y1="0" x2="265" y2="520"/>
-    </g>
+      <line x1="0" y1="430" x2="393" y2="430" stroke="#FFE082" stroke-width="12"/>
+      <line x1="0" y1="430" x2="393" y2="430" stroke="#FFFFFF" stroke-width="8"/>
+      <text x="24" y="424" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#78716C">E CENTRAL BLVD</text>
 
-    <!-- Real Google Maps Navigation Polyline (Vibrant Blue & Flame) -->
-    <path d="M60 460 L115 460 L265 460 L265 240 L310 240" stroke="#1D4ED8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
-    <path d="M60 460 L115 460 L265 460 L265 240 L310 240" stroke="#D93B18" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M60 460 L115 460 L265 460 L265 240 L310 240" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6 6" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="90" y1="0" x2="90" y2="600" stroke="#FFE082" stroke-width="14"/>
+      <line x1="90" y1="0" x2="90" y2="600" stroke="#FFFFFF" stroke-width="9"/>
+      <text x="96" y="90" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#78716C" transform="rotate(90, 96, 90)">S ORANGE AVE</text>
 
-    <!-- Restaurant Pin: Crust & Q Kitchen (60, 460) -->
-    <g transform="translate(60, 460)" filter="url(#shadow3D)">
-      <circle cx="0" cy="0" r="16" fill="#D93B18" stroke="#FFFFFF" stroke-width="2.5"/>
-      <text x="0" y="5" font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">🍕</text>
-    </g>
+      <!-- Active Delivery Polyline -->
+      <path d="M 90 430 L 90 180 L 260 180" stroke="#1A73E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M 90 430 L 90 180 L 260 180" stroke="#4285F4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 
-    <!-- 3D Realistic Moving Driver Vehicle (265, 360) -->
-    <g transform="translate(265, 360)" filter="url(#carShadow)">
-      <!-- Radar Pulse Waves -->
-      <circle cx="0" cy="0" r="32" stroke="#D93B18" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
-      <circle cx="0" cy="0" r="22" fill="#D93B18" fill-opacity="0.15"/>
-      
-      <!-- 3D Car Body (Heading Forward) -->
-      <rect x="-9" y="-16" width="18" height="32" rx="6" fill="#1E293B" stroke="#FFFFFF" stroke-width="2"/>
-      <rect x="-7" y="-14" width="14" height="28" rx="4" fill="#D93B18"/>
-      <rect x="-5" y="-10" width="10" height="7" rx="2" fill="#0F172A"/>
-      <circle cx="-4" cy="-14" r="1.5" fill="#FEF08A"/>
-      <circle cx="4" cy="-14" r="1.5" fill="#FEF08A"/>
-    </g>
+      <!-- Restaurant Pin: Crust & Q (90, 430) -->
+      <g transform="translate(90, 430)" filter="url(#shadowElevated)">
+        <circle cx="0" cy="0" r="16" fill="#D93B18"/>
+        <g transform="translate(-10, -10)" color="#FFFFFF"><path d="M12 2c.5 2.5 2 4.5 4 6 2.5 1.8 4 4.5 4 7.5a8 8 0 11-16 0c0-4 3-7.5 5.5-9.5 1 2 2.5 3.5 4.5 4 0-3-1-6.5-2-8z" fill="currentColor"/></g>
+      </g>
 
-    <!-- Customer Home Pin (310, 240) -->
-    <g transform="translate(310, 240)" filter="url(#shadow3D)">
-      <circle cx="0" cy="0" r="16" fill="#D97706" stroke="#FFFFFF" stroke-width="2.5"/>
-      <text x="0" y="5" font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">🏠</text>
+      <!-- Customer Destination Pin (260, 180) -->
+      <g transform="translate(260, 180)" filter="url(#shadowElevated)">
+        <circle cx="0" cy="0" r="16" fill="#111827"/>
+        <g transform="translate(-10, -10)" color="#FFFFFF"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" fill="none"/><polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-width="2" fill="none"/></g>
+      </g>
+
+      <!-- 3D Moving Delivery Vehicle: Toyota RAV4 (90, 270) -->
+      <g transform="translate(90, 270)" filter="url(#carShadow)">
+        <circle cx="0" cy="0" r="20" fill="#1A73E8" stroke="#FFFFFF" stroke-width="3"/>
+        <g transform="translate(-10, -10)" color="#FFFFFF"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></g>
+      </g>
     </g>
 
     
-  <!-- iOS Light Dynamic Island & Status Bar -->
   <g id="StatusBar">
     <rect x="0" y="0" width="393" height="54" fill="transparent"/>
     <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#111827">9:41</text>
-    <!-- Dynamic Island Pill -->
     <rect x="134" y="11" width="125" height="34" rx="17" fill="#000000"/>
     <circle cx="238" cy="28" r="5.5" fill="#141312"/>
     <circle cx="238" cy="28" r="2.5" fill="#1A2035"/>
-    <!-- Signal, Wifi, Battery -->
     <g transform="translate(325, 26)">
       <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#111827"/>
       <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#111827"/>
@@ -137,140 +110,127 @@
     </g>
   </g>
 
-    <!-- Google Maps Top Floating Header -->
+    <!-- Top Floating Back & Status Bar -->
     <g transform="translate(20, 64)" filter="url(#shadowElevated)">
-      <rect width="353" height="52" rx="16" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1"/>
-      <circle cx="26" cy="26" r="16" fill="#F1F3F5"/>
-      <text x="26" y="31" font-family="-apple-system, sans-serif" font-size="14" fill="#111827" text-anchor="middle">&lt;</text>
+      <circle cx="20" cy="20" r="20" fill="#FFFFFF"/>
+      <g transform="translate(8, 8)" color="#111827"><polyline points="15,18 9,12 15,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
       
-      <text x="56" y="27" font-family="-apple-system, sans-serif" font-size="14" font-weight="900" fill="#111827">Order #CQ-8492</text>
-      <text x="56" y="42" font-family="-apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#D93B18">Google Maps Live Route</text>
+      <rect x="52" y="0" width="220" height="40" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+      <circle cx="70" cy="20" r="5" fill="#D93B18"/>
+      <text x="82" y="24" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#111827">Live Google Maps Track</text>
 
-      <rect x="290" y="12" width="50" height="28" rx="8" fill="#F1F3F5"/>
-      <text x="315" y="30" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#111827" text-anchor="middle">Share</text>
+      <circle cx="333" cy="20" r="20" fill="#FFFFFF"/>
+      <g transform="translate(321, 8)" color="#111827"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" fill="currentColor"/></g>
     </g>
 
-    <!-- Live ETA Floating Pill (Center HUD) -->
-    <g transform="translate(86, 128)" filter="url(#shadowElevated)">
-      <rect width="220" height="42" rx="21" fill="url(#btnGrad)"/>
-      <text x="110" y="26" font-family="-apple-system, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">⏱️ Arriving in 14 mins</text>
-    </g>
+    <!-- Bottom Tracking Card (Light Theme) -->
+    <g transform="translate(20, 520)" filter="url(#shadowElevated)">
+      <rect width="353" height="300" rx="24" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
 
-    <!-- Bottom Driver & Order Status Drawer (Clean White 3D Sheet) -->
-    <g transform="translate(0, 480)" filter="url(#shadowElevated)">
-      <rect width="393" height="372" rx="32" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1.5"/>
-      <rect x="176" y="10" width="40" height="5" rx="2.5" fill="#9CA3AF" opacity="0.4"/>
-
-      <!-- 4-Stage Stepper -->
-      <g transform="translate(30, 36)">
-        <circle cx="10" cy="10" r="10" fill="#16A34A"/>
-        <text x="10" y="14" font-family="-apple-system, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">✓</text>
-        <text x="10" y="32" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#4B5563" text-anchor="middle">Placed</text>
-        <line x1="25" y1="10" x2="95" y2="10" stroke="#16A34A" stroke-width="2"/>
-
-        <circle cx="110" cy="10" r="10" fill="#16A34A"/>
-        <text x="110" y="14" font-family="-apple-system, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">✓</text>
-        <text x="110" y="32" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#4B5563" text-anchor="middle">Baking</text>
-        <line x1="125" y1="10" x2="195" y2="10" stroke="#D93B18" stroke-width="2"/>
-
-        <circle cx="210" cy="10" r="12" fill="#D93B18"/>
-        <circle cx="210" cy="10" r="4" fill="#FFFFFF"/>
-        <text x="210" y="32" font-family="-apple-system, sans-serif" font-size="10" font-weight="900" fill="#D93B18" text-anchor="middle">On the way</text>
-        <line x1="225" y1="10" x2="295" y2="10" stroke="#E9ECEF" stroke-width="2"/>
-
-        <circle cx="310" cy="10" r="10" fill="#F1F3F5" stroke="#CED4DA" stroke-width="1.5"/>
-        <text x="310" y="32" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#9CA3AF" text-anchor="middle">Delivered</text>
+      <!-- ETA Badge Header -->
+      <g transform="translate(20, 22)">
+        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#D93B18">ESTIMATED DELIVERY</text>
+        <text x="0" y="28" font-family="-apple-system, sans-serif" font-size="28" font-weight="900" fill="#111827">8–12 mins</text>
+        <text x="0" y="46" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#4B5563">On time • 1.2 mi away from 200 E Robinson St</text>
       </g>
 
-      <!-- Driver Information Card -->
-      <g transform="translate(24, 96)" filter="url(#shadow3D)">
-        <rect width="345" height="88" rx="18" fill="#F8F9FA" stroke="#E9ECEF" stroke-width="1"/>
-        <circle cx="44" cy="44" r="26" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
-        <text x="44" y="52" font-family="-apple-system, sans-serif" font-size="24" text-anchor="middle">👨🏻‍🍳</text>
+      <!-- Progress Stepper -->
+      <g transform="translate(20, 96)">
+        <line x1="16" y1="12" x2="300" y2="12" stroke="#E5E7EB" stroke-width="3"/>
+        <line x1="16" y1="12" x2="210" y2="12" stroke="#D93B18" stroke-width="3"/>
+        
+        <!-- Step 1: Confirmed -->
+        <circle cx="16" cy="12" r="8" fill="#D93B18"/>
+        <g transform="translate(10, 6)" color="#FFFFFF"><polyline points="20,6 9,17 4,12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+        
+        <!-- Step 2: Wood-Fired Kitchen -->
+        <circle cx="112" cy="12" r="8" fill="#D93B18"/>
+        <g transform="translate(106, 6)" color="#FFFFFF"><polyline points="20,6 9,17 4,12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
 
-        <text x="82" y="36" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#111827">Marcus Vance</text>
-        <text x="82" y="54" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#D97706">★ 4.9 • 1,240 Deliveries</text>
-        <text x="82" y="70" font-family="-apple-system, sans-serif" font-size="11.5" fill="#4B5563">Silver Toyota Prius • 7XYZ42</text>
+        <!-- Step 3: Out for Delivery (Active) -->
+        <circle cx="210" cy="12" r="10" fill="#D93B18" stroke="#FFF1EE" stroke-width="3"/>
+
+        <!-- Step 4: Delivered -->
+        <circle cx="304" cy="12" r="8" fill="#E5E7EB"/>
+
+        <text x="16" y="34" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#4B5563" text-anchor="middle">Ordered</text>
+        <text x="112" y="34" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#4B5563" text-anchor="middle">Kitchen</text>
+        <text x="210" y="34" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#D93B18" text-anchor="middle">On Route</text>
+        <text x="304" y="34" font-family="-apple-system, sans-serif" font-size="9" font-weight="600" fill="#9CA3AF" text-anchor="middle">Arrived</text>
+      </g>
+
+      <!-- Driver Partner Information Card -->
+      <g transform="translate(20, 160)">
+        <rect width="313" height="74" rx="16" fill="#F1F3F5" stroke="#E5E7EB" stroke-width="1"/>
+        <circle cx="38" cy="37" r="22" fill="#D1D5DB"/>
+        <text x="38" y="42" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#111827" text-anchor="middle">MV</text>
+
+        <text x="70" y="28" font-family="-apple-system, sans-serif" font-size="14.5" font-weight="800" fill="#111827">Marcus Vance</text>
+        <text x="70" y="44" font-family="-apple-system, sans-serif" font-size="11.5" fill="#4B5563">2023 Silver Toyota RAV4 Hybrid</text>
+        <text x="70" y="58" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#9CA3AF">FL-78A-BQ9 • 4.96 ★ (2,410 trips)</text>
 
         <!-- Call & Chat Actions -->
-        <circle cx="270" cy="44" r="18" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1"/>
-        <text x="270" y="49" font-family="-apple-system, sans-serif" font-size="16" text-anchor="middle">💬</text>
+        <circle cx="250" cy="37" r="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+        <g transform="translate(238, 25)" color="#111827"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="currentColor"/></g>
 
-        <circle cx="315" cy="44" r="18" fill="url(#btnGrad)"/>
-        <text x="315" y="49" font-family="-apple-system, sans-serif" font-size="16" text-anchor="middle">📞</text>
+        <circle cx="288" cy="37" r="16" fill="url(#btnGrad)"/>
+        <g transform="translate(276, 25)" color="#FFFFFF"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" fill="currentColor"/></g>
       </g>
 
-      <!-- Order Items Summary Bar -->
-      <g transform="translate(24, 202)">
-        <rect width="345" height="52" rx="14" fill="#F1F3F5" stroke="#E9ECEF" stroke-width="1"/>
-        <text x="20" y="31" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#111827">Order Items (2 items)</text>
-        <text x="325" y="31" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#D93B18" text-anchor="end">$41.99 ▼</text>
+      <!-- Pin Safety Code -->
+      <g transform="translate(20, 252)">
+        <text x="0" y="16" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#4B5563">Delivery PIN Code:</text>
+        <text x="118" y="16" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#D93B18">8 4 1 9</text>
+        <text x="313" y="16" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#D93B18" text-anchor="end">Order Details ▸</text>
       </g>
     </g>
 
     
-  <!-- iOS Light Home Indicator -->
   <g id="HomeIndicator">
     <rect x="120" y="838" width="153" height="5" rx="2.5" fill="#111827" opacity="0.3"/>
   </g>
   </g>
     </g>
 
-    <!-- Bi-directional Sync Arrow -->
     <g transform="translate(448, 510)">
-      <circle cx="20" cy="20" r="18" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1.5" filter="url(#shadow3D)"/>
+      <circle cx="20" cy="20" r="18" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5" filter="url(#shadow3D)"/>
       <text x="20" y="25" font-family="-apple-system, sans-serif" font-size="14" font-weight="900" fill="#D93B18" text-anchor="middle">⇄</text>
     </g>
 
-    <!-- Screen 6: DRV-02 (x: 500, y: 110) -->
     <g transform="translate(500, 110)">
       <text x="0" y="-12" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#4B5563">06 | DRV-02 • Driver Reverse Google Navigation</text>
       
   <g id="SCREEN_DRV-02">
-    <rect width="393" height="852" rx="44" fill="#FFFFFF" stroke="#CED4DA" stroke-width="2"/>
-    <rect x="1" y="1" width="391" height="850" rx="43" fill="#E8ECE9"/>
+    <rect width="393" height="852" rx="44" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+    <rect x="1" y="1" width="391" height="850" rx="43" fill="#E5E7EB"/>
 
-    <!-- Map Grid -->
-    <g stroke="#CBD5E1" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="196" y1="0" x2="196" y2="852"/>
-      <line x1="0" y1="380" x2="393" y2="380"/>
-    </g>
-    <g stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="196" y1="0" x2="196" y2="852"/>
-      <line x1="0" y1="380" x2="393" y2="380"/>
-    </g>
+    <!-- Daylight Turn-By-Turn Navigation Background -->
+    <g id="DriverGoogleNav">
+      <!-- Streets -->
+      <line x1="196" y1="0" x2="196" y2="852" stroke="#FFFFFF" stroke-width="36"/>
+      <line x1="196" y1="0" x2="196" y2="852" stroke="#FFE082" stroke-width="26"/>
+      
+      <!-- Cross street Robinson -->
+      <line x1="0" y1="360" x2="393" y2="360" stroke="#FFFFFF" stroke-width="34"/>
+      <line x1="0" y1="360" x2="393" y2="360" stroke="#FFE082" stroke-width="24"/>
 
-    <!-- Route Polyline (Ahead of Driver to Customer) -->
-    <path d="M196 520 L196 380 L320 380 L320 200" stroke="#D93B18" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M196 520 L196 380 L320 380 L320 200" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Navigation Turn Route -->
+      <path d="M 196 680 L 196 360 L 320 360" stroke="#1A73E8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 
-    <!-- Driver Vehicle Marker (Heading North) -->
-    <g transform="translate(196, 520)" filter="url(#carShadow)">
-      <circle cx="0" cy="0" r="34" stroke="#D93B18" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
-      <circle cx="0" cy="0" r="22" fill="#D93B18" fill-opacity="0.2"/>
-      <!-- Car Body -->
-      <rect x="-10" y="-18" width="20" height="36" rx="6" fill="#1E293B" stroke="#FFFFFF" stroke-width="2"/>
-      <rect x="-8" y="-16" width="16" height="32" rx="4" fill="#D93B18"/>
-      <circle cx="-5" cy="-16" r="2" fill="#FEF08A"/>
-      <circle cx="5" cy="-16" r="2" fill="#FEF08A"/>
-    </g>
-
-    <!-- Customer Destination Pin (320, 200) -->
-    <g transform="translate(320, 200)" filter="url(#shadow3D)">
-      <circle cx="0" cy="0" r="16" fill="#D97706" stroke="#FFFFFF" stroke-width="2.5"/>
-      <text x="0" y="5" font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">🏠</text>
+      <!-- Driver Vehicle Arrow -->
+      <g transform="translate(196, 520)" filter="url(#carShadow)">
+        <circle cx="0" cy="0" r="22" fill="#1A73E8" stroke="#FFFFFF" stroke-width="3"/>
+        <g transform="translate(-10, -10)" color="#FFFFFF"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></g>
+      </g>
     </g>
 
     
-  <!-- iOS Light Dynamic Island & Status Bar -->
   <g id="StatusBar">
     <rect x="0" y="0" width="393" height="54" fill="transparent"/>
     <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#111827">9:41</text>
-    <!-- Dynamic Island Pill -->
     <rect x="134" y="11" width="125" height="34" rx="17" fill="#000000"/>
     <circle cx="238" cy="28" r="5.5" fill="#141312"/>
     <circle cx="238" cy="28" r="2.5" fill="#1A2035"/>
-    <!-- Signal, Wifi, Battery -->
     <g transform="translate(325, 26)">
       <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#111827"/>
       <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#111827"/>
@@ -282,26 +242,29 @@
     </g>
   </g>
 
-    <!-- Authentic Google Maps Turn-by-Turn Card (Top Banner) -->
-    <g transform="translate(16, 62)" filter="url(#shadowElevated)">
-      <rect width="361" height="88" rx="20" fill="#15803D" stroke="#166534" stroke-width="1.5"/>
-      <g transform="translate(24, 24)">
-        <circle cx="20" cy="20" r="20" fill="#166534"/>
-        <path d="M16 28 V16 H24 M21 12 L26 16 L21 20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Top Turn-By-Turn Banner (Authentic Google Maps Green #15803D) -->
+    <g transform="translate(16, 54)" filter="url(#shadowElevated)">
+      <rect width="361" height="96" rx="20" fill="#15803D"/>
+      <!-- Turn Left Arrow Glyph -->
+      <g transform="translate(24, 28)" color="#FFFFFF">
+        <path d="M24 10 L10 10 L10 2 M10 10 L2 2 M10 10 L10 32" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
       </g>
-      <text x="80" y="42" font-family="-apple-system, sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">In 300 ft</text>
-      <text x="80" y="66" font-family="-apple-system, sans-serif" font-size="15" font-weight="700" fill="#DCFCE7">Turn Right onto Palm Ave</text>
+      <text x="64" y="44" font-family="-apple-system, sans-serif" font-size="21" font-weight="900" fill="#FFFFFF">In 400 ft</text>
+      <text x="64" y="66" font-family="-apple-system, sans-serif" font-size="14.5" font-weight="700" fill="#DCFCE7">Turn Left on E Robinson St</text>
+      <text x="64" y="84" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#BBF7D0">Then destination is on your right</text>
     </g>
 
-    <!-- Speed & ETA HUD -->
-    <g transform="translate(16, 162)" filter="url(#shadow3D)">
-      <rect width="180" height="42" rx="14" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1.5"/>
-      <text x="90" y="26" font-family="-apple-system, sans-serif" font-size="13" font-weight="900" fill="#111827" text-anchor="middle">11 min • 3.4 mi • 32 mph</text>
+    <!-- Speed Limit & Compass Badges -->
+    <g transform="translate(24, 164)" filter="url(#shadow3D)">
+      <rect width="48" height="58" rx="10" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+      <text x="24" y="20" font-family="-apple-system, sans-serif" font-size="9" font-weight="900" fill="#000000" text-anchor="middle">SPEED</text>
+      <text x="24" y="32" font-family="-apple-system, sans-serif" font-size="9" font-weight="900" fill="#000000" text-anchor="middle">LIMIT</text>
+      <text x="24" y="50" font-family="-apple-system, sans-serif" font-size="17" font-weight="900" fill="#000000" text-anchor="middle">30</text>
     </g>
 
-    <!-- Bottom Customer Notes & "I Have Arrived" Drawer -->
+    <!-- Bottom Driver Sheet -->
     <g transform="translate(0, 580)" filter="url(#shadowElevated)">
-      <rect width="393" height="272" rx="32" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1.5"/>
+      <rect width="393" height="272" rx="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
       <rect x="176" y="10" width="40" height="5" rx="2.5" fill="#9CA3AF" opacity="0.4"/>
 
       <!-- Customer Details -->
@@ -310,29 +273,30 @@
         <text x="24" y="30" font-family="-apple-system, sans-serif" font-size="15" font-weight="900" fill="#D93B18" text-anchor="middle">SJ</text>
 
         <text x="60" y="22" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#111827">Sarah Jenkins</text>
-        <text x="60" y="38" font-family="-apple-system, sans-serif" font-size="12.5" fill="#4B5563">Orlando, 7th Street, Apt 402</text>
+        <text x="60" y="38" font-family="-apple-system, sans-serif" font-size="12.5" fill="#4B5563">200 E Robinson St, Apt 402</text>
 
         <circle cx="280" cy="24" r="18" fill="#F1F3F5"/>
-        <text x="280" y="29" font-family="-apple-system, sans-serif" font-size="14" text-anchor="middle">💬</text>
+        <g transform="translate(268, 12)" color="#111827"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="currentColor"/></g>
 
         <circle cx="325" cy="24" r="18" fill="url(#btnGrad)"/>
-        <text x="325" y="29" font-family="-apple-system, sans-serif" font-size="14" text-anchor="middle">📞</text>
+        <g transform="translate(313, 12)" color="#FFFFFF"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" fill="currentColor"/></g>
       </g>
 
-      <!-- Gate / Delivery Note -->
+      <!-- Delivery Instruction -->
       <g transform="translate(24, 88)">
-        <rect width="345" height="52" rx="14" fill="#F1F3F5" stroke="#E9ECEF" stroke-width="1"/>
+        <rect width="345" height="52" rx="14" fill="#F1F3F5" stroke="#E5E7EB" stroke-width="1"/>
         <text x="16" y="24" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#D93B18">DELIVERY INSTRUCTION:</text>
-        <text x="16" y="40" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#111827">"Apartment 4B, please dial #0412 at callbox"</text>
+        <text x="16" y="40" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#111827">"Apt 4B, please dial #0412 at callbox or leave at door"</text>
       </g>
 
       <!-- Primary Action: I Have Arrived -->
-      <rect x="24" y="156" width="345" height="56" rx="16" fill="url(#btnGrad)" filter="url(#shadow3D)"/>
-      <text x="196.5" y="191" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">I Have Arrived at Location</text>
+      <g transform="translate(24, 156)" filter="url(#shadow3D)">
+        <rect width="345" height="56" rx="16" fill="url(#btnGrad)"/>
+        <text x="172.5" y="35" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">I Have Arrived at Location</text>
+      </g>
     </g>
 
     
-  <!-- iOS Light Home Indicator -->
   <g id="HomeIndicator">
     <rect x="120" y="838" width="153" height="5" rx="2.5" fill="#111827" opacity="0.3"/>
   </g>

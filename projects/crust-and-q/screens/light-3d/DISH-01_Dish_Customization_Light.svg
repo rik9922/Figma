@@ -1,53 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 852" width="393" height="852" fill="none">
   <defs>
-    <!-- Realistic 3D Soft Shadow for Cards -->
+    <!-- Multi-level diffuse ambient shadow -->
     <filter id="shadow3D" x="-15%" y="-15%" width="130%" height="140%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
       <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.04"/>
     </filter>
 
-    <!-- Deep Elevation Shadow for Modals & Floating Pills -->
     <filter id="shadowElevated" x="-20%" y="-20%" width="140%" height="150%">
       <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.10"/>
       <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#0F172A" flood-opacity="0.06"/>
     </filter>
 
-    <!-- 3D Car Marker Drop Shadow -->
     <filter id="carShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.25"/>
     </filter>
 
-    <!-- Primary Button 3D Gradient -->
     <linearGradient id="btnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#E6441F"/>
       <stop offset="100%" stop-color="#CA3212"/>
     </linearGradient>
 
-    <!-- Gold Accent 3D Gradient -->
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FBBF24"/>
       <stop offset="100%" stop-color="#D97706"/>
     </linearGradient>
 
-    <!-- Clip Paths for Rounded Images -->
     <clipPath id="heroClip"><rect width="353" height="150" rx="18"/></clipPath>
     <clipPath id="dishCardClip"><rect width="170" height="100" rx="14"/></clipPath>
     <clipPath id="dishListClip"><rect width="76" height="76" rx="12"/></clipPath>
     <clipPath id="dishModalClip"><rect width="353" height="170" rx="18"/></clipPath>
+    <clipPath id="circleDishClip"><circle cx="28" cy="28" r="24"/></clipPath>
   </defs>
   <g id="SCREEN_DISH-01">
-    <rect width="393" height="852" rx="44" fill="#F8F9FA" stroke="#CED4DA" stroke-width="2"/>
+    <rect width="393" height="852" rx="44" fill="#F8F9FA" stroke="#D1D5DB" stroke-width="2"/>
     <rect x="1" y="1" width="391" height="850" rx="43" fill="#000000" fill-opacity="0.4"/>
     
-  <!-- iOS Light Dynamic Island & Status Bar -->
   <g id="StatusBar">
     <rect x="0" y="0" width="393" height="54" fill="transparent"/>
     <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#111827">9:41</text>
-    <!-- Dynamic Island Pill -->
     <rect x="134" y="11" width="125" height="34" rx="17" fill="#000000"/>
     <circle cx="238" cy="28" r="5.5" fill="#141312"/>
     <circle cx="238" cy="28" r="2.5" fill="#1A2035"/>
-    <!-- Signal, Wifi, Battery -->
     <g transform="translate(325, 26)">
       <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#111827"/>
       <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#111827"/>
@@ -61,7 +54,7 @@
 
     <!-- Modal Container -->
     <g transform="translate(0, 110)" filter="url(#shadowElevated)">
-      <rect width="393" height="742" rx="32" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1"/>
+      <rect width="393" height="742" rx="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
       <rect x="176" y="12" width="40" height="5" rx="2.5" fill="#9CA3AF" opacity="0.4"/>
 
       <!-- Hero Real Food Photography Box -->
@@ -95,8 +88,8 @@
 
         <!-- Option 2 -->
         <g transform="translate(0, 58)">
-          <rect width="345" height="42" rx="12" fill="#F1F3F5" stroke="#E9ECEF" stroke-width="1"/>
-          <circle cx="24" cy="21" r="8" stroke="#CED4DA" stroke-width="1.5" fill="none"/>
+          <rect width="345" height="42" rx="12" fill="#F1F3F5" stroke="#E5E7EB" stroke-width="1"/>
+          <circle cx="24" cy="21" r="8" stroke="#D1D5DB" stroke-width="1.5" fill="none"/>
           <text x="44" y="26" font-family="-apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#4B5563">Stuffed Mozzarella Crust</text>
           <text x="325" y="26" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">+$2.50</text>
         </g>
@@ -104,38 +97,38 @@
 
       <!-- Section 2: Extra Toppings -->
       <g transform="translate(24, 408)">
-        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="14" font-weight="900" fill="#111827">Add Premium Toppings</text>
+        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="14" font-weight="900" fill="#111827">Add Premium Smokehouse Toppings</text>
         
         <g transform="translate(0, 10)">
-          <rect width="345" height="40" rx="10" fill="#F1F3F5" stroke="#E9ECEF" stroke-width="1"/>
+          <rect width="345" height="40" rx="10" fill="#F1F3F5" stroke="#E5E7EB" stroke-width="1"/>
           <rect x="14" y="12" width="16" height="16" rx="4" fill="#D93B18"/>
-          <text x="22" y="24" font-family="-apple-system, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle">✓</text>
-          <text x="40" y="25" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#111827">Crispy Wood-Smoked Bacon</text>
-          <text x="325" y="25" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">+$2.00</text>
+          <g transform="translate(12, 10)" color="#FFFFFF"><polyline points="20,6 9,17 4,12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+          <text x="40" y="25" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#111827">Hot Honey Drizzle</text>
+          <text x="325" y="25" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">+$1.50</text>
         </g>
 
         <g transform="translate(0, 56)">
-          <rect width="345" height="40" rx="10" fill="#F1F3F5" stroke="#E9ECEF" stroke-width="1"/>
-          <rect x="14" y="12" width="16" height="16" rx="4" stroke="#CED4DA" stroke-width="1.5" fill="none"/>
-          <text x="40" y="25" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#4B5563">Fresh Buffalo Mozzarella</text>
-          <text x="325" y="25" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">+$2.50</text>
+          <rect width="345" height="40" rx="10" fill="#F1F3F5" stroke="#E5E7EB" stroke-width="1"/>
+          <rect x="14" y="12" width="16" height="16" rx="4" stroke="#D1D5DB" stroke-width="1.5" fill="none"/>
+          <text x="40" y="25" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#4B5563">St. Louis Smoked Rib Crumbles</text>
+          <text x="325" y="25" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#D97706" text-anchor="end">+$3.50</text>
         </g>
       </g>
 
-      <!-- Bottom Add to Order Bar -->
-      <g transform="translate(24, 532)">
-        <rect width="110" height="52" rx="14" fill="#F1F3F5" stroke="#E9ECEF" stroke-width="1.5"/>
-        <text x="24" y="32" font-family="-apple-system, sans-serif" font-size="18" font-weight="700" fill="#4B5563">-</text>
-        <text x="55" y="32" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#111827" text-anchor="middle">1</text>
-        <text x="86" y="32" font-family="-apple-system, sans-serif" font-size="18" font-weight="700" fill="#D93B18">+</text>
+      <!-- Bottom Action Bar -->
+      <g transform="translate(24, 530)" filter="url(#shadowElevated)">
+        <rect width="345" height="60" rx="18" fill="url(#btnGrad)"/>
+        <!-- Quantity -->
+        <text x="36" y="36" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">−</text>
+        <text x="64" y="36" font-family="-apple-system, sans-serif" font-size="17" font-weight="900" fill="#FFFFFF">1</text>
+        <text x="92" y="36" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">+</text>
 
-        <rect x="124" y="0" width="221" height="52" rx="14" fill="url(#btnGrad)" filter="url(#shadow3D)"/>
-        <text x="234.5" y="32" font-family="-apple-system, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">Add to Order • $23.50</text>
+        <line x1="120" y1="14" x2="120" y2="46" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1"/>
+        <text x="225" y="36" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">Add to Feast • $23.00</text>
       </g>
     </g>
 
     
-  <!-- iOS Light Home Indicator -->
   <g id="HomeIndicator">
     <rect x="120" y="838" width="153" height="5" rx="2.5" fill="#111827" opacity="0.3"/>
   </g>

@@ -1,53 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 852" width="393" height="852" fill="none">
   <defs>
-    <!-- Realistic 3D Soft Shadow for Cards -->
+    <!-- Multi-level diffuse ambient shadow -->
     <filter id="shadow3D" x="-15%" y="-15%" width="130%" height="140%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
       <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.04"/>
     </filter>
 
-    <!-- Deep Elevation Shadow for Modals & Floating Pills -->
     <filter id="shadowElevated" x="-20%" y="-20%" width="140%" height="150%">
       <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.10"/>
       <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#0F172A" flood-opacity="0.06"/>
     </filter>
 
-    <!-- 3D Car Marker Drop Shadow -->
     <filter id="carShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.25"/>
     </filter>
 
-    <!-- Primary Button 3D Gradient -->
     <linearGradient id="btnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#E6441F"/>
       <stop offset="100%" stop-color="#CA3212"/>
     </linearGradient>
 
-    <!-- Gold Accent 3D Gradient -->
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FBBF24"/>
       <stop offset="100%" stop-color="#D97706"/>
     </linearGradient>
 
-    <!-- Clip Paths for Rounded Images -->
     <clipPath id="heroClip"><rect width="353" height="150" rx="18"/></clipPath>
     <clipPath id="dishCardClip"><rect width="170" height="100" rx="14"/></clipPath>
     <clipPath id="dishListClip"><rect width="76" height="76" rx="12"/></clipPath>
     <clipPath id="dishModalClip"><rect width="353" height="170" rx="18"/></clipPath>
+    <clipPath id="circleDishClip"><circle cx="28" cy="28" r="24"/></clipPath>
   </defs>
   <g id="SCREEN_DRV-AUTH-01">
-    <rect width="393" height="852" rx="44" fill="#F8F9FA" stroke="#CED4DA" stroke-width="2"/>
+    <rect width="393" height="852" rx="44" fill="#F8F9FA" stroke="#D1D5DB" stroke-width="2"/>
     <rect x="1" y="1" width="391" height="850" rx="43" fill="#F8F9FA"/>
     
-  <!-- iOS Light Dynamic Island & Status Bar -->
   <g id="StatusBar">
     <rect x="0" y="0" width="393" height="54" fill="transparent"/>
     <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" font-weight="600" fill="#111827">9:41</text>
-    <!-- Dynamic Island Pill -->
     <rect x="134" y="11" width="125" height="34" rx="17" fill="#000000"/>
     <circle cx="238" cy="28" r="5.5" fill="#141312"/>
     <circle cx="238" cy="28" r="2.5" fill="#1A2035"/>
-    <!-- Signal, Wifi, Battery -->
     <g transform="translate(325, 26)">
       <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#111827"/>
       <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#111827"/>
@@ -59,45 +52,39 @@
     </g>
   </g>
 
-    <!-- Profile Header -->
+    <!-- Header Navigation -->
     <g transform="translate(20, 64)">
-      <circle cx="28" cy="28" r="28" fill="#FFFFFF" stroke="#D97706" stroke-width="2" filter="url(#shadow3D)"/>
-      <text x="28" y="36" font-family="-apple-system, sans-serif" font-size="28" text-anchor="middle">👨🏻‍🍳</text>
+      <circle cx="22" cy="22" r="22" fill="#D1D5DB"/>
+      <text x="22" y="27" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#111827" text-anchor="middle">MV</text>
       
-      <text x="68" y="24" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#111827">Marcus Vance</text>
-      <text x="68" y="42" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#D97706">Gold Driver • ★ 4.94</text>
+      <text x="56" y="20" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#111827">Marcus Vance</text>
+      <text x="56" y="36" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#16A34A">● Active Shift • Online</text>
+
+      <!-- Toggle Status -->
+      <rect x="270" y="6" width="80" height="32" rx="16" fill="#16A34A"/>
+      <circle cx="334" cy="22" r="12" fill="#FFFFFF"/>
+      <text x="300" y="26" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF">ON</text>
     </g>
 
-    <!-- Online Toggle Switch -->
-    <g transform="translate(20, 130)" filter="url(#shadow3D)">
-      <rect width="353" height="68" rx="18" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5"/>
-      <circle cx="34" cy="34" r="10" fill="#16A34A"/>
-      <text x="56" y="30" font-family="-apple-system, sans-serif" font-size="15" font-weight="900" fill="#111827">You are Online</text>
-      <text x="56" y="48" font-family="-apple-system, sans-serif" font-size="12" fill="#16A34A">Ready for Crust &amp; Q delivery dispatches</text>
-
-      <rect x="285" y="20" width="52" height="28" rx="14" fill="#16A34A"/>
-      <circle cx="323" cy="34" r="11" fill="#FFFFFF"/>
-    </g>
-
-    <!-- Shift Stats -->
-    <g transform="translate(20, 218)">
-      <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#111827">Today's Shift Earnings</text>
+    <!-- Shift Metrics Summary -->
+    <g transform="translate(20, 130)">
+      <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="13" font-weight="900" fill="#111827">TODAY'S DRIVER METRICS</text>
       
       <g transform="translate(0, 12)">
-        <g filter="url(#shadow3D)">
-          <rect width="110" height="90" rx="16" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1"/>
-          <text x="14" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#9CA3AF">EARNED</text>
+        <g transform="translate(0, 0)" filter="url(#shadow3D)">
+          <rect width="110" height="90" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+          <text x="14" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#9CA3AF">EARNINGS</text>
           <text x="14" y="58" font-family="-apple-system, sans-serif" font-size="20" font-weight="900" fill="#D93B18">$142.50</text>
         </g>
 
         <g transform="translate(121, 0)" filter="url(#shadow3D)">
-          <rect width="110" height="90" rx="16" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1"/>
+          <rect width="110" height="90" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
           <text x="14" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#9CA3AF">TRIPS</text>
           <text x="14" y="58" font-family="-apple-system, sans-serif" font-size="20" font-weight="900" fill="#111827">8</text>
         </g>
 
         <g transform="translate(242, 0)" filter="url(#shadow3D)">
-          <rect width="111" height="90" rx="16" fill="#FFFFFF" stroke="#E9ECEF" stroke-width="1"/>
+          <rect width="111" height="90" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
           <text x="14" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#9CA3AF">HOURS</text>
           <text x="14" y="58" font-family="-apple-system, sans-serif" font-size="20" font-weight="900" fill="#111827">4.2h</text>
         </g>
@@ -105,9 +92,9 @@
     </g>
 
     <!-- Incoming Dispatch Radar -->
-    <g transform="translate(20, 350)" filter="url(#shadowElevated)">
-      <rect width="353" height="220" rx="20" fill="#FFFFFF" stroke="#D93B18" stroke-width="2"/>
-      <text x="20" y="32" font-family="-apple-system, sans-serif" font-size="14" font-weight="900" fill="#D93B18">⚡ INCOMING DISPATCH READY</text>
+    <g transform="translate(20, 260)" filter="url(#shadowElevated)">
+      <rect width="353" height="230" rx="20" fill="#FFFFFF" stroke="#D93B18" stroke-width="2"/>
+      <text x="20" y="32" font-family="-apple-system, sans-serif" font-size="13" font-weight="900" fill="#D93B18">⚡ INCOMING DISPATCH READY</text>
       
       <text x="20" y="64" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#111827">Crust &amp; Q Smokehouse</text>
       <text x="20" y="82" font-family="-apple-system, sans-serif" font-size="12.5" fill="#4B5563">Pickup: Counter 2 • 0.8 mi away</text>
@@ -115,12 +102,13 @@
 
       <text x="20" y="142" font-family="-apple-system, sans-serif" font-size="12.5" font-weight="600" fill="#111827">Dropoff: Orlando, 7th Street (3.4 mi)</text>
 
-      <rect x="20" y="160" width="313" height="46" rx="14" fill="url(#btnGrad)"/>
-      <text x="176.5" y="189" font-family="-apple-system, sans-serif" font-size="15" font-weight="900" fill="#FFFFFF" text-anchor="middle">Accept Delivery Dispatch (15s)</text>
+      <g transform="translate(20, 164)" filter="url(#shadow3D)">
+        <rect width="313" height="46" rx="14" fill="url(#btnGrad)"/>
+        <text x="156.5" y="28" font-family="-apple-system, sans-serif" font-size="15" font-weight="900" fill="#FFFFFF" text-anchor="middle">Accept Delivery Dispatch (15s)</text>
+      </g>
     </g>
 
     
-  <!-- iOS Light Home Indicator -->
   <g id="HomeIndicator">
     <rect x="120" y="838" width="153" height="5" rx="2.5" fill="#111827" opacity="0.3"/>
   </g>
