@@ -26,7 +26,19 @@
         "from": "DESIGN_IN_PROGRESS",
         "to": "AWAITING_USER_REVIEW",
         "timestamp": "2026-10-31T13:20:00.000Z",
-        "note": "Completed 15 canonical screens, scratch assets, and deployed to live Figma canvas for user inspection"
+        "note": "Completed initial screens and deployed to live Figma canvas"
+      },
+      {
+        "from": "AWAITING_USER_REVIEW",
+        "to": "REVISION_REQUESTED",
+        "timestamp": "2026-10-31T13:26:00.000Z",
+        "note": "User requested major revision: Switch completely to premium LIGHT theme, eliminate fake 2D elements in favor of photorealistic 3D depth and real Google Maps, polish visual hierarchy, and cleanly arrange canvas with proper spacing and labels."
+      },
+      {
+        "from": "REVISION_REQUESTED",
+        "to": "AWAITING_USER_REVIEW",
+        "timestamp": "2026-10-31T13:32:00.000Z",
+        "note": "Delivered complete Bright Artisanal Light Theme overhaul: 5 structured presentation artboards, photorealistic food photography embedded in dish cards, real daylight Google Maps cartography, and 3D tactile elevation shadows on live Figma canvas."
       }
     ],
     "userSignOff": null
@@ -50,13 +62,13 @@
     "personality": "Craft smokehouse master meets blistered wood-fired pizzaiolo"
   },
   "visualDirection": {
-    "style": "Char & Crust (Deep smoked cast-iron ground with vibrant culinary contrast and flame embers)",
-    "primaryColor": "#FF5C1A",
-    "secondaryColor": "#F2A93B",
-    "accentColor": "#FF7A3D",
-    "surfaceColor": "#26221E",
-    "groundColor": "#141312",
-    "textColor": "#FFFFFF",
+    "style": "Bright Artisanal Hearth (Crisp white porcelain surfaces, photorealistic 3D depth, vibrant flame ember #D93B18, golden crust #D97706)",
+    "primaryColor": "#D93B18",
+    "secondaryColor": "#D97706",
+    "accentColor": "#E0401C",
+    "surfaceColor": "#FFFFFF",
+    "groundColor": "#F8F9FA",
+    "textColor": "#111827",
     "typography": {
       "displayFamily": "System Font, sans-serif",
       "bodyFamily": "System Font, sans-serif",
