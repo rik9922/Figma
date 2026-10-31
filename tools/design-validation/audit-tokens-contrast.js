@@ -101,3 +101,4 @@ if (failed === 0) {
   console.error(`❌ ${failed} token pairs failed WCAG thresholds.\n`);
   process.exit(1);
 }
+
