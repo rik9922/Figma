@@ -95,6 +95,22 @@ Antigravity operates as the direct operational bridge to Figma. Every claimed op
 
 ## 6. Project Switching & Lifecycle Protocol
 
+### Natural Language Command Mapping
+The user interacts using simple, intuitive commands. Antigravity executes the corresponding workflow stages autonomously:
+
+| Command | Pipeline Stage | Operational Execution | Artifacts & Output |
+|---|---|---|---|
+| **`"Start a new project <name>"`** | Stage 01 (Gate 1) | Runs `./scripts/new-project <name>`, scaffolds isolated directory | `projects/<name>/` initialized |
+| **`"Continue project <name>"`** | Current Active Stage | Reads `projects/<name>/project.config.json`, restores Figma link & gate | Project status report & next gate |
+| **`"Research this project"`** | Stage 02 | Benchmarks competitor apps, maps user personas, audits Apple HIG / Material 3 | `research/COMPETITIVE_RESEARCH.md` |
+| **`"Create the screen architecture"`** | Stage 03 (Gate 2) | Builds standardized screen IDs (`ONB-01`), user flows, runs `./scripts/audit-architecture` | `architecture/SCREEN_INVENTORY.md` |
+| **`"Generate design concepts"`** | Stage 04 (Gate 3) | Establishes custom palette, typography scale, 8pt tokens (never generic templates) | `design-system/TOKENS.json` |
+| **`"Show me asset previews"`** | Stage 05 & 06 (Gate 4) | Generates candidate variants via free cloud AI (Imagen 3); creates preview artifact for approval | `assets/generated/`, chat preview |
+| **`"Create the approved Figma design"`** | Stage 07 & 08 (Gate 5) | Optimizes approved assets, uploads to canvas via MCP `upload_assets` ($0 cost), builds vector layers | Live editable frames in Figma |
+| **`"Connect the prototype"`** | Stage 09 & 10 (Gate 6) | Documents triggers, Smart Animate easing; generates FigJam user flows via `generate_diagram` | `motion/MOTION_SPECIFICATIONS.md` |
+| **`"Run design QA"`** | Stage 11 & 14 (Gate 8) | Executes Playwright + axe-core WCAG AA contrast check and 44×44 pt touch target audit | `qa/reports/`, JSON audit report |
+| **`"Prepare design handoff"`** | Stage 12 (Gate 7) | Generates component property tables, export assets, and design token handoff specs | Handoff specifications |
+
 ### Starting a New Project: `"Start a new project <name>"`
 1. Run `./scripts/new-project <name> [platform] [framework]`.
 2. Ask only the minimal necessary questions (Product description, Brand color preference, Figma file link).

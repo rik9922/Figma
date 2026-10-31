@@ -51,16 +51,20 @@
     "preferredFormat": "png",
     "approvalRequired": true
   },
-  "restrictions": {
-    "noPaidApis": true,
-    "noAutomaticFigmaWrites": true,
+  "executionPolicy": {
+    "autonomousFigmaExecution": true,
+    "requireApprovalBeforeImport": true,
+    "requireApprovalBeforeDestructiveAction": true,
+    "inspectBeforeWrite": true,
+    "preserveExistingUserWork": true,
+    "zeroPaidCreditsEnforced": true,
     "wcagCompliance": "AA"
   },
   "workflowStatus": {
     "gate1_requirementsApproved": true,
     "gate2_architectureApproved": true,
     "gate3_visualDirectionApproved": false,
-    "gate4_assetsApproved": true,
+    "gate4_assetsApproved": false,
     "gate5_figmaDesignApproved": false,
     "gate6_prototypeApproved": false,
     "gate7_codeImplementationApproved": false,

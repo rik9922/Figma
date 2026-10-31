@@ -23,9 +23,9 @@ Tracks all visual assets generated, reviewed, approved, and imported into Figma 
 
 | ID | Asset Name | Category | Intended Screen | Dimensions | Format | Provider & Model | Approval Status | License Status | Figma Node |
 |---|---|---|---|---|---|---|---|---|---|
-| `ONB-001A` | `hero_wallet_variant_a` | Onboarding Hero | `ONB-02` (Consumer / Rewards Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_TO_FIGMA` | `VERIFIED_COMMERCIAL_USE` | `5:2` |
-| `ONB-001B` | `hero_wallet_variant_b` | Onboarding Hero | `ONB-02` (Minimalist / Clean Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_TO_FIGMA` | `VERIFIED_COMMERCIAL_USE` | `5:3` |
-| `ONB-001C` | `hero_wallet_variant_c` | Onboarding Hero | `ONB-02` (Premium Wealth Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_TO_FIGMA` | `VERIFIED_COMMERCIAL_USE` | `5:4` |
+| `ONB-001A` | `hero_wallet_variant_a` | Onboarding Hero | `ONB-02` (Consumer / Rewards Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_FOR_REVIEW` | `VERIFIED_COMMERCIAL_USE` | `5:2` |
+| `ONB-001B` | `hero_wallet_variant_b` | Onboarding Hero | `ONB-02` (Minimalist / Clean Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_FOR_REVIEW` | `VERIFIED_COMMERCIAL_USE` | `5:3` |
+| `ONB-001C` | `hero_wallet_variant_c` | Onboarding Hero | `ONB-02` (Premium Wealth Theme) | 1024×1024 | JPG | Google DeepMind (Imagen 3) | `IMPORTED_FOR_REVIEW` | `VERIFIED_COMMERCIAL_USE` | `5:4` |
 
 ---
 

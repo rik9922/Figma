@@ -54,9 +54,13 @@
     "preferredFormat": "png",
     "approvalRequired": true
   },
-  "restrictions": {
-    "noPaidApis": true,
-    "noAutomaticFigmaWrites": true,
+  "executionPolicy": {
+    "autonomousFigmaExecution": true,
+    "requireApprovalBeforeImport": true,
+    "requireApprovalBeforeDestructiveAction": true,
+    "inspectBeforeWrite": true,
+    "preserveExistingUserWork": true,
+    "zeroPaidCreditsEnforced": true,
     "wcagCompliance": "AA"
   },
   "workflowStatus": {
