@@ -247,52 +247,52 @@ function renderScreen_CAT01() {
       <!-- 3 Cards Grid -->
       <!-- Card 1 -->
       <g transform="translate(0, 26)">
-        <rect x="0" y="0" width="112" height="118" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
-        <defs><clipPath id="steakClip1"><rect x="0" y="0" width="112" height="68" rx="14"/></clipPath></defs>
-        ${ribeyeBase64 ? `<image href="${ribeyeBase64}" x="0" y="0" width="112" height="68" preserveAspectRatio="xMidYMid slice" clip-path="url(#steakClip1)"/>` : ''}
-        <rect x="4" y="4" width="70" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">$10 OFF &gt;$40</text>
-        <rect x="6" y="54" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 56, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="65" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.9</text>
-        <text x="6" y="82" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Angus Ribeye</text>
-        <g transform="translate(6, 90)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+        <defs><clipPath id="steakClip1"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
+        ${ribeyeBase64 ? `<image href="${ribeyeBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#steakClip1)"/>` : ''}
+        <rect x="4" y="4" width="76" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="42" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">$10 OFF &gt;$40</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.9</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Angus Ribeye</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
         </g>
       </g>
 
       <!-- Card 2 -->
       <g transform="translate(122, 26)">
-        <rect x="0" y="0" width="112" height="118" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
-        <defs><clipPath id="steakClip2"><rect x="0" y="0" width="112" height="68" rx="14"/></clipPath></defs>
-        ${brisketBase64 ? `<image href="${brisketBase64}" x="0" y="0" width="112" height="68" preserveAspectRatio="xMidYMid slice" clip-path="url(#steakClip2)"/>` : ''}
-        <rect x="4" y="4" width="62" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">PRIME OAK</text>
-        <rect x="6" y="54" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 56, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="65" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.8</text>
-        <text x="6" y="82" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Smoked Filet</text>
-        <g transform="translate(6, 90)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">20-25 min</text>
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+        <defs><clipPath id="steakClip2"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
+        ${brisketBase64 ? `<image href="${brisketBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#steakClip2)"/>` : ''}
+        <rect x="4" y="4" width="70" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="39" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">PRIME OAK</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.8</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Smoked Filet</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">20-25 min</text>
         </g>
       </g>
 
       <!-- Card 3 -->
       <g transform="translate(244, 26)">
-        <rect x="0" y="0" width="112" height="118" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
-        <defs><clipPath id="steakClip3"><rect x="0" y="0" width="112" height="68" rx="14"/></clipPath></defs>
-        ${ribsBase64 ? `<image href="${ribsBase64}" x="0" y="0" width="112" height="68" preserveAspectRatio="xMidYMid slice" clip-path="url(#steakClip3)"/>` : ''}
-        <rect x="4" y="4" width="62" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">CHEF CUT</text>
-        <rect x="6" y="54" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 56, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="65" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.9</text>
-        <text x="6" y="82" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Dry Aged Strip</text>
-        <g transform="translate(6, 90)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+        <defs><clipPath id="steakClip3"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
+        ${ribsBase64 ? `<image href="${ribsBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#steakClip3)"/>` : ''}
+        <rect x="4" y="4" width="66" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="37" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">CHEF CUT</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.9</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Dry Aged Strip</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
         </g>
       </g>
     </g>
@@ -569,7 +569,7 @@ function renderScreen_CART01() {
     <g transform="translate(16, 328)">
       <rect x="0" y="0" width="358" height="46" rx="12" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2"/>
       ${renderIcon('sparkles', { x: 14, y: 14, size: 18, color: TOKENS.accent })}
-      <text x="40" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.textPrimary}">CRUST50 applied ($19.99 saved)</text>
+      <text x="40" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.textPrimary}">CRUST50 applied ($20.00 saved)</text>
       <text x="344" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="${TOKENS.ratingGreen}" text-anchor="end">APPLIED</text>
     </g>
 
@@ -594,26 +594,29 @@ function renderScreen_CART01() {
     </g>
 
     <!-- Bill Details Breakdown Card -->
-    <g transform="translate(16, 470)">
-      <rect x="0" y="0" width="358" height="150" rx="16" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2"/>
+    <g transform="translate(16, 460)">
+      <rect x="0" y="0" width="358" height="174" rx="16" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2"/>
       
-      <g transform="translate(16, 20)">
-        <text x="0" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Item Total</text>
+      <g transform="translate(16, 18)">
+        <text x="0" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Item Subtotal</text>
         <text x="326" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.textPrimary}" text-anchor="end">$39.99</text>
 
-        <text x="0" y="38" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Delivery Fee</text>
-        <text x="326" y="38" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.ratingGreen}" text-anchor="end">FREE</text>
+        <text x="0" y="36" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.ratingGreen}">CRUST50 Voucher (50% Off)</text>
+        <text x="326" y="36" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="${TOKENS.ratingGreen}" text-anchor="end">-$20.00</text>
 
-        <text x="0" y="62" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Driver Partner Tip</text>
-        <text x="326" y="62" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.textPrimary}" text-anchor="end">$4.00</text>
+        <text x="0" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Delivery Fee (Over $35)</text>
+        <text x="326" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.ratingGreen}" text-anchor="end">FREE</text>
 
-        <text x="0" y="86" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Taxes &amp; Restaurant Charges</text>
-        <text x="326" y="86" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.textPrimary}" text-anchor="end">$3.20</text>
+        <text x="0" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Driver Partner Tip</text>
+        <text x="326" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.textPrimary}" text-anchor="end">$4.00</text>
 
-        <line x1="0" y1="98" x2="326" y2="98" stroke="${TOKENS.cardBorder}" stroke-width="1"/>
+        <text x="0" y="102" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Taxes &amp; Platform Fees (8%)</text>
+        <text x="326" y="102" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="${TOKENS.textPrimary}" text-anchor="end">$1.61</text>
 
-        <text x="0" y="120" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="${TOKENS.textPrimary}">To Pay</text>
-        <text x="326" y="120" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="${TOKENS.primary}" text-anchor="end">$47.19</text>
+        <line x1="0" y1="114" x2="326" y2="114" stroke="${TOKENS.cardBorder}" stroke-width="1"/>
+
+        <text x="0" y="136" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="${TOKENS.textPrimary}">To Pay</text>
+        <text x="326" y="136" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="${TOKENS.primary}" text-anchor="end">$25.60</text>
       </g>
     </g>
 
@@ -621,7 +624,7 @@ function renderScreen_CART01() {
     <g transform="translate(16, 756)">
       <rect x="0" y="0" width="358" height="52" rx="16" fill="${TOKENS.primary}" filter="url(#btnShadow)"/>
       <g transform="translate(20, 17)">
-        <text x="0" y="14" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">$47.19</text>
+        <text x="0" y="14" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">$25.60</text>
         <text x="0" y="26" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#FEE2E2">TOTAL</text>
       </g>
       <text x="250" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Proceed to Pay &gt;</text>
@@ -691,7 +694,7 @@ function renderScreen_CHECK01() {
     <!-- Place Order Button -->
     <g transform="translate(16, 756)">
       <rect x="0" y="0" width="358" height="52" rx="16" fill="${TOKENS.primary}" filter="url(#btnShadow)"/>
-      <text x="179" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Pay $47.19 &amp; Place Order</text>
+      <text x="179" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Pay $25.60 &amp; Place Order</text>
     </g>
 
     ${renderHomeIndicator(false)}
@@ -736,7 +739,7 @@ function renderScreen_ORDER_SUCC01() {
       <g transform="translate(114, 20)">
         <text x="0" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="${TOKENS.textPrimary}">Crust &amp; Q — Downtown</text>
         <text x="0" y="34" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="${TOKENS.textSecondary}">2 Items: Hot Pepperoni, Smash Burger</text>
-        <text x="0" y="56" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="${TOKENS.primary}">Total Paid: $47.19</text>
+        <text x="0" y="56" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="${TOKENS.primary}">Total Paid: $25.60</text>
         
         <g transform="translate(0, 68)">
           <rect x="0" y="0" width="110" height="24" rx="6" fill="#F4E9D9"/>
@@ -850,7 +853,7 @@ function renderScreen_TRACK01() {
       <!-- ETA Display -->
       <g transform="translate(24, 28)">
         <text x="0" y="24" font-family="Manrope, sans-serif" font-size="24" font-weight="900" fill="${TOKENS.primary}">Arriving in 14 mins</text>
-        <text x="0" y="44" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Estimated delivery by 6:24 PM</text>
+        <text x="0" y="44" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="${TOKENS.textSecondary}">Estimated delivery by 6:15 PM</text>
 
         <!-- 4-Stage Step Tracker -->
         <g transform="translate(0, 60)">

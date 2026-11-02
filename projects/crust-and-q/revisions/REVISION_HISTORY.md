@@ -26,6 +26,45 @@ This document logs all design review submissions, user feedback iterations, and 
 | ----------- | ---------- | ---------------- | ------------------------ | --------------------- | -------------------------------- | ------------- |
 | `REV-00`    | 2026-11-02 | Antigravity      | Project Scaffolding      | Initial setup         | Complete requirements & research | `DISCOVERING` |
 | `REV-01`    | 2026-11-02 | Antigravity      | 17 Screens / 7 Artboards | Light theme overhaul, 3D dishes, zero emojis, exact user reference layout | Awaiting user visual inspection | `AWAITING_USER_REVIEW` |
+| `REV-02`    | 2026-11-02 | Antigravity      | 30 Screens / 10 Artboards| Complete screen architecture expansion, requirements traceability repair, typography contrast scaling, and cart math reconciliation | Complete 30-screen suite generated | `AWAITING_USER_REVIEW` |
+
+---
+
+## Detailed Feedback Records
+
+### Complete Product Expansion & Screen Architecture Delivery (`REV-02`)
+
+- **Date**: 2026-11-02
+- **Status**: `AWAITING_USER_REVIEW`
+- **Scope**:
+  - Expanded from 17 screens across 7 artboards to full **30-Screen Canonical Architecture** across 10 Master Artboards:
+    1. `01_Customer_Onboarding_Artboard`: `ONB-01`, `AUTH-01`, `GUEST-01`
+    2. `02_Home_and_Location_Artboard`: `HOME-01`, `LOC-01`
+    3. `03_Category_and_Menu_Artboard`: `MENU-01`, `CAT-01`
+    4. `04_Customization_and_Pizza_Builder_Artboard`: `PIZZA-01`, `DISH-01`
+    5. `05_Cart_and_Checkout_Artboard`: `CART-01`, `CHECK-01`
+    6. `06_Live_Google_Maps_Cartography_Artboard`: `ORDER-SUCC-01`, `TRACK-01`
+    7. `07_Fulfillment_and_Driver_Ops_Artboard`: `DRV-DASH-01`, `DRV-REQ-01`, `DRV-NAV-01`, `DRV-COMP-01`
+    8. `08_Customer_Account_and_History_Artboard`: `HIST-01` (Order History & Receipts with Re-order), `PROF-01` (Pitmaster Rewards & Profile), `AUTH-02` (Forgot & Reset Password)
+    9. `09_Search_and_System_States_Artboard`: `SRCH-01` (Search & Results), `SRCH-01-EMPTY` (Search No Results), `CART-01-EMPTY` (Empty Feast Cart), `AUTH-01-ERROR` (Inline Field Errors), `CHECK-01-RETRY` (Payment Decline Retry), `HOME-01-LOADING` (Shimmer Skeleton Loader)
+    10. `10_Driver_Onboarding_and_Finance_Artboard`: `DRV-AUTH-01` (Courier Login & Shift Access), `DRV-ONB-01` (Driver Verification Checklist), `DRV-PICK-01` (Kitchen Pickup Verification), `DRV-EARN-01` (Weekly Earnings Ledger & Instant Cash Out)
+  - **Reconciled Cart Math**:
+    - Item Subtotal: `$39.99`
+    - `CRUST50` Voucher (50% Off): `-$20.00`
+    - Delivery Fee: `FREE`
+    - Driver Tip: `$4.00`
+    - Taxes & Fees (8%): `$1.61`
+    - **Total to Pay**: **`$25.60`** (Reconciled identically across `CART-01`, `CHECK-01`, `ORDER-SUCC-01`, `HIST-01`, and `CHECK-01-RETRY`).
+  - **Reconciled Live Telemetry**:
+    - Status Bar: `6:01 PM`
+    - ETA: `14 mins` -> Expected Delivery: `6:15 PM` (6:01 + 14 = 6:15 PM across `TRACK-01` and status pill).
+  - **Typography Enhancements**:
+    - Scaled all tag, badge, and chip typography to >=10–12 px with accessible pill dimensions.
+  - **Full Requirements & Architecture Repair**:
+    - Created `projects/crust-and-q/requirements/TBD_DECISIONS.md` (authoritative decision register with conservative demo defaults).
+    - Created `projects/crust-and-q/requirements/REQUIREMENTS_TRACEABILITY.md` (complete cross-reference matrix).
+    - Rewrote `PRD.md`, `FEATURE_INVENTORY.md`, `SCREEN_ARCHITECTURE.md`, `SCREEN_INVENTORY.md`, `USER_FLOWS.md`, `SCREEN_CONNECTION_MATRIX.md`, `NAVIGATION_ARCHITECTURE.md`, `COMPETITIVE_RESEARCH.md`, `USER_PERSONAS.md`, `DESIGN_REFERENCES.md`, `UX_FINDINGS.md`, and `asset-manifest.md`.
+    - Passed all 63 technical validation unit tests (`pnpm test`), token contrast audit (`pnpm run audit:contrast`), architecture audit (`./scripts/audit-architecture`), and asset check (`./scripts/validate-assets`).
 
 ---
 

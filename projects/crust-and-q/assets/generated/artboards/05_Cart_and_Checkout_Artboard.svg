@@ -141,7 +141,7 @@
   <path d="M20 2v4" />
   <path d="M22 4h-4" />
   <circle cx="4" cy="20" r="2" /></g>
-      <text x="40" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#292824">CRUST50 applied ($19.99 saved)</text>
+      <text x="40" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#292824">CRUST50 applied ($20.00 saved)</text>
       <text x="344" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#15803D" text-anchor="end">APPLIED</text>
     </g>
 
@@ -166,26 +166,29 @@
     </g>
 
     <!-- Bill Details Breakdown Card -->
-    <g transform="translate(16, 470)">
-      <rect x="0" y="0" width="358" height="150" rx="16" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+    <g transform="translate(16, 460)">
+      <rect x="0" y="0" width="358" height="174" rx="16" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
       
-      <g transform="translate(16, 20)">
-        <text x="0" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Item Total</text>
+      <g transform="translate(16, 18)">
+        <text x="0" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Item Subtotal</text>
         <text x="326" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#292824" text-anchor="end">$39.99</text>
 
-        <text x="0" y="38" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Delivery Fee</text>
-        <text x="326" y="38" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#15803D" text-anchor="end">FREE</text>
+        <text x="0" y="36" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#15803D">CRUST50 Voucher (50% Off)</text>
+        <text x="326" y="36" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#15803D" text-anchor="end">-$20.00</text>
 
-        <text x="0" y="62" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Driver Partner Tip</text>
-        <text x="326" y="62" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#292824" text-anchor="end">$4.00</text>
+        <text x="0" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Delivery Fee (Over $35)</text>
+        <text x="326" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#15803D" text-anchor="end">FREE</text>
 
-        <text x="0" y="86" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Taxes &amp; Restaurant Charges</text>
-        <text x="326" y="86" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#292824" text-anchor="end">$3.20</text>
+        <text x="0" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Driver Partner Tip</text>
+        <text x="326" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#292824" text-anchor="end">$4.00</text>
 
-        <line x1="0" y1="98" x2="326" y2="98" stroke="#EFE8DE" stroke-width="1"/>
+        <text x="0" y="102" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Taxes &amp; Platform Fees (8%)</text>
+        <text x="326" y="102" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#292824" text-anchor="end">$1.61</text>
 
-        <text x="0" y="120" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#292824">To Pay</text>
-        <text x="326" y="120" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#D93B18" text-anchor="end">$47.19</text>
+        <line x1="0" y1="114" x2="326" y2="114" stroke="#EFE8DE" stroke-width="1"/>
+
+        <text x="0" y="136" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#292824">To Pay</text>
+        <text x="326" y="136" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#D93B18" text-anchor="end">$25.60</text>
       </g>
     </g>
 
@@ -193,7 +196,7 @@
     <g transform="translate(16, 756)">
       <rect x="0" y="0" width="358" height="52" rx="16" fill="#D93B18" filter="url(#btnShadow)"/>
       <g transform="translate(20, 17)">
-        <text x="0" y="14" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">$47.19</text>
+        <text x="0" y="14" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">$25.60</text>
         <text x="0" y="26" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#FEE2E2">TOTAL</text>
       </g>
       <text x="250" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Proceed to Pay &gt;</text>
@@ -211,8 +214,8 @@
     <g transform="translate(470, 100)">
       <!-- Title & Specification Header -->
       <g transform="translate(0, -32)">
-        <rect x="0" y="0" width="70" height="20" rx="4" fill="#D97706"/>
-        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROPOSED</text>
+        <rect x="0" y="0" width="70" height="20" rx="4" fill="#15803D"/>
+        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIRMED</text>
         <text x="80" y="15" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824">CHECK-01 — Payment & Address Checkout</text>
       </g>
 
@@ -318,7 +321,7 @@
     <!-- Place Order Button -->
     <g transform="translate(16, 756)">
       <rect x="0" y="0" width="358" height="52" rx="16" fill="#D93B18" filter="url(#btnShadow)"/>
-      <text x="179" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Pay $47.19 &amp; Place Order</text>
+      <text x="179" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Pay $25.60 &amp; Place Order</text>
     </g>
 
     

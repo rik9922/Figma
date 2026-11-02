@@ -22,6 +22,21 @@ const {
   renderScreen_DRV_NAV01,
   renderScreen_DRV_COMP01
 } = require('./screens-part2.cjs');
+const {
+  renderScreen_AUTH02,
+  renderScreen_AUTH01_ERROR,
+  renderScreen_SRCH01,
+  renderScreen_SRCH01_EMPTY,
+  renderScreen_CART01_EMPTY,
+  renderScreen_CHECK01_RETRY,
+  renderScreen_HIST01,
+  renderScreen_PROF01,
+  renderScreen_DRV_AUTH01,
+  renderScreen_DRV_ONB01,
+  renderScreen_DRV_PICK01,
+  renderScreen_DRV_EARN01,
+  renderScreen_HOME01_LOADING
+} = require('./screens-part3.cjs');
 
 const OUTPUT_DIR = path.resolve(__dirname, '../../projects/crust-and-q/assets/generated/artboards');
 
@@ -60,7 +75,7 @@ function wrapArtboardSvg({ width, height, title, subtitle, content }) {
 }
 
 function buildAllArtboards() {
-  console.log('Generating production artboards for Crust & Q...');
+  console.log('Generating complete 30-screen production artboard suite for Crust & Q...');
 
   // 1. Onboarding & Authentication (3 screens: ONB-01, AUTH-01, GUEST-01)
   const artboard1 = wrapArtboardSvg({
@@ -75,7 +90,7 @@ function buildAllArtboards() {
     `
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, '01_Customer_Onboarding_Artboard.svg'), artboard1);
-  console.log('Built 01_Customer_Onboarding_Artboard.svg');
+  console.log('Built 01_Customer_Onboarding_Artboard.svg (3 screens)');
 
   // 2. Home Hub & Location (2 screens: HOME-01, LOC-01)
   const artboard2 = wrapArtboardSvg({
@@ -89,7 +104,7 @@ function buildAllArtboards() {
     `
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, '02_Home_and_Location_Artboard.svg'), artboard2);
-  console.log('Built 02_Home_and_Location_Artboard.svg');
+  console.log('Built 02_Home_and_Location_Artboard.svg (2 screens)');
 
   // 3. Category & Menu (2 screens: MENU-01, CAT-01)
   const artboard3 = wrapArtboardSvg({
@@ -98,12 +113,12 @@ function buildAllArtboards() {
     title: 'CRUST & Q — FULL RESTAURANT MENU & CATEGORY CATALOG',
     subtitle: 'Journey 03 • Comprehensive Dish Catalog, Steak & BBQ Category View, Quick Filters, and Dish Customization',
     content: `
-      ${renderPhoneFrame(40, 100, 'Full Restaurant Menu Catalog', 'MENU-01', 'PROPOSED', renderScreen_MENU01())}
+      ${renderPhoneFrame(40, 100, 'Full Restaurant Menu Catalog', 'MENU-01', 'CONFIRMED', renderScreen_MENU01())}
       ${renderPhoneFrame(470, 100, 'Steak & Craft BBQ Exploration', 'CAT-01', 'PROPOSED', renderScreen_CAT01())}
     `
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, '03_Category_and_Menu_Artboard.svg'), artboard3);
-  console.log('Built 03_Category_and_Menu_Artboard.svg');
+  console.log('Built 03_Category_and_Menu_Artboard.svg (2 screens)');
 
   // 4. Customization & Pizza Builder (2 screens: PIZZA-01, DISH-01)
   const artboard4 = wrapArtboardSvg({
@@ -113,11 +128,11 @@ function buildAllArtboards() {
     subtitle: 'Journey 04 • Interactive 3D Pizza Builder Stage & Food Item Customization Sheet',
     content: `
       ${renderPhoneFrame(40, 100, '7-Step "Build Your Own Pizza"', 'PIZZA-01', 'CONFIRMED', renderScreen_PIZZA01())}
-      ${renderPhoneFrame(470, 100, 'Double Wagyu Burger Customization', 'DISH-01', 'PROPOSED', renderScreen_DISH01())}
+      ${renderPhoneFrame(470, 100, 'Double Wagyu Burger Customization', 'DISH-01', 'CONFIRMED', renderScreen_DISH01())}
     `
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, '04_Customization_and_Pizza_Builder_Artboard.svg'), artboard4);
-  console.log('Built 04_Customization_and_Pizza_Builder_Artboard.svg');
+  console.log('Built 04_Customization_and_Pizza_Builder_Artboard.svg (2 screens)');
 
   // 5. Cart & Checkout (2 screens: CART-01, CHECK-01)
   const artboard5 = wrapArtboardSvg({
@@ -127,11 +142,11 @@ function buildAllArtboards() {
     subtitle: 'Journey 05 • Itemized Cart Drawer, Tip Selector Pills, Apple Pay / Card Checkout',
     content: `
       ${renderPhoneFrame(40, 100, 'Itemized Feast Cart', 'CART-01', 'CONFIRMED', renderScreen_CART01())}
-      ${renderPhoneFrame(470, 100, 'Payment & Address Checkout', 'CHECK-01', 'PROPOSED', renderScreen_CHECK01())}
+      ${renderPhoneFrame(470, 100, 'Payment & Address Checkout', 'CHECK-01', 'CONFIRMED', renderScreen_CHECK01())}
     `
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, '05_Cart_and_Checkout_Artboard.svg'), artboard5);
-  console.log('Built 05_Cart_and_Checkout_Artboard.svg');
+  console.log('Built 05_Cart_and_Checkout_Artboard.svg (2 screens)');
 
   // 6. Live Google Maps Cartography (2 screens: ORDER-SUCC-01, TRACK-01)
   const artboard6 = wrapArtboardSvg({
@@ -140,12 +155,12 @@ function buildAllArtboards() {
     title: 'CRUST & Q — LIVE GOOGLE MAPS TRACKING & ORDER CONFIRMATION',
     subtitle: 'Journey 06 • Real Daylight Orlando Lake Eola Cartography, Live Driver GPS Marker & Route Polyline',
     content: `
-      ${renderPhoneFrame(40, 100, 'Order Placed Confirmation', 'ORDER-SUCC-01', 'PROPOSED', renderScreen_ORDER_SUCC01())}
+      ${renderPhoneFrame(40, 100, 'Order Placed Confirmation', 'ORDER-SUCC-01', 'CONFIRMED', renderScreen_ORDER_SUCC01())}
       ${renderPhoneFrame(470, 100, 'Live Customer Google Maps Tracking', 'TRACK-01', 'CONFIRMED', renderScreen_TRACK01())}
     `
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, '06_Live_Google_Maps_Cartography_Artboard.svg'), artboard6);
-  console.log('Built 06_Live_Google_Maps_Cartography_Artboard.svg');
+  console.log('Built 06_Live_Google_Maps_Cartography_Artboard.svg (2 screens)');
 
   // 7. Fulfillment & Driver Ops (4 screens: DRV-DASH-01, DRV-REQ-01, DRV-NAV-01, DRV-COMP-01)
   const artboard7 = wrapArtboardSvg({
@@ -157,13 +172,62 @@ function buildAllArtboards() {
       ${renderPhoneFrame(40, 100, 'Driver Shift Dashboard', 'DRV-DASH-01', 'CONFIRMED', renderScreen_DRV_DASH01())}
       ${renderPhoneFrame(460, 100, '15s Radar Offer Modal', 'DRV-REQ-01', 'CONFIRMED', renderScreen_DRV_REQ01())}
       ${renderPhoneFrame(880, 100, 'Turn-by-Turn Navigation HUD', 'DRV-NAV-01', 'CONFIRMED', renderScreen_DRV_NAV01())}
-      ${renderPhoneFrame(1300, 100, 'Delivery Proof Camera & Signature', 'DRV-COMP-01', 'PROPOSED', renderScreen_DRV_COMP01())}
+      ${renderPhoneFrame(1300, 100, 'Delivery Proof Camera & Signature', 'DRV-COMP-01', 'CONFIRMED', renderScreen_DRV_COMP01())}
     `
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, '07_Fulfillment_and_Driver_Ops_Artboard.svg'), artboard7);
-  console.log('Built 07_Fulfillment_and_Driver_Ops_Artboard.svg');
+  console.log('Built 07_Fulfillment_and_Driver_Ops_Artboard.svg (4 screens)');
 
-  console.log('All 7 master artboards successfully built!');
+  // 8. Customer Account & History (3 screens: HIST-01, PROF-01, AUTH-02)
+  const artboard8 = wrapArtboardSvg({
+    width: 1320,
+    height: 980,
+    title: 'CRUST & Q — CUSTOMER ACCOUNT, ORDER HISTORY & SECURITY',
+    subtitle: 'Journey 08 • Order History & Re-orders, Pitmaster Rewards Profile, and Password Recovery',
+    content: `
+      ${renderPhoneFrame(40, 100, 'Order History & Receipts', 'HIST-01', 'CONFIRMED', renderScreen_HIST01())}
+      ${renderPhoneFrame(470, 100, 'Customer Profile & Pitmaster Rewards', 'PROF-01', 'CONFIRMED', renderScreen_PROF01())}
+      ${renderPhoneFrame(900, 100, 'Forgot & Reset Password', 'AUTH-02', 'PROPOSED', renderScreen_AUTH02())}
+    `
+  });
+  fs.writeFileSync(path.join(OUTPUT_DIR, '08_Customer_Account_and_History_Artboard.svg'), artboard8);
+  console.log('Built 08_Customer_Account_and_History_Artboard.svg (3 screens)');
+
+  // 9. Search & System States (6 screens: SRCH-01, SRCH-01-EMPTY, CART-01-EMPTY, AUTH-01-ERROR, CHECK-01-RETRY, HOME-01-LOADING)
+  const artboard9 = wrapArtboardSvg({
+    width: 2580,
+    height: 980,
+    title: 'CRUST & Q — SEARCH, EMPTY STATES & ERROR RECOVERY FLOWS',
+    subtitle: 'Journey 09 • Live Search Results, Zero Results Fallback, Empty Cart, Form Validation Error, Payment Decline Retry, Feed Shimmer',
+    content: `
+      ${renderPhoneFrame(40, 100, 'Live Search & Results', 'SRCH-01', 'PROPOSED', renderScreen_SRCH01())}
+      ${renderPhoneFrame(460, 100, 'Search No Results Fallback', 'SRCH-01-EMPTY', 'PROPOSED', renderScreen_SRCH01_EMPTY())}
+      ${renderPhoneFrame(880, 100, 'Empty Feast Cart State', 'CART-01-EMPTY', 'PROPOSED', renderScreen_CART01_EMPTY())}
+      ${renderPhoneFrame(1300, 100, 'Inline Field Error Recovery', 'AUTH-01-ERROR', 'PROPOSED', renderScreen_AUTH01_ERROR())}
+      ${renderPhoneFrame(1720, 100, 'Payment Decline & Alternative Selector', 'CHECK-01-RETRY', 'PROPOSED', renderScreen_CHECK01_RETRY())}
+      ${renderPhoneFrame(2140, 100, 'Shimmer Skeleton Feed Loader', 'HOME-01-LOADING', 'PROPOSED', renderScreen_HOME01_LOADING())}
+    `
+  });
+  fs.writeFileSync(path.join(OUTPUT_DIR, '09_Search_and_System_States_Artboard.svg'), artboard9);
+  console.log('Built 09_Search_and_System_States_Artboard.svg (6 screens)');
+
+  // 10. Driver Onboarding & Finance (4 screens: DRV-AUTH-01, DRV-ONB-01, DRV-PICK-01, DRV-EARN-01)
+  const artboard10 = wrapArtboardSvg({
+    width: 1740,
+    height: 980,
+    title: 'CRUST & Q — DRIVER ONBOARDING, PICKUP & EARNINGS LEDGER',
+    subtitle: 'Operational Journey 10 • Driver Shift Login, Background Verification, Restaurant Pickup Checklist, Weekly Earnings & Cash-Out',
+    content: `
+      ${renderPhoneFrame(40, 100, 'Driver Login & Shift Access', 'DRV-AUTH-01', 'CONFIRMED', renderScreen_DRV_AUTH01())}
+      ${renderPhoneFrame(460, 100, 'Driver Document Verification', 'DRV-ONB-01', 'PROPOSED', renderScreen_DRV_ONB01())}
+      ${renderPhoneFrame(880, 100, 'Kitchen Pickup Verification', 'DRV-PICK-01', 'PROPOSED', renderScreen_DRV_PICK01())}
+      ${renderPhoneFrame(1300, 100, 'Courier Weekly Earnings Ledger', 'DRV-EARN-01', 'PROPOSED', renderScreen_DRV_EARN01())}
+    `
+  });
+  fs.writeFileSync(path.join(OUTPUT_DIR, '10_Driver_Onboarding_and_Finance_Artboard.svg'), artboard10);
+  console.log('Built 10_Driver_Onboarding_and_Finance_Artboard.svg (4 screens)');
+
+  console.log('All 10 master artboards (30 canonical screens) successfully built!');
 }
 
 buildAllArtboards();

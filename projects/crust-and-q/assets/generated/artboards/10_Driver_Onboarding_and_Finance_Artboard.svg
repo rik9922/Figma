@@ -1,0 +1,513 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1740 980" width="1740" height="980">
+  <defs>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#292824" flood-opacity="0.06"/>
+    </filter>
+    <filter id="btnShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#D93B18" flood-opacity="0.25"/>
+    </filter>
+    <filter id="dockShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.30"/>
+    </filter>
+    <filter id="cartShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Artboard Background & Border -->
+  <rect width="1740" height="980" rx="24" fill="#FAF7F2" stroke="#EAE3D6" stroke-width="2"/>
+
+  <!-- Artboard Master Header -->
+  <g transform="translate(40, 48)">
+    <circle cx="16" cy="16" r="16" fill="#D93B18"/>
+    <path d="M12 21L19 12" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M20 21L13 12" stroke="#FEF08A" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="44" y="16" font-family="Manrope, sans-serif" font-size="20" font-weight="900" fill="#292824" letter-spacing="-0.3">CRUST & Q — DRIVER ONBOARDING, PICKUP & EARNINGS LEDGER</text>
+    <text x="44" y="32" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#716E68">Operational Journey 10 • Driver Shift Login, Background Verification, Restaurant Pickup Checklist, Weekly Earnings & Cash-Out</text>
+  </g>
+
+  <!-- Canonical Frames Canvas -->
+  
+      
+    <g transform="translate(40, 100)">
+      <!-- Title & Specification Header -->
+      <g transform="translate(0, -32)">
+        <rect x="0" y="0" width="70" height="20" rx="4" fill="#15803D"/>
+        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIRMED</text>
+        <text x="80" y="15" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824">DRV-AUTH-01 — Driver Login & Shift Access</text>
+      </g>
+
+      <!-- Canonical Phone Bezel & Canvas -->
+      <defs>
+        <clipPath id="clip_DRV_AUTH_01">
+          <rect x="0" y="0" width="390" height="844" rx="40"/>
+        </clipPath>
+        <filter id="phoneShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#292824" flood-opacity="0.10"/>
+          <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#292824" flood-opacity="0.05"/>
+        </filter>
+      </defs>
+
+      <!-- Drop Shadow & Frame Outline -->
+      <rect x="0" y="0" width="390" height="844" rx="40" fill="#FFFFFF" filter="url(#phoneShadow)" stroke="#E5E0D8" stroke-width="2"/>
+
+      <!-- Clipped Screen Content -->
+      <g clip-path="url(#clip_DRV_AUTH_01)">
+        
+    <rect width="390" height="844" fill="#FFF8F0"/>
+    
+    <!-- iOS Dynamic Island & Status Bar -->
+    <g id="StatusBar">
+      <rect x="0" y="0" width="390" height="47" fill="transparent"/>
+      <!-- Time -->
+      <text x="32" y="32" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824" letter-spacing="-0.2">6:01</text>
+      <!-- Dynamic Island Pill -->
+      <rect x="135" y="10" width="120" height="28" rx="14" fill="#000000"/>
+      <circle cx="238" cy="24" r="5" fill="#1C1C1E"/>
+      <!-- Cellular, Wifi, Battery -->
+      <g transform="translate(315, 20)">
+        <!-- Cellular bars -->
+        <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#292824"/>
+        <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#292824"/>
+        <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#292824"/>
+        <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#292824"/>
+        <!-- Wifi icon -->
+        <path d="M22 2a11 11 0 0 1 12 0 M24 6a7 7 0 0 1 8 0 M26 9.5a3 3 0 0 1 4 0" stroke="#292824" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <!-- Battery frame & fill -->
+        <rect x="38" y="1" width="22" height="11" rx="3" stroke="#292824" stroke-width="1.2" fill="none"/>
+        <rect x="40" y="3" width="15" height="7" rx="1.5" fill="#292824"/>
+        <path d="M61 4.5v4" stroke="#292824" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+    </g>
+  
+
+    <!-- Driver Partner Brand Emblem -->
+    <g transform="translate(24, 100)">
+      <circle cx="36" cy="36" r="36" fill="#1C1B19"/>
+      <g transform="translate(18, 18) scale(1.5000)" stroke="#F59E0B" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5" />
+  <circle cx="5.5" cy="17.5" r="3.5" />
+  <circle cx="15" cy="5" r="1" />
+  <path d="M12 17.5V14l-3-3 4-3 2 3h2" /></g>
+      <text x="86" y="32" font-family="Manrope, sans-serif" font-size="22" font-weight="900" fill="#292824">Crust &amp; Q Courier</text>
+      <text x="86" y="52" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#D93B18">DELIVERY PARTNER PORTAL</text>
+    </g>
+
+    <!-- Sign In Card -->
+    <g transform="translate(24, 210)">
+      <text x="0" y="24" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#292824">Partner Shift Sign In</text>
+      <text x="0" y="44" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#716E68">Sign in with your verified driver credentials</text>
+
+      <!-- Driver Phone / ID Field -->
+      <g transform="translate(0, 68)">
+        <text x="0" y="-8" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#292824">Courier Mobile Number</text>
+        <rect x="0" y="0" width="342" height="52" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.5"/>
+        <g transform="translate(16, 16) scale(0.8333)" stroke="#9E9A90" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></g>
+        <text x="48" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#292824">+1 (407) 555-0192</text>
+      </g>
+
+      <!-- Password / PIN Field -->
+      <g transform="translate(0, 148)">
+        <text x="0" y="-8" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#292824">Shift Access PIN</text>
+        <rect x="0" y="0" width="342" height="52" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.5"/>
+        <g transform="translate(16, 16) scale(0.8333)" stroke="#9E9A90" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+  <path d="M7 11V7a5 5 0 0 1 10 0v4" /></g>
+        <text x="48" y="34" font-family="Inter, sans-serif" font-size="18" font-weight="800" fill="#292824">••••</text>
+      </g>
+
+      <!-- Sign In Button -->
+      <g transform="translate(0, 230)">
+        <rect x="0" y="0" width="342" height="52" rx="16" fill="#1C1B19" filter="url(#dockShadow)"/>
+        <text x="171" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Start Courier Shift</text>
+      </g>
+
+      <!-- Onboarding Link -->
+      <g transform="translate(0, 310)">
+        <text x="171" y="16" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#716E68" text-anchor="middle">
+          New courier? <tspan fill="#D93B18" font-weight="700">Apply to Deliver</tspan>
+        </text>
+      </g>
+    </g>
+
+    
+    <!-- iOS Home Indicator -->
+    <rect x="125" y="830" width="140" height="5" rx="2.5" fill="#292824" opacity="0.8"/>
+  
+  
+      </g>
+    </g>
+  
+      
+    <g transform="translate(460, 100)">
+      <!-- Title & Specification Header -->
+      <g transform="translate(0, -32)">
+        <rect x="0" y="0" width="70" height="20" rx="4" fill="#D97706"/>
+        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROPOSED</text>
+        <text x="80" y="15" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824">DRV-ONB-01 — Driver Document Verification</text>
+      </g>
+
+      <!-- Canonical Phone Bezel & Canvas -->
+      <defs>
+        <clipPath id="clip_DRV_ONB_01">
+          <rect x="0" y="0" width="390" height="844" rx="40"/>
+        </clipPath>
+        <filter id="phoneShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#292824" flood-opacity="0.10"/>
+          <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#292824" flood-opacity="0.05"/>
+        </filter>
+      </defs>
+
+      <!-- Drop Shadow & Frame Outline -->
+      <rect x="0" y="0" width="390" height="844" rx="40" fill="#FFFFFF" filter="url(#phoneShadow)" stroke="#E5E0D8" stroke-width="2"/>
+
+      <!-- Clipped Screen Content -->
+      <g clip-path="url(#clip_DRV_ONB_01)">
+        
+    <rect width="390" height="844" fill="#FFF8F0"/>
+    
+    <!-- iOS Dynamic Island & Status Bar -->
+    <g id="StatusBar">
+      <rect x="0" y="0" width="390" height="47" fill="transparent"/>
+      <!-- Time -->
+      <text x="32" y="32" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824" letter-spacing="-0.2">6:01</text>
+      <!-- Dynamic Island Pill -->
+      <rect x="135" y="10" width="120" height="28" rx="14" fill="#000000"/>
+      <circle cx="238" cy="24" r="5" fill="#1C1C1E"/>
+      <!-- Cellular, Wifi, Battery -->
+      <g transform="translate(315, 20)">
+        <!-- Cellular bars -->
+        <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#292824"/>
+        <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#292824"/>
+        <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#292824"/>
+        <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#292824"/>
+        <!-- Wifi icon -->
+        <path d="M22 2a11 11 0 0 1 12 0 M24 6a7 7 0 0 1 8 0 M26 9.5a3 3 0 0 1 4 0" stroke="#292824" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <!-- Battery frame & fill -->
+        <rect x="38" y="1" width="22" height="11" rx="3" stroke="#292824" stroke-width="1.2" fill="none"/>
+        <rect x="40" y="3" width="15" height="7" rx="1.5" fill="#292824"/>
+        <path d="M61 4.5v4" stroke="#292824" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+    </g>
+  
+
+    <!-- Navigation Bar -->
+    <g transform="translate(16, 56)">
+      <circle cx="20" cy="20" r="20" fill="#FFFFFF" filter="url(#softShadow)"/>
+      <g transform="translate(10, 10) scale(0.8333)" stroke="#292824" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" /></g>
+      <text x="56" y="26" font-family="Manrope, sans-serif" font-size="18" font-weight="800" fill="#292824">Courier Verification</text>
+    </g>
+
+    <!-- Header Description -->
+    <g transform="translate(24, 116)">
+      <text x="0" y="18" font-family="Manrope, sans-serif" font-size="20" font-weight="900" fill="#292824">Required Driver Documents</text>
+      <text x="0" y="38" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">
+        Upload clear photos to activate your shift delivery dispatch.
+      </text>
+    </g>
+
+    <!-- Document Checklist -->
+    <g transform="translate(16, 180)">
+      <!-- Item 1: Driver License (VERIFIED) -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="358" height="66" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <circle cx="28" cy="33" r="14" fill="#ECFDF5"/>
+        <g transform="translate(18, 23) scale(0.8333)" stroke="#047857" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g>
+        <text x="54" y="28" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#292824">Government Driver's License</text>
+        <text x="54" y="46" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#047857">VERIFIED (Exp: 08/2028)</text>
+      </g>
+
+      <!-- Item 2: Vehicle Insurance (VERIFIED) -->
+      <g transform="translate(0, 78)">
+        <rect x="0" y="0" width="358" height="66" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <circle cx="28" cy="33" r="14" fill="#ECFDF5"/>
+        <g transform="translate(18, 23) scale(0.8333)" stroke="#047857" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g>
+        <text x="54" y="28" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#292824">Vehicle Insurance Policy</text>
+        <text x="54" y="46" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#047857">VERIFIED (State Farm Active)</text>
+      </g>
+
+      <!-- Item 3: Background Check (IN REVIEW) -->
+      <g transform="translate(0, 156)">
+        <rect x="0" y="0" width="358" height="66" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <circle cx="28" cy="33" r="14" fill="#FEF3C7"/>
+        <g transform="translate(18, 23) scale(0.8333)" stroke="#B45309" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" />
+  <path d="M12 6v6l4 2" /></g>
+        <text x="54" y="28" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#292824">Background Check (Checkr)</text>
+        <text x="54" y="46" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#B45309">IN REVIEW (Est: 2 hrs)</text>
+      </g>
+
+      <!-- Item 4: Direct Deposit Bank Info (READY) -->
+      <g transform="translate(0, 234)">
+        <rect x="0" y="0" width="358" height="66" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <circle cx="28" cy="33" r="14" fill="#F4E9D9"/>
+        <g transform="translate(18, 23) scale(0.8333)" stroke="#D93B18" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+  <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></g>
+        <text x="54" y="28" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#292824">Direct Deposit (Routing / Acct)</text>
+        <text x="54" y="46" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#716E68">Chase Bank ****8821</text>
+      </g>
+    </g>
+
+    <!-- Bottom Action -->
+    <g transform="translate(16, 756)">
+      <rect x="0" y="0" width="358" height="52" rx="16" fill="#D93B18" filter="url(#btnShadow)"/>
+      <text x="179" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Continue to Vehicle Setup</text>
+    </g>
+
+    
+    <!-- iOS Home Indicator -->
+    <rect x="125" y="830" width="140" height="5" rx="2.5" fill="#292824" opacity="0.8"/>
+  
+  
+      </g>
+    </g>
+  
+      
+    <g transform="translate(880, 100)">
+      <!-- Title & Specification Header -->
+      <g transform="translate(0, -32)">
+        <rect x="0" y="0" width="70" height="20" rx="4" fill="#D97706"/>
+        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROPOSED</text>
+        <text x="80" y="15" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824">DRV-PICK-01 — Kitchen Pickup Verification</text>
+      </g>
+
+      <!-- Canonical Phone Bezel & Canvas -->
+      <defs>
+        <clipPath id="clip_DRV_PICK_01">
+          <rect x="0" y="0" width="390" height="844" rx="40"/>
+        </clipPath>
+        <filter id="phoneShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#292824" flood-opacity="0.10"/>
+          <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#292824" flood-opacity="0.05"/>
+        </filter>
+      </defs>
+
+      <!-- Drop Shadow & Frame Outline -->
+      <rect x="0" y="0" width="390" height="844" rx="40" fill="#FFFFFF" filter="url(#phoneShadow)" stroke="#E5E0D8" stroke-width="2"/>
+
+      <!-- Clipped Screen Content -->
+      <g clip-path="url(#clip_DRV_PICK_01)">
+        
+    <rect width="390" height="844" fill="#FFF8F0"/>
+    
+    <!-- iOS Dynamic Island & Status Bar -->
+    <g id="StatusBar">
+      <rect x="0" y="0" width="390" height="47" fill="transparent"/>
+      <!-- Time -->
+      <text x="32" y="32" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824" letter-spacing="-0.2">6:01</text>
+      <!-- Dynamic Island Pill -->
+      <rect x="135" y="10" width="120" height="28" rx="14" fill="#000000"/>
+      <circle cx="238" cy="24" r="5" fill="#1C1C1E"/>
+      <!-- Cellular, Wifi, Battery -->
+      <g transform="translate(315, 20)">
+        <!-- Cellular bars -->
+        <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#292824"/>
+        <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#292824"/>
+        <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#292824"/>
+        <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#292824"/>
+        <!-- Wifi icon -->
+        <path d="M22 2a11 11 0 0 1 12 0 M24 6a7 7 0 0 1 8 0 M26 9.5a3 3 0 0 1 4 0" stroke="#292824" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <!-- Battery frame & fill -->
+        <rect x="38" y="1" width="22" height="11" rx="3" stroke="#292824" stroke-width="1.2" fill="none"/>
+        <rect x="40" y="3" width="15" height="7" rx="1.5" fill="#292824"/>
+        <path d="M61 4.5v4" stroke="#292824" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+    </g>
+  
+
+    <!-- Top Navigation Header -->
+    <g transform="translate(16, 56)">
+      <circle cx="20" cy="20" r="20" fill="#FFFFFF" filter="url(#softShadow)"/>
+      <g transform="translate(10, 10) scale(0.8333)" stroke="#292824" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" /></g>
+      <g transform="translate(56, 0)">
+        <text x="0" y="18" font-family="Manrope, sans-serif" font-size="16" font-weight="800" fill="#292824">Crust &amp; Q Smokehouse</text>
+        <text x="0" y="34" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#15803D">ARRIVED AT RESTAURANT</text>
+      </g>
+    </g>
+
+    <!-- Order Pin Badge -->
+    <g transform="translate(16, 120)">
+      <rect x="0" y="0" width="358" height="84" rx="18" fill="#1C1B19" filter="url(#dockShadow)"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="16" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8A49C">ORDER TO COLLECT</text>
+        <text x="0" y="42" font-family="Manrope, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF">#CQ-98241</text>
+        <text x="318" y="36" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#F59E0B" text-anchor="end">2 ITEMS</text>
+      </g>
+    </g>
+
+    <!-- Checklist of Items in Bag -->
+    <g transform="translate(16, 224)">
+      <text x="0" y="14" font-family="Manrope, sans-serif" font-size="16" font-weight="800" fill="#292824">Verify Bag Contents with Kitchen</text>
+
+      <!-- Checklist Item 1 -->
+      <g transform="translate(0, 28)">
+        <rect x="0" y="0" width="358" height="54" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <rect x="14" y="14" width="24" height="24" rx="7" fill="#D93B18"/>
+        <g transform="translate(16, 16) scale(0.8333)" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g>
+        <text x="48" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#292824">1x Hot Honey Pepperoni Pizza (14")</text>
+      </g>
+
+      <!-- Checklist Item 2 -->
+      <g transform="translate(0, 92)">
+        <rect x="0" y="0" width="358" height="54" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <rect x="14" y="14" width="24" height="24" rx="7" fill="#D93B18"/>
+        <g transform="translate(16, 16) scale(0.8333)" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g>
+        <text x="48" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#292824">1x Double Smash Wagyu Burger + Fries</text>
+      </g>
+
+      <!-- Kitchen Staff Seal Check -->
+      <g transform="translate(0, 160)">
+        <rect x="0" y="0" width="358" height="54" rx="14" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <rect x="14" y="14" width="24" height="24" rx="7" fill="#D93B18"/>
+        <g transform="translate(16, 16) scale(0.8333)" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g>
+        <text x="48" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#292824">Tamper-Evident Freshness Seal Attached</text>
+      </g>
+    </g>
+
+    <!-- Customer Drop-off Destination Info -->
+    <g transform="translate(16, 470)">
+      <rect x="0" y="0" width="358" height="90" rx="16" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+      <g transform="translate(16, 18)">
+        <text x="0" y="14" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#716E68">DROP-OFF DESTINATION</text>
+        <text x="0" y="34" font-family="Manrope, sans-serif" font-size="15" font-weight="800" fill="#292824">Sarah Jenkins • 420 E Robinson St, Apt 4B</text>
+        <text x="0" y="52" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Note: Gate code #4821 • Leave at doorstep</text>
+      </g>
+    </g>
+
+    <!-- Bottom Action: Confirm Pickup & Start Delivery -->
+    <g transform="translate(16, 756)">
+      <rect x="0" y="0" width="358" height="52" rx="16" fill="#D93B18" filter="url(#btnShadow)"/>
+      <text x="179" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Confirm Pickup &amp; Start Navigation</text>
+    </g>
+
+    
+    <!-- iOS Home Indicator -->
+    <rect x="125" y="830" width="140" height="5" rx="2.5" fill="#292824" opacity="0.8"/>
+  
+  
+      </g>
+    </g>
+  
+      
+    <g transform="translate(1300, 100)">
+      <!-- Title & Specification Header -->
+      <g transform="translate(0, -32)">
+        <rect x="0" y="0" width="70" height="20" rx="4" fill="#D97706"/>
+        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROPOSED</text>
+        <text x="80" y="15" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824">DRV-EARN-01 — Courier Weekly Earnings Ledger</text>
+      </g>
+
+      <!-- Canonical Phone Bezel & Canvas -->
+      <defs>
+        <clipPath id="clip_DRV_EARN_01">
+          <rect x="0" y="0" width="390" height="844" rx="40"/>
+        </clipPath>
+        <filter id="phoneShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#292824" flood-opacity="0.10"/>
+          <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#292824" flood-opacity="0.05"/>
+        </filter>
+      </defs>
+
+      <!-- Drop Shadow & Frame Outline -->
+      <rect x="0" y="0" width="390" height="844" rx="40" fill="#FFFFFF" filter="url(#phoneShadow)" stroke="#E5E0D8" stroke-width="2"/>
+
+      <!-- Clipped Screen Content -->
+      <g clip-path="url(#clip_DRV_EARN_01)">
+        
+    <rect width="390" height="844" fill="#FFF8F0"/>
+    
+    <!-- iOS Dynamic Island & Status Bar -->
+    <g id="StatusBar">
+      <rect x="0" y="0" width="390" height="47" fill="transparent"/>
+      <!-- Time -->
+      <text x="32" y="32" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824" letter-spacing="-0.2">6:01</text>
+      <!-- Dynamic Island Pill -->
+      <rect x="135" y="10" width="120" height="28" rx="14" fill="#000000"/>
+      <circle cx="238" cy="24" r="5" fill="#1C1C1E"/>
+      <!-- Cellular, Wifi, Battery -->
+      <g transform="translate(315, 20)">
+        <!-- Cellular bars -->
+        <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#292824"/>
+        <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="#292824"/>
+        <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#292824"/>
+        <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#292824"/>
+        <!-- Wifi icon -->
+        <path d="M22 2a11 11 0 0 1 12 0 M24 6a7 7 0 0 1 8 0 M26 9.5a3 3 0 0 1 4 0" stroke="#292824" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <!-- Battery frame & fill -->
+        <rect x="38" y="1" width="22" height="11" rx="3" stroke="#292824" stroke-width="1.2" fill="none"/>
+        <rect x="40" y="3" width="15" height="7" rx="1.5" fill="#292824"/>
+        <path d="M61 4.5v4" stroke="#292824" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+    </g>
+  
+
+    <!-- Navigation Header -->
+    <g transform="translate(16, 56)">
+      <text x="0" y="24" font-family="Manrope, sans-serif" font-size="22" font-weight="900" fill="#292824">Courier Earnings</text>
+      <text x="0" y="44" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Marcus Vance • Silver Honda Civic (FL-7492-CQ)</text>
+    </g>
+
+    <!-- Weekly Total Hero Card -->
+    <g transform="translate(16, 126)">
+      <rect x="0" y="0" width="358" height="150" rx="20" fill="#1C1B19" filter="url(#dockShadow)"/>
+      
+      <g transform="translate(24, 22)">
+        <text x="0" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8A49C">THIS WEEK'S EARNINGS (OCT 27 - NOV 02)</text>
+        <text x="0" y="52" font-family="Manrope, sans-serif" font-size="34" font-weight="900" fill="#FFFFFF">$748.20</text>
+        
+        <!-- Metrics Breakdown Row -->
+        <g transform="translate(0, 76)">
+          <text x="0" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8A49C">Trips: <tspan fill="#FFFFFF" font-weight="800">42</tspan></text>
+          <text x="80" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8A49C">Online: <tspan fill="#FFFFFF" font-weight="800">24.5 hrs</tspan></text>
+          <text x="180" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8A49C">Tips: <tspan fill="#F59E0B" font-weight="800">$186.00</tspan></text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Instant Cash-Out Card -->
+    <g transform="translate(16, 296)">
+      <rect x="0" y="0" width="358" height="68" rx="16" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2" filter="url(#softShadow)"/>
+      <g transform="translate(16, 16)">
+        <text x="0" y="16" font-family="Manrope, sans-serif" font-size="15" font-weight="800" fill="#292824">Available to Cash Out: $142.50</text>
+        <text x="0" y="34" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Instant transfer to Chase ****8821</text>
+        
+        <rect x="220" y="4" width="106" height="32" rx="10" fill="#15803D"/>
+        <text x="273" y="24" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Cash Out</text>
+      </g>
+    </g>
+
+    <!-- Daily Breakdown Ledger -->
+    <g transform="translate(16, 384)">
+      <text x="0" y="16" font-family="Manrope, sans-serif" font-size="16" font-weight="800" fill="#292824">Recent Shifts</text>
+
+      <!-- Today -->
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="358" height="52" rx="12" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <text x="16" y="31" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#292824">Today, Nov 02 (8 trips)</text>
+        <text x="342" y="31" font-family="Manrope, sans-serif" font-size="14" font-weight="900" fill="#D93B18" text-anchor="end">$142.50</text>
+      </g>
+
+      <!-- Yesterday -->
+      <g transform="translate(0, 90)">
+        <rect x="0" y="0" width="358" height="52" rx="12" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <text x="16" y="31" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#292824">Yesterday, Nov 01 (11 trips)</text>
+        <text x="342" y="31" font-family="Manrope, sans-serif" font-size="14" font-weight="900" fill="#292824" text-anchor="end">$198.00</text>
+      </g>
+
+      <!-- Friday -->
+      <g transform="translate(0, 150)">
+        <rect x="0" y="0" width="358" height="52" rx="12" fill="#FFFFFF" stroke="#EFE8DE" stroke-width="1.2"/>
+        <text x="16" y="31" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#292824">Friday, Oct 31 (14 trips)</text>
+        <text x="342" y="31" font-family="Manrope, sans-serif" font-size="14" font-weight="900" fill="#292824" text-anchor="end">$246.70</text>
+      </g>
+    </g>
+
+    
+    <!-- iOS Home Indicator -->
+    <rect x="125" y="830" width="140" height="5" rx="2.5" fill="#292824" opacity="0.8"/>
+  
+  
+      </g>
+    </g>
+  
+    
+</svg>

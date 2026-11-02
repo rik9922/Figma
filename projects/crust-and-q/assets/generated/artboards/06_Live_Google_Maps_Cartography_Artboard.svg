@@ -32,8 +32,8 @@
     <g transform="translate(40, 100)">
       <!-- Title & Specification Header -->
       <g transform="translate(0, -32)">
-        <rect x="0" y="0" width="70" height="20" rx="4" fill="#D97706"/>
-        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROPOSED</text>
+        <rect x="0" y="0" width="70" height="20" rx="4" fill="#15803D"/>
+        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIRMED</text>
         <text x="80" y="15" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824">ORDER-SUCC-01 — Order Placed Confirmation</text>
       </g>
 
@@ -112,7 +112,7 @@
       <g transform="translate(114, 20)">
         <text x="0" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#292824">Crust &amp; Q — Downtown</text>
         <text x="0" y="34" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#716E68">2 Items: Hot Pepperoni, Smash Burger</text>
-        <text x="0" y="56" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#D93B18">Total Paid: $47.19</text>
+        <text x="0" y="56" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#D93B18">Total Paid: $25.60</text>
         
         <g transform="translate(0, 68)">
           <rect x="0" y="0" width="110" height="24" rx="6" fill="#F4E9D9"/>
@@ -282,7 +282,7 @@
       <!-- ETA Display -->
       <g transform="translate(24, 28)">
         <text x="0" y="24" font-family="Manrope, sans-serif" font-size="24" font-weight="900" fill="#D93B18">Arriving in 14 mins</text>
-        <text x="0" y="44" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Estimated delivery by 6:24 PM</text>
+        <text x="0" y="44" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#716E68">Estimated delivery by 6:15 PM</text>
 
         <!-- 4-Stage Step Tracker -->
         <g transform="translate(0, 60)">

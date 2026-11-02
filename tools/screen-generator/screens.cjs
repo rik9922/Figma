@@ -292,7 +292,7 @@ function renderScreen_HOME01() {
 
       <!-- VEG / CRAFT MODE Toggle -->
       <g transform="translate(338, 4)">
-        <text x="12" y="10" font-family="Inter, sans-serif" font-size="8" font-weight="800" fill="${TOKENS.textSecondary}" text-anchor="middle">VEG</text>
+        <text x="12" y="10" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="${TOKENS.textSecondary}" text-anchor="middle">VEG</text>
         <rect x="0" y="14" width="26" height="15" rx="7.5" fill="#E5E0D8"/>
         <circle cx="7.5" cy="21.5" r="5.5" fill="#FFFFFF" filter="url(#softShadow)"/>
       </g>
@@ -342,10 +342,10 @@ function renderScreen_HOME01() {
     <g transform="translate(16, 296)">
       <!-- Left: Meals Under $15 Promo Card -->
       <g transform="translate(0, 0)">
-        <rect x="0" y="0" width="58" height="66" rx="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1"/>
-        <text x="29" y="14" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="${TOKENS.primary}" text-anchor="middle">MEALS UNDER</text>
-        <text x="29" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="900" fill="${TOKENS.primary}" text-anchor="middle">$15</text>
-        <text x="29" y="52" font-family="Inter, sans-serif" font-size="7" font-weight="600" fill="${TOKENS.textSecondary}" text-anchor="middle">Explore &gt;</text>
+        <rect x="0" y="0" width="62" height="68" rx="12" fill="#FEE2E2" stroke="#FECACA" stroke-width="1.2"/>
+        <text x="31" y="16" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="${TOKENS.primary}" text-anchor="middle">UNDER</text>
+        <text x="31" y="36" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="${TOKENS.primary}" text-anchor="middle">$15</text>
+        <text x="31" y="54" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textSecondary}" text-anchor="middle">DEALS &gt;</text>
       </g>
 
       <!-- Category 1: "All" (Active with Red Underline!) -->
@@ -435,107 +435,107 @@ function renderScreen_HOME01() {
       <!-- Row 1: 3 Food Cards -->
       <!-- Card 1: Truffle Pizza -->
       <g transform="translate(0, 24)">
-        <rect x="0" y="0" width="112" height="114" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
         <defs><clipPath id="recClip1"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
         ${truffleBase64 ? `<image href="${truffleBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#recClip1)"/>` : ''}
         <!-- Discount Tag -->
-        <rect x="4" y="4" width="62" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">50% OFF</text>
+        <rect x="4" y="4" width="64" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="36" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">50% OFF</text>
         <!-- Rating Pill -->
-        <rect x="6" y="52" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 54, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.8</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.8</text>
         <!-- Title & Time -->
-        <text x="6" y="80" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Truffle Pizza</text>
-        <g transform="translate(6, 88)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">15-20 min</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Truffle Pizza</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">15-20 min</text>
         </g>
       </g>
 
       <!-- Card 2: Smoked Ribs -->
       <g transform="translate(122, 24)">
-        <rect x="0" y="0" width="112" height="114" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
         <defs><clipPath id="recClip2"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
         ${ribsBase64 ? `<image href="${ribsBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#recClip2)"/>` : ''}
-        <rect x="4" y="4" width="70" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">$5 OFF >$25</text>
-        <rect x="6" y="52" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 54, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.9</text>
-        <text x="6" y="80" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Smoked Ribs</text>
-        <g transform="translate(6, 88)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">20-25 min</text>
+        <rect x="4" y="4" width="74" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="41" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">$5 OFF &gt;$25</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.9</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Smoked Ribs</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">20-25 min</text>
         </g>
       </g>
 
       <!-- Card 3: Texas Brisket -->
       <g transform="translate(244, 24)">
-        <rect x="0" y="0" width="112" height="114" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
         <defs><clipPath id="recClip3"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
         ${brisketBase64 ? `<image href="${brisketBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#recClip3)"/>` : ''}
-        <rect x="4" y="4" width="62" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">PITMASTER</text>
-        <rect x="6" y="52" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 54, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.9</text>
-        <text x="6" y="80" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Texas Brisket</text>
-        <g transform="translate(6, 88)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
+        <rect x="4" y="4" width="70" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="39" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">PITMASTER</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.9</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Texas Brisket</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
         </g>
       </g>
 
       <!-- Row 2: 3 Food Cards -->
       <!-- Card 4: Hot Honey Pepperoni -->
-      <g transform="translate(0, 146)">
-        <rect x="0" y="0" width="112" height="114" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+      <g transform="translate(0, 154)">
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
         <defs><clipPath id="recClip4"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
         ${pepperoniBase64 ? `<image href="${pepperoniBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#recClip4)"/>` : ''}
-        <rect x="4" y="4" width="66" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">BESTSELLER</text>
-        <rect x="6" y="52" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 54, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.9</text>
-        <text x="6" y="80" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Hot Pepperoni</text>
-        <g transform="translate(6, 88)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">15-20 min</text>
+        <rect x="4" y="4" width="70" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="39" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">BESTSELLER</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.9</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Hot Pepperoni</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">15-20 min</text>
         </g>
       </g>
 
       <!-- Card 5: Smash Burger -->
-      <g transform="translate(122, 146)">
-        <rect x="0" y="0" width="112" height="114" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+      <g transform="translate(122, 154)">
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
         <defs><clipPath id="recClip5"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
         ${burgerBase64 ? `<image href="${burgerBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#recClip5)"/>` : ''}
-        <rect x="4" y="4" width="66" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">BUY 1 GET 1</text>
-        <rect x="6" y="52" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 54, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.8</text>
-        <text x="6" y="80" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Smash Burger</text>
-        <g transform="translate(6, 88)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">15-20 min</text>
+        <rect x="4" y="4" width="74" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="41" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">BUY 1 GET 1</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.8</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Smash Burger</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">15-20 min</text>
         </g>
       </g>
 
       <!-- Card 6: Angus Ribeye -->
-      <g transform="translate(244, 146)">
-        <rect x="0" y="0" width="112" height="114" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
+      <g transform="translate(244, 154)">
+        <rect x="0" y="0" width="112" height="122" rx="14" fill="#FFFFFF" stroke="${TOKENS.cardBorder}" stroke-width="1.2" filter="url(#softShadow)"/>
         <defs><clipPath id="recClip6"><rect x="0" y="0" width="112" height="66" rx="14"/></clipPath></defs>
         ${ribeyeBase64 ? `<image href="${ribeyeBase64}" x="0" y="0" width="112" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#recClip6)"/>` : ''}
-        <rect x="4" y="4" width="62" height="14" rx="3" fill="#1C1B19" opacity="0.85"/>
-        <text x="7" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF">PREMIUM</text>
-        <rect x="6" y="52" width="34" height="15" rx="3" fill="#15803D"/>
-        ${renderStar({ x: 9, y: 54, size: 10, color: '#FFFFFF', fill: '#FFFFFF' })}
-        <text x="21" y="63" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">4.9</text>
-        <text x="6" y="80" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="${TOKENS.textPrimary}">Angus Ribeye</text>
-        <g transform="translate(6, 88)">
-          ${renderLightning({ x: 0, y: 0, size: 10, color: '#16A34A', fill: '#16A34A' })}
-          <text x="12" y="9" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
+        <rect x="4" y="4" width="66" height="16" rx="4" fill="#1C1B19" opacity="0.90"/>
+        <text x="37" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">PREMIUM</text>
+        <rect x="6" y="48" width="38" height="16" rx="4" fill="#15803D"/>
+        ${renderStar({ x: 9, y: 50, size: 11, color: '#FFFFFF', fill: '#FFFFFF' })}
+        <text x="24" y="60" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">4.9</text>
+        <text x="6" y="84" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="${TOKENS.textPrimary}">Angus Ribeye</text>
+        <g transform="translate(6, 94)">
+          ${renderLightning({ x: 0, y: 0, size: 11, color: '#16A34A', fill: '#16A34A' })}
+          <text x="14" y="10" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="${TOKENS.textSecondary}">25-30 min</text>
         </g>
       </g>
     </g>

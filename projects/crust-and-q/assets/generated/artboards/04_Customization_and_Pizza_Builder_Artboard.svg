@@ -164,8 +164,8 @@
     <g transform="translate(470, 100)">
       <!-- Title & Specification Header -->
       <g transform="translate(0, -32)">
-        <rect x="0" y="0" width="70" height="20" rx="4" fill="#D97706"/>
-        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROPOSED</text>
+        <rect x="0" y="0" width="70" height="20" rx="4" fill="#15803D"/>
+        <text x="35" y="14" font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIRMED</text>
         <text x="80" y="15" font-family="Inter, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#292824">DISH-01 — Double Wagyu Burger Customization</text>
       </g>
 
