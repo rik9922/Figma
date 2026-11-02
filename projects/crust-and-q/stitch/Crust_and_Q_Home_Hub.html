@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crust &amp; Q - Artisanal Smokehouse &amp; Oven Hub</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom theme -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#fff0ed",
+            "surface-container-high": "#F5ECE0",
+            "secondary-container": "#ECFDF5",
+            "on-surface": "#292824",
+            "error": "#DC2626",
+            "secondary-fixed": "#b2f0d0",
+            "on-secondary-container": "#356f56",
+            "on-background": "#271814",
+            "error-container": "#FEE2E2",
+            "inverse-surface": "#3e2c28",
+            "surface-variant": "#FAF6F0",
+            "surface-tint": "#b72400",
+            "tertiary-fixed": "#d3e4ff",
+            "on-primary-fixed": "#3d0600",
+            "outline": "#EAE0D2",
+            "tertiary-fixed-dim": "#a2c9ff",
+            "inverse-on-surface": "#FFFFFF",
+            "tertiary-container": "#0078d1",
+            "on-tertiary": "#FFFFFF",
+            "surface-bright": "#FFFFFF",
+            "primary-container": "#d93b18",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container-highest": "#EFE5D6",
+            "on-secondary-fixed": "#002114",
+            "primary-fixed": "#ffdad2",
+            "on-primary": "#FFFFFF",
+            "on-error-container": "#7F1D1D",
+            "tertiary": "#D97706",
+            "surface": "#FFFFFF",
+            "on-primary-container": "#991B1B",
+            "surface-dim": "#FAF6F0",
+            "outline-variant": "#D6C7B2",
+            "on-tertiary-container": "#ffffff",
+            "on-tertiary-fixed-variant": "#004881",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#001c38",
+            "secondary-fixed-dim": "#97d3b5",
+            "on-primary-fixed-variant": "#8c1900",
+            "surface-container": "#ffe9e5",
+            "secondary": "#2e6950",
+            "background": "#FFF8F0",
+            "on-surface-variant": "#57534E",
+            "inverse-primary": "#ffb4a3",
+            "primary": "#b42300",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#125139",
+            "primary-fixed-dim": "#ffb4a3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "3rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "display-lg-mobile": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "display-lg": ["Manrope"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Manrope"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["0.8125rem", { "lineHeight": "1.125rem", "letterSpacing": "0.02em", "fontWeight": "700" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-sm": ["1.05rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "700" }],
+            "display-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "display-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "500" }],
+            "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-28 selection:bg-primary selection:text-white">
+<!-- Mobile Screen Container -->
+<div class="max-w-md mx-auto min-h-screen relative flex flex-col bg-background">
+<!-- 1. Top Location Bar (Adheres to TopAppBar Shared Component logic) -->
+<header class="docked full-width top-0 sticky z-40 bg-surface shadow-sm transition-all duration-150">
+<div class="flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<!-- Delivery Location Selector Pill -->
+<button class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-left max-w-[70%]">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" data-icon="location_on">location_on</span>
+<div class="flex flex-col truncate">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase font-bold">DELIVERING TO</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate leading-none">420 E Robinson St, Orlando FL</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0" data-icon="expand_more">expand_more</span>
+</button>
+<!-- Right Quick Action Bar (Cart & Notifications) -->
+<div class="flex items-center gap-2 shrink-0">
+<button class="relative w-10 h-10 rounded-full flex items-center justify-center bg-surface hover:bg-surface-container-low text-on-surface transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full ring-2 ring-surface"></span>
+</button>
+<button aria-label="Shopping Cart" class="relative w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary hover:bg-primary-container transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-surface text-primary border-2 border-primary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold leading-none shadow">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 px-margin-mobile space-y-6 pt-3">
+<!-- 2. Search & Filter Bar -->
+<section class="space-y-3">
+<div class="flex items-center gap-2">
+<!-- Main Search Input -->
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]" data-icon="search">search</span>
+</span>
+<input class="w-full pl-10 pr-10 py-2.5 bg-surface rounded-full text-on-surface font-body-sm text-body-sm shadow-sm placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface transition-all border border-outline/60" placeholder="Search wood-fired pizza, smoked brisket, ribs..." type="text"/>
+<button class="absolute inset-y-0 right-3 flex items-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Veg-Only Dietary Switch -->
+<div class="flex items-center gap-1.5 bg-surface px-3 py-2 rounded-full shadow-sm shrink-0 border border-outline/60">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="eco">eco</span>
+<span class="font-label-sm text-label-sm text-on-surface">Veg Only</span>
+<label class="relative inline-flex items-center cursor-pointer ml-0.5">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4.5 bg-outline peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- 3. Hero Promo Banner Carousel -->
+<section class="relative">
+<div class="relative rounded-2xl overflow-hidden shadow-md bg-inverse-surface text-surface">
+<!-- Background Composite Imagery -->
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover opacity-50 mix-blend-overlay" data-alt="Gourmet close up view of charred artisanal Neapolitan wood-fired pizza with blistered crust next to sliced thick Texas smoked brisket with aromatic smoke in a moody warm artisanal restaurant kitchen, ambient ember glow lighting with rich warm cream and terracotta tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrCak74iMRd6KUCx032g7CI-c2-C-BaK9BeTLuu4K4ZO_799FnpSVIfgbYOBWy_zY9kHF73MRk-0opHwFch9iWGV5xaEGkAWeOi9Q6v-dd13H27hfGKacIqVfC8lCHEbZI0SJD3XjQLLMaa2piW_dcSzRn4pX7aSS_8og87hG7RvYshXpQcEaHB_ZhjocEURTP64XHfUmGIxRRbTagseQXg1JYhPeBYAbM-JhF9XHzC3S9aNEmgJm7IDC9HFgr1RlyQKArmjAsuzk"/>
+<div class="absolute inset-0 bg-gradient-to-r from-inverse-surface via-inverse-surface/85 to-transparent"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative p-5 z-10 space-y-2">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/20 backdrop-blur-md text-primary-fixed border border-primary/40 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department">local_fire_department</span>
+<span>CRAFT SMOKED &amp; FIRED</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-surface tracking-tight leading-tight">
+              50% OFF Craft Pitmaster &amp; Pizza Specials
+            </h2>
+<p class="font-body-sm text-body-sm text-surface-variant/90">
+              Use code <strong class="text-tertiary-fixed underline underline-offset-2">FIREDUP50</strong> • Min $25
+            </p>
+<div class="pt-2 flex items-center justify-between">
+<button class="bg-primary text-on-primary hover:bg-primary-container px-4 py-2 rounded-xl font-label-md text-label-md flex items-center gap-1.5 shadow-md active:scale-95 transition-all">
+<span>Order Now</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Carousel Indicators -->
+<div class="flex items-center gap-1.5 pr-2">
+<span class="w-5 h-1.5 rounded-full bg-primary"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface/40"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface/40"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Circular Dish Category Row (Horizontal Scroll) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Explore Craft Cuisines</h3>
+<span class="font-label-sm text-label-sm text-primary font-bold cursor-pointer hover:underline">View Menu</span>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-1 pt-0.5">
+<!-- Category 1: All (Active) -->
+<button class="flex flex-col items-center gap-1.5 shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-md ring-4 ring-primary-fixed/40 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[28px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">All</span>
+</button>
+<!-- Category 2: Pizza -->
+<button class="flex flex-col items-center gap-1.5 shrink-0 group">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm border-2 border-outline group-hover:border-primary transition-all group-active:scale-95 bg-surface">
+<img class="w-full h-full object-cover" data-alt="Artisanal personal round Margherita pizza with blistered crust, melted fresh buffalo mozzarella, vibrant San Marzano tomato puree, and charred fresh basil leaves, isolated top-down appetizing culinary shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCip4j6zU27JDLxKz7RP6DJ5jh8iaLwryzMitDmYxEIv3Nqa9S21xs6nOEJlNZew4XxpSRlPx0teXyjoZxmJaANs36Ft22pDWFMAVc4dyXMcy3iC_Bk9MG1ptUviKqFc_d-rKW-d0iVItbb10E7ZDagVyy5lQvEhdOkavDkqwtkPrR_cRqy103YLYAimLLuM5tr-R9jw35Uk9MTN5nFsjBnlnG-v5VGg9R61KDeVmNCaVR8mOpB_Y1VbaF6MIOFomS6HgazmuWzoOs"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[70px]">Wood-Fired</span>
+</button>
+<!-- Category 3: Smoked BBQ -->
+<button class="flex flex-col items-center gap-1.5 shrink-0 group">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm border-2 border-outline group-hover:border-primary transition-all group-active:scale-95 bg-surface">
+<img class="w-full h-full object-cover" data-alt="Texas smoked beef brisket slices showcasing coarse black pepper bark and dark pink smoke ring on a butcher paper surface, succulent artisan food photography with warm studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9y2Ac-HovuGmkdV1MYToF7RCQPMJ1ZXMVIuaSphxLLrutYcfLy4yDTBpMe0FnhNZLgQ2tJDyCmRnYuaN9iEHQwwpOWQYq3fCY3CN9IG1Lw5mvxIvq6zf28EnXzGA-09I6Zl1BgyITA74CgYgxgcSInJhaChrixpHmmOd363BH5xl_qllqt3SVry1DRJ99m09HnqA2Sp3e7JLnz6-I2VrHljzLNKePCSIIMTRjCwbHhydxRlP3pkCBzO4RSKHeoukHCCuSwztWawU"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[70px]">Craft BBQ</span>
+</button>
+<!-- Category 4: Smash Burgers -->
+<button class="flex flex-col items-center gap-1.5 shrink-0 group">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm border-2 border-outline group-hover:border-primary transition-all group-active:scale-95 bg-surface">
+<img class="w-full h-full object-cover" data-alt="Double gourmet smash burger with lacy seared crisp beef edges, melted cheddar dripping down, and toasted brioche bun, delicious rustic high-end comfort food photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcinsqzwjaBuLAjP3_yfktkjzcI8L84G9zSxgOPhSCgqAzYBzzSRQfvo8FVB1Eb8Z5vP0D8r2K13Aq6VkGYc_lu5kBxRYEZiPayBuu2Fa9afdZ_qh5kowrMoZy6B6ZAdDjJM1wlxQs7GHWKouLTtXyShhh4ILHoZEpZE0ksDfzN-O2cSkGij2zVVafu8Zsj6mKuNQUXNqGFqxi2dRy3HPElMD981BXpFkVqB2dJHWfOpSw17WguJ3XApNr--Zs1hhsQK_DZGZbyHw"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[70px]">Burgers</span>
+</button>
+<!-- Category 5: Steaks -->
+<button class="flex flex-col items-center gap-1.5 shrink-0 group">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm border-2 border-outline group-hover:border-primary transition-all group-active:scale-95 bg-surface">
+<img class="w-full h-full object-cover" data-alt="Thick cut wood-grilled Angus ribeye steak with diamond char marks and herb compound butter melting on top, rich gourmet rustic meat culinary image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuRkLJPtCoKDd97qx4MP0pGFUXz41g1llEvgKEgvn0aLmUpB1gpZClFB3kMnXdc8XnH1_CuZsX9GnhVfy2SbspKrSn4YQRHBFG3Tv3KMbPNSBzX-baKBHmOTUoUAxVf10nH8BWCV2A3Dwponfd7iTqD1dv1LDdze8cErHZGmzvPUuHGWWbQbsG403mPuGXkv0oHS_GedYs-I31MXycWM3EJtVkN_aSHF9BbOX1oII1w9NtUjEj4I-3bPnh0TUNXUY5-AF2y9A74vs"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[70px]">Steaks</span>
+</button>
+</div>
+</section>
+<!-- 5. Curated Food Section 1: 'Pitmaster & Oven Favorites' -->
+<section class="space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="restaurant">restaurant</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Pitmaster &amp; Oven Favorites</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold bg-secondary-container px-2 py-0.5 rounded-full">Most Loved</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Card 1: Margherita Pizza -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border border-outline/50 relative overflow-hidden group">
+<div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Rustic gourmet sourdough Neapolitan Margherita pizza fresh out of the wood-fired brick oven, blistered spotted crust, pools of melted buffalo mozzarella, red San Marzano tomato sauce, fresh green basil leaves and drizzles of olive oil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNNuBBJpYqaLItldF98EE7c-ojRXzM2W09jdNjWSnY34utiQJFEexCX8EPM74BF5ElE-p_APG6ha4uBLszouJvKYDk_ZdcC1P-hayGlWIW4ftQceod8lqanXnVLlLqCWVRl67FN5mw5qCVLCXnFEiXBLGrZoCbiXVzoOkb_2s183NZCkjNaG0W98YHxCn5M-xzH7T2-LIr0JEEVUYj_417J9sbzLp6m4pH_xtjx27XaZ5f0Rszjepd770TmAVvSgMvQT9wLIHAfEc"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1 shadow-sm">
+<span class="text-tertiary">★</span> 4.9 <span class="text-on-surface-variant font-normal">(1.2k)</span>
+</span>
+</div>
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 backdrop-blur-sm text-surface px-2 py-0.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                15-20 min
+              </div>
+</div>
+<div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Charred Sourdough Margherita</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-3">
+                Fresh mozzarella, San Marzano tomato, charred basil, cold-pressed olive oil.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline/40 mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">$18.50</span>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-3.5 py-1.5 rounded-xl font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>ADD</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Smoked Brisket Plate -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border border-outline/50 relative overflow-hidden group">
+<div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Mouthwatering thick slices of 14-hour slow Texas oak smoked beef brisket laid on a wooden cutting board with coarse cracked pepper crust, tender fat cap, pickled red onion rings and artisan house barbecue sauce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzdyMhz3TfU6wOry7u2b2epktKJd0g_CfK4wY3r3f9Wy4gpDDmlJGe0e7ukprwtNI6owSyiQE8HzMo__8dbKNcIZzBl51ISrN5nfpgjgtR-3_8_oBddulp8zNo0kPm67eHI6pIOr1iK5MGpZMpg2yq6XPYxuc-9Iu32xXUzNnqKZ7f8xQXDs6lLt4Sj7nEfOmLFJA6OJhDPbfULeku5-rXEcdvqlfFKvQNJ_9736AEc1fDrTgY4I_e9bzskAJ4tBgKjYFxiL62tDA"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1 shadow-sm">
+<span class="text-tertiary">★</span> 4.95 <span class="text-on-surface-variant font-normal">(850)</span>
+</span>
+</div>
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 backdrop-blur-sm text-surface px-2 py-0.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                15-20 min
+              </div>
+</div>
+<div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">14-Hr Texas Smoked Brisket Plate</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-3">
+                Black pepper bark, pickled jalapeños, craft slow-simmered BBQ glaze.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline/40 mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">$24.00</span>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-3.5 py-1.5 rounded-xl font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>ADD</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Curated Food Section 2: 'Sizzle & Smoke Staples' -->
+<section class="space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]" data-icon="skillet">skillet</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Sizzle &amp; Smoke Staples</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">Chef's Cut</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Card 3: Truffle Smash Burger -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border border-outline/50 relative overflow-hidden group">
+<div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Gourmet double angus beef smash burger stacked with thick caramelized onions, melted smoked gouda cheese, truffle aioli drizzle in a glistening butter-toasted brioche bun resting on craft butcher paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkp0-GHd0UOoU4KHNDlY7KLDChILTktAf00-QQnRdoK_w273FgphTpbLDdk96pUybvFLsOACUdSy75osLcsvVaO_97s3Efw23ECynY0TH8OBp4X-6azm64Vr6HRy_-qtkklcf3MLRmHM1lJwwJtLRD4kCVGNb_u9QA74nD3ZmkHogUu2h5YAufGX011_d6WB4SFe6QWJnh1hrHFZt0TQq_EQ2pXLf-_enoDnsPWyqfk5J8c0KVqUALormTXI_i8MGhLYvEkc8ShYk"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1 shadow-sm">
+<span class="text-tertiary">★</span> 4.8 <span class="text-on-surface-variant font-normal">(940)</span>
+</span>
+</div>
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 backdrop-blur-sm text-surface px-2 py-0.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                15-20 min
+              </div>
+</div>
+<div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Truffle &amp; Smoked Gouda Smash</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-3">
+                Double angus patty, smoked gouda, sweet caramelized onion, brioche.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline/40 mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">$16.75</span>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-3.5 py-1.5 rounded-xl font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>ADD</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Wood-Charred Angus Ribeye -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border border-outline/50 relative overflow-hidden group">
+<div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Prime 14-ounce carved Angus ribeye steak, wood-charred crust cooked medium-rare, basted with bubbling garlic rosemary herb butter accompanied by roasted crisp baby golden potatoes on a warm cast iron presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ1_vLQayen4KmODa0S6heDFvwj3FH37iHarcbM-MrVlNXuDtq6d7HrwotynKi-CxvO3VZmmNNHboMCz4c1P0gbqIrLXqQr7b7wT-tgs77ztDvm9fm_PEUND1foPMAKw7Vsz2lFD02zlXWx4BXLYnxEdMMkgLeKTbB0CYiYslfRpLEv1PFm0XMKaXoQgLtoD9VrtlxoXgKcRGsyaSgJyGJ069nLpTSfc3IvEBZJvKHXen7cgv9Sm-SA7ueu4ZR724aItaSEg2XCg4"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-surface/90 backdrop-blur-sm px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1 shadow-sm">
+<span class="text-tertiary">★</span> 4.9 <span class="text-on-surface-variant font-normal">(420)</span>
+</span>
+</div>
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 backdrop-blur-sm text-surface px-2 py-0.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                20-25 min
+              </div>
+</div>
+<div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Wood-Charred Angus Ribeye (14oz)</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-3">
+                Garlic herb butter basting, roasted rosemary baby potatoes.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline/40 mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">$34.50</span>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-3.5 py-1.5 rounded-xl font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>ADD</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Artisanal Craft Story Snippet (Enhancement for Brand Personality) -->
+<section class="bg-surface-container-high rounded-2xl p-4 border border-outline/70 flex items-center gap-3.5 my-4">
+<div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center shrink-0 text-primary shadow-sm">
+<span class="material-symbols-outlined text-[26px]" data-icon="outdoor_grill">outdoor_grill</span>
+</div>
+<div class="space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">The 900° Wood-Fire Promise</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Naturally leavened dough fermented for 72 hours, charred in our custom oak-fed hearth.
+          </p>
+</div>
+</section>
+</main>
+<!-- Floating Dock Contextual Quick Cart Preview Strip -->
+<div class="fixed bottom-[4.75rem] left-0 w-full z-40 px-4 pointer-events-none">
+<div class="max-w-md mx-auto pointer-events-auto">
+<div class="bg-inverse-surface/95 backdrop-blur-md text-surface rounded-xl px-3.5 py-2.5 shadow-xl flex items-center justify-between border border-outline/20">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<div class="text-xs">
+<span class="font-bold text-surface">2 items in order</span>
+<span class="text-surface-variant/80 ml-1">• $42.50</span>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-primary-fixed hover:text-white flex items-center gap-1 font-bold">
+<span>View Cart</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 7. Floating Bottom Navigation Dock (Executes BottomNavBar from Shared Components JSON) -->
+<!-- JSON Specs: label_texts: ["Delivery", "Orders", "History"], icons: ["local_shipping", "receipt_long", "history"] -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs bg-surface shadow-lg">
+<div class="max-w-md w-full mx-auto flex justify-around items-center py-1">
+<!-- Tab 1: Delivery (Active - Intent matches current Delivery Hub screen) -->
+<button class="flex flex-col items-center justify-center bg-primary-fixed text-on-primary-fixed rounded-full px-space-md py-space-xs font-bold transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_shipping" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label-sm text-label-sm">Delivery</span>
+</button>
+<!-- Tab 2: Orders (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs hover:bg-surface-container transition-colors duration-150 active:scale-95 relative">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm">Orders</span>
+<span class="absolute top-1 right-3 w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</button>
+<!-- Tab 3: History (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs hover:bg-surface-container transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+<span class="font-label-sm text-label-sm">History</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

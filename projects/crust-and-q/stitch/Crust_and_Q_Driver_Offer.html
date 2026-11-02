@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incoming Delivery Offer - Crust &amp; Q Delivery Partner</title>
+<!-- Material Symbols Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Manrope & Inter Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration with Design System Tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#FFFFFF",
+            "primary-fixed-dim": "#ffb4a3",
+            "on-surface-variant": "#5b403a",
+            "surface": "#FFFFFF",
+            "on-primary-fixed-variant": "#8c1900",
+            "on-primary": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "primary-container": "#FEE2E2",
+            "on-secondary-fixed-variant": "#125139",
+            "surface-container-high": "#ffe2dc",
+            "on-tertiary-container": "#B45309",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#292824",
+            "inverse-primary": "#F87171",
+            "surface-container-highest": "#fadcd6",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-error-container": "#7F1D1D",
+            "primary": "#b42300",
+            "tertiary-container": "#0078d1",
+            "tertiary-fixed-dim": "#a2c9ff",
+            "surface-tint": "#D93B18",
+            "surface-dim": "#f1d4cd",
+            "tertiary": "#D97706",
+            "outline-variant": "#D6C7B2",
+            "secondary": "#2e6950",
+            "on-secondary-fixed": "#002114",
+            "on-tertiary-fixed-variant": "#004881",
+            "on-primary-fixed": "#3d0600",
+            "primary-fixed": "#ffdad2",
+            "on-surface": "#292824",
+            "inverse-on-surface": "#ffede9",
+            "error": "#DC2626",
+            "on-primary-container": "#fffeff",
+            "on-secondary-container": "#047857",
+            "surface-container-low": "#FAF6F0",
+            "surface-variant": "#FAF6F0",
+            "surface-bright": "#fff8f6",
+            "secondary-container": "#ECFDF5",
+            "outline": "#EAE0D2",
+            "secondary-fixed": "#b2f0d0",
+            "on-background": "#292824",
+            "surface-container": "#FFF8F0",
+            "secondary-fixed-dim": "#97d3b5",
+            "tertiary-fixed": "#d3e4ff",
+            "on-tertiary-fixed": "#001c38",
+            "background": "#FFF8F0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "3rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Manrope", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Manrope", "sans-serif"],
+            "headline-md": ["Manrope", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "headline-sm": ["Manrope", "sans-serif"],
+            "display-lg-mobile": ["Manrope", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg": ["2.25rem", { lineHeight: "2.75rem", letterSpacing: "-0.03em", fontWeight: "800" }],
+            "body-lg": ["1rem", { lineHeight: "1.5rem", letterSpacing: "0em", fontWeight: "500" }],
+            "body-md": ["0.9375rem", { lineHeight: "1.375rem", letterSpacing: "0em", fontWeight: "400" }],
+            "body-sm": ["0.8125rem", { lineHeight: "1.125rem", letterSpacing: "0.01em", fontWeight: "500" }],
+            "label-sm": ["0.6875rem", { lineHeight: "0.875rem", letterSpacing: "0.04em", fontWeight: "700" }],
+            "headline-lg": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "headline-md": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "label-md": ["0.8125rem", { lineHeight: "1.125rem", letterSpacing: "0.02em", fontWeight: "700" }],
+            "headline-sm": ["1.05rem", { lineHeight: "1.5rem", letterSpacing: "0em", fontWeight: "700" }],
+            "display-lg-mobile": ["1.75rem", { lineHeight: "2.25rem", letterSpacing: "-0.02em", fontWeight: "800" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(180, 35, 0, 0.4); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(180, 35, 0, 0); }
+      100% { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(180, 35, 0, 0); }
+    }
+    .animate-pulse-cta {
+      animation: pulse-ring 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#e8decb] text-on-surface antialiased min-h-screen flex items-center justify-center p-0 sm:p-4">
+<!-- Mobile Screen Container: 390x844 Frame -->
+<div class="w-full max-w-[390px] min-h-[844px] bg-background relative flex flex-col shadow-2xl overflow-hidden sm:rounded-[36px] border border-outline">
+<!-- Top Status Bar & Emergency Notice Strip -->
+<header class="sticky top-0 z-30 bg-surface shadow-sm border-b border-outline">
+<div class="px-margin-mobile pt-3 pb-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping inline-block"></span>
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide">
+            Live Request • Flame Queue
+          </span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span>4G GPS</span>
+</div>
+</div>
+<!-- Main Header Row with Headline and 15s Countdown Wheel -->
+<div class="px-margin-mobile pb-3 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">CRUST &amp; Q DISPATCH</span>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Incoming Dispatch Offer</h1>
+</div>
+<!-- 15-second Circular Countdown (12s active) -->
+<div class="relative w-14 h-14 flex items-center justify-center flex-shrink-0">
+<svg class="w-14 h-14 -rotate-90 transform" viewbox="0 0 48 48">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#FAF6F0" stroke-width="4"></circle>
+<!-- Stroke dasharray: circumference = 2 * pi * 20 ≈ 125.66. 12s/15s = 80% remaining -> stroke-dashoffset = 125.66 * 0.2 = 25.13 -->
+<circle class="transition-all duration-1000 ease-linear" cx="24" cy="24" fill="none" id="countdown-circle" r="20" stroke="#b42300" stroke-dasharray="125.66" stroke-dashoffset="25.13" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-primary leading-none font-extrabold" id="countdown-timer">12s</span>
+<span class="text-[8px] font-label-sm uppercase text-on-surface-variant leading-tight">left</span>
+</div>
+</div>
+</div>
+<!-- Surge Banner -->
+<div class="bg-primary px-margin-mobile py-1.5 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined material-symbols-fill text-[16px] text-primary-fixed">local_fire_department</span>
+<span class="font-label-md text-label-md font-bold text-white">Hearth Surge Active</span>
+</div>
+<span class="font-label-sm text-label-sm bg-white/20 px-2 py-0.5 rounded-full font-bold text-white">
+          +$2.50 included in base pay
+        </span>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 overflow-y-auto pb-44 px-margin-mobile space-y-3.5 pt-3.5">
+<!-- Guaranteed Payout & Earnings Hero Card -->
+<section class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-outline relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold block">Guaranteed Total Payout</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-display-lg text-display-lg text-primary tracking-tight font-extrabold">$12.50</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold bg-secondary-container px-1.5 py-0.5 rounded-md">Instant Cashout</span>
+</div>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-low border border-outline-variant/60 flex items-center justify-center">
+<span class="material-symbols-outlined material-symbols-fill text-tertiary text-[26px]">payments</span>
+</div>
+</div>
+<!-- Earnings Pill Breakdown -->
+<div class="mt-2.5 p-2.5 rounded-xl bg-surface-container-low border border-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-on-surface">$8.50 Base Fare</strong> <span class="text-on-surface-variant">(incl. $2.50 surge)</span> + <strong class="font-semibold text-secondary">$4.00 Tip</strong>
+</p>
+</div>
+<!-- Trip Stats Badges Row -->
+<div class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-outline/70">
+<div class="flex flex-col items-center bg-surface-container rounded-xl py-2 px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Dist</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">2.4 mi</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container rounded-xl py-2 px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Est. Time</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">18 mins</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container rounded-xl py-2 px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rate</span>
+<span class="font-headline-sm text-headline-sm text-secondary mt-0.5 font-bold">$5.21/mi</span>
+</div>
+</div>
+<!-- Order Specs & Equipment Pill -->
+<div class="mt-3.5 space-y-2">
+<div class="flex items-start gap-2 bg-surface-container-low p-2.5 rounded-xl border border-outline">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">restaurant_menu</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Order CQ-20481</span>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-primary-container px-1.5 py-0.5 rounded">2 items</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+                1x 14" Hot Honey Pepperoni Pizza, 1x Double Wagyu Smash Burger
+              </p>
+</div>
+</div>
+<!-- Hearth Freshness Thermal Bag Notice -->
+<div class="flex items-center gap-2 bg-[#FFF3E8] border border-tertiary/40 px-3 py-2 rounded-xl text-on-surface">
+<span class="material-symbols-outlined material-symbols-fill text-tertiary text-[20px]">local_fire_department</span>
+<p class="font-label-sm text-label-sm leading-tight text-on-tertiary-container">
+<strong class="font-bold">Hearth Freshness Alert:</strong> Thermal insulated bag required (165°F standard).
+            </p>
+</div>
+</div>
+</section>
+<!-- Daylight Route & Turn Cartography Preview Card -->
+<section class="bg-surface-container-lowest rounded-2xl p-3 shadow-sm border border-outline overflow-hidden">
+<div class="flex items-center justify-between mb-2 px-1">
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">map</span>
+            Route Preview
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full border border-outline">
+            Clear traffic on Church St
+          </span>
+</div>
+<!-- Map Container with Daylight Vector Stylization -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-[#FAF6F0] border border-outline shadow-inner">
+<!-- Background Daylight Map Graphic (Vector styled SVG canvas) -->
+<svg class="w-full h-full object-cover" fill="none" viewbox="0 0 350 176" xmlns="http://www.w3.org/2000/svg">
+<!-- Park areas -->
+<path d="M 0 0 L 80 0 L 70 50 L 0 40 Z" fill="#E2F2E9"></path>
+<path d="M 270 90 Q 320 80 350 110 L 350 176 L 250 176 Z" fill="#E2F2E9"></path>
+<path d="M 120 10 Q 150 5 180 25 L 170 45 L 110 30 Z" fill="#E8F4EC"></path>
+<!-- Lake / Water element (Lake Eola stylized) -->
+<path d="M 30 70 C 50 60, 95 65, 90 95 C 85 115, 45 125, 25 105 Z" fill="#D3E4FF"></path>
+<text fill="#004881" font-family="Inter" font-size="8" font-weight="600" x="44" y="93">Lake Eola</text>
+<!-- Base City Grid Roads -->
+<line stroke="#FFFFFF" stroke-width="8" x1="0" x2="350" y1="55" y2="55"></line>
+<line stroke="#EAE0D2" stroke-width="4" x1="0" x2="350" y1="55" y2="55"></line>
+<line stroke="#FFFFFF" stroke-width="10" x1="0" x2="350" y1="125" y2="125"></line>
+<line stroke="#E5DAC9" stroke-width="6" x1="0" x2="350" y1="125" y2="125"></line>
+<line stroke="#FFFFFF" stroke-width="8" x1="90" x2="90" y1="0" y2="176"></line>
+<line stroke="#EAE0D2" stroke-width="4" x1="90" x2="90" y1="0" y2="176"></line>
+<line stroke="#FFFFFF" stroke-width="10" x1="220" x2="220" y1="0" y2="176"></line>
+<line stroke="#E5DAC9" stroke-width="6" x1="220" x2="220" y1="0" y2="176"></line>
+<line stroke="#FFFFFF" stroke-width="6" x1="305" x2="305" y1="0" y2="176"></line>
+<line stroke="#EAE0D2" stroke-width="3" x1="305" x2="305" y1="0" y2="176"></line>
+<!-- Active Delivery Route Vector Line (Eola Dr to Church St) -->
+<path d="M 105 48 L 105 125 L 255 125 L 255 92" stroke="#FAF6F0" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<path d="M 105 48 L 105 125 L 255 125 L 255 92" stroke="#b42300" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"></path>
+<path d="M 105 48 L 105 125 L 255 125 L 255 92" stroke="#FFF8F0" stroke-dasharray="4 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<!-- Street Name Labels -->
+<text fill="#8A7768" font-family="Inter" font-size="7" font-weight="600" x="12" y="50">ROBINSON ST</text>
+<text fill="#8A7768" font-family="Inter" font-size="7.5" font-weight="700" x="120" y="120">E CHURCH ST</text>
+<text fill="#8A7768" font-family="Inter" font-size="7" font-weight="600" x="228" y="35">S EOLA DR</text>
+<!-- Pin A: Restaurant Pickup (Green Accent) -->
+<g transform="translate(93, 26)">
+<circle cx="12" cy="12" fill="#2e6950" r="11"></circle>
+<circle cx="12" cy="12" fill="#FFFFFF" r="4.5"></circle>
+<rect fill="#292824" height="13" rx="4" width="40" x="-8" y="24"></rect>
+<text fill="#FFFFFF" font-family="Inter" font-size="7" font-weight="700" text-anchor="middle" x="12" y="33">PICKUP</text>
+</g>
+<!-- Pin B: Alex M. Dropoff (Tomato Flame Accent) -->
+<g transform="translate(243, 68)">
+<circle cx="12" cy="12" fill="#b42300" r="11"></circle>
+<path d="M12 7 L17 11 L17 17 L7 17 L7 11 Z" fill="#FFFFFF"></path>
+<rect fill="#292824" height="13" rx="4" width="44" x="-10" y="24"></rect>
+<text fill="#FFFFFF" font-family="Inter" font-size="7" font-weight="700" text-anchor="middle" x="12" y="33">DROPOFF</text>
+</g>
+</svg>
+<!-- Floating Badge Overlay -->
+<div class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-outline flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">navigation</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">2.4 mi • 18 min est.</span>
+</div>
+<div class="absolute top-2.5 right-2.5 bg-white/95 backdrop-blur-sm px-2 py-0.5 rounded-md border border-outline text-[10px] font-label-sm font-semibold text-on-surface-variant">
+            0.6 mi to pickup
+          </div>
+</div>
+</section>
+<!-- Route Stop Details (Stepped delivery path card) -->
+<section class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-outline">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-3 flex items-center justify-between">
+<span>Delivery Sequence</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-2 py-0.5 rounded-full font-bold">Ready Now</span>
+</h2>
+<!-- Vertical Stepper Path -->
+<div class="relative pl-7 space-y-4">
+<!-- Connecting Line -->
+<div class="absolute left-3 top-3 bottom-3 w-0.5 bg-dashed border-l-2 border-dashed border-outline-variant"></div>
+<!-- Step 1: Pickup -->
+<div class="relative">
+<div class="absolute -left-7 top-0 w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[15px]">storefront</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Pickup • 0.6 mi away</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Ready in bag</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-bold mt-0.5">Crust &amp; Q Smokehouse &amp; Oven</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">100 S Eola Dr, Orlando FL</p>
+<div class="mt-1.5 inline-flex items-center gap-1 bg-surface-container px-2 py-1 rounded-md text-on-surface text-label-sm font-label-sm border border-outline">
+<span class="material-symbols-outlined text-[14px] text-tertiary">inventory_2</span>
+                Items boxed &amp; waiting at express courier shelf
+              </div>
+</div>
+</div>
+<!-- Step 2: Dropoff -->
+<div class="relative pt-1">
+<div class="absolute -left-7 top-1 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[15px]">home</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Drop-off • 1.8 mi</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Priority Customer</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-bold mt-0.5">Alex M. • Apt 4B</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">420 E Church St, Unit 4B, Orlando FL</p>
+<div class="mt-1.5 bg-surface-container-low p-2 rounded-lg border border-outline text-on-surface-variant text-body-sm font-body-sm flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant mt-0.5">edit_note</span>
+<span><strong class="font-semibold text-on-surface">Customer Note:</strong> Ring bell, leave on front porch table.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Courier Shift Info & Performance Metrics Quick Strip -->
+<div class="flex items-center justify-between px-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">star</span>
+          Acceptance Rate: 98%
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tertiary">bolt</span>
+          Current Shift: $48.20 (3 trips)
+        </span>
+</div>
+</main>
+<!-- High-Impact One-Handed Driver Action Dock (Fixed Bottom) -->
+<footer class="fixed sm:absolute bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md border-t border-outline px-margin-mobile pt-3 pb-5 shadow-2xl">
+<div class="w-full space-y-2.5">
+<!-- Primary Action Button: Tomato Flame CTA -->
+<button class="w-full h-[58px] bg-primary hover:bg-[#991e00] active:scale-[0.98] transition-all duration-150 rounded-xl text-on-primary font-headline-sm text-headline-sm flex items-center justify-between px-5 shadow-lg shadow-primary/25 animate-pulse-cta cursor-pointer" id="accept-button" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+<span class="tracking-tight font-extrabold text-white">Accept Delivery Dispatch</span>
+</div>
+<span class="bg-white/20 font-display-lg text-[1.15rem] leading-none px-2.5 py-1.5 rounded-lg text-white font-extrabold flex items-center gap-0.5">
+            $12.50 <span class="text-sm font-normal">→</span>
+</span>
+</button>
+<!-- Secondary Action Button: Pass / Decline -->
+<button class="w-full h-[46px] bg-surface-container-low hover:bg-surface-container border border-outline active:scale-[0.98] transition-all duration-150 rounded-xl text-on-surface-variant font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 cursor-pointer" id="decline-button" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Decline Offer (Pass to Next Courier)</span>
+</button>
+<!-- Auto-expiry Timer Note -->
+<div class="text-center pt-0.5">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+            Order will automatically reassign if no response in <span class="font-bold text-primary" id="auto-expire-seconds">12s</span>
+</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- Inline Script for Countdown & Ergonomic Micro-Interactions -->
+<script>
+    let remainingSeconds = 12;
+    const totalSeconds = 15;
+    const circumference = 125.66;
+    const timerText = document.getElementById('countdown-timer');
+    const expireText = document.getElementById('auto-expire-seconds');
+    const circle = document.getElementById('countdown-circle');
+    const acceptBtn = document.getElementById('accept-button');
+    const declineBtn = document.getElementById('decline-button');
+
+    const countdownInterval = setInterval(() => {
+      remainingSeconds--;
+      if (remainingSeconds >= 0) {
+        timerText.textContent = remainingSeconds + 's';
+        expireText.textContent = remainingSeconds + 's';
+        
+        // Calculate stroke offset
+        const progress = remainingSeconds / totalSeconds;
+        const offset = circumference * (1 - progress);
+        circle.style.strokeDashoffset = offset;
+
+        // Turn redder if below 5s
+        if (remainingSeconds <= 5) {
+          circle.setAttribute('stroke', '#DC2626');
+          timerText.classList.add('text-error');
+        }
+      } else {
+        clearInterval(countdownInterval);
+        timerText.textContent = '0s';
+        expireText.textContent = '0s (Expired)';
+        acceptBtn.disabled = true;
+        acceptBtn.classList.remove('animate-pulse-cta');
+        acceptBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    }, 1000);
+
+    // Micro-interaction handlers
+    acceptBtn.addEventListener('click', () => {
+      clearInterval(countdownInterval);
+      acceptBtn.innerHTML = `
+        <span class="w-full text-center flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined animate-spin text-[22px]">progress_activity</span>
+          <span>Claiming Dispatch CQ-20481...</span>
+        </span>
+      `;
+      setTimeout(() => {
+        acceptBtn.innerHTML = `
+          <span class="w-full text-center flex items-center justify-center gap-2 text-white font-bold">
+            <span class="material-symbols-outlined text-[24px]">check_circle</span>
+            <span>Dispatch Confirmed! Routing...</span>
+          </span>
+        `;
+        acceptBtn.classList.remove('bg-primary');
+        acceptBtn.classList.add('bg-secondary');
+      }, 700);
+    });
+
+    declineBtn.addEventListener('click', () => {
+      clearInterval(countdownInterval);
+      declineBtn.textContent = 'Declining dispatch offer...';
+      declineBtn.classList.add('opacity-50', 'pointer-events-none');
+      setTimeout(() => {
+        declineBtn.textContent = 'Dispatch passed to next courier.';
+      }, 500);
+    });
+  </script>
+</body></html>

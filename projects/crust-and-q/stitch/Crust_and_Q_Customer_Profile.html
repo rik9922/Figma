@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-container": "#047857", "primary-container": "#d93b18", "surface-container-high": "#F5ECE0", "inverse-primary": "#F87171", "on-primary-container": "#fffeff", "on-tertiary-fixed": "#001c38", "on-secondary-fixed-variant": "#125139", "on-error": "#ffffff", "surface-variant": "#fadcd6", "outline": "#EAE0D2", "on-primary": "#ffffff", "surface-tint": "#D93B18", "surface-container-highest": "#EFE5D6", "surface-container": "#ffe9e5", "on-background": "#292824", "secondary-fixed-dim": "#97d3b5", "on-surface-variant": "#57534E", "tertiary": "#D97706", "error-container": "#ffdad6", "outline-variant": "#D6C7B2", "on-secondary-fixed": "#002114", "tertiary-fixed-dim": "#a2c9ff", "primary-fixed-dim": "#ffb4a3", "surface-container-lowest": "#ffffff", "surface": "#FFFFFF", "on-primary-fixed": "#3d0600", "on-secondary": "#FFFFFF", "inverse-on-surface": "#ffede9", "surface-dim": "#f1d4cd", "secondary-fixed": "#b2f0d0", "secondary-container": "#ECFDF5", "on-error-container": "#7F1D1D", "surface-container-low": "#fff0ed", "on-tertiary-container": "#B45309", "on-tertiary-fixed-variant": "#004881", "primary-fixed": "#ffdad2", "surface-bright": "#FFFFFF", "tertiary-container": "#0078d1", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#8c1900", "secondary": "#2e6950", "error": "#DC2626", "primary": "#b42300", "inverse-surface": "#292824", "on-surface": "#292824", "background": "#FFF8F0", "tertiary-fixed": "#d3e4ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-xs": "0.25rem", "gutter": "1rem", "margin": "1rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-xl": "2rem" }, fontFamily: { "headline-sm": ["Manrope"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Manrope"], "body-md": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Manrope"], "display-lg-mobile": ["Manrope"], "label-sm": ["Inter"], "display-lg": ["Manrope"] }, fontSize: { "headline-sm": ["1.05rem", { lineHeight: "1.5rem", letterSpacing: "0em", fontWeight: "700" }], "label-md": ["0.8125rem", { lineHeight: "1.125rem", letterSpacing: "0.02em", fontWeight: "700" }], "body-sm": ["0.8125rem", { lineHeight: "1.125rem", letterSpacing: "0.01em", fontWeight: "500" }], "headline-md": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "700" }], "body-md": ["0.9375rem", { lineHeight: "1.375rem", letterSpacing: "0em", fontWeight: "400" }], "body-lg": ["1rem", { lineHeight: "1.5rem", letterSpacing: "0em", fontWeight: "500" }], "headline-lg": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.02em", fontWeight: "800" }], "display-lg-mobile": ["1.75rem", { lineHeight: "2.25rem", letterSpacing: "-0.02em", fontWeight: "800" }], "label-sm": ["0.6875rem", { lineHeight: "0.875rem", letterSpacing: "0.04em", fontWeight: "700" }], "display-lg": ["2.25rem", { lineHeight: "2.75rem", letterSpacing: "-0.03em", fontWeight: "800" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#FFF8F0;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[22px]">local_fire_department</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Crust &amp; Q</span><h1 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Customer Profile</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search menu" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[24px]">search</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full bg-background pt-16 pb-24 px-gutter-mobile"><div class="flex flex-col w-full pb-8">
+<!-- Profile Header Hero Card -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-16 h-16 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Warm natural portrait of a happy smiling woman named Eleanor in her late twenties with soft golden hour light, wearing a casual denim jacket, artisanal bakery warm tones with cozy bokeh background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVrTwukCc2LrbeqNZFMxGn84gZVPWbxSIZK18TaRRhrkBLGyLxQNd72y9o8niWbrVTwgQaYK_UQqYedljW59fEGYP-LN2LDQz1V0Of1kTb0O-gJw3ac0VawwFbc9brluAs5Nfh1x2fzokpGXCjjGwLaFpf344S92OpVO1OKbPze8IJ-vMY8V8ANqnumbWWHJ75i1aXoTw3rxkdDtF5-ih7AB0HzQojCGj6X7X__ls"/>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Eleanor Brooks</h2>
+<span class="inline-flex items-center gap-1 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+            VIP Tier
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">eleanor.b@email.com</p>
+<p class="font-label-sm text-label-sm text-tertiary mt-0.5">Member since Oct 2023</p>
+</div>
+<button aria-label="Edit Profile" class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</section>
+<!-- Pitmaster Rewards Loyalty Card (Gold & Terracotta styled premium card) -->
+<section class="w-full bg-gradient-to-br from-primary via-primary-container to-tertiary text-on-primary rounded-xl p-space-lg shadow-md mb-space-md relative overflow-hidden">
+<!-- Tactile Background Embellishment -->
+<div class="absolute -right-6 -bottom-6 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[160px]" style="font-variation-settings: 'FILL' 1;">outdoor_grill</span>
+</div>
+<div class="relative z-10 flex flex-col">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed font-bold">Pitmaster VIP Pass</span>
+</div>
+<div class="px-2.5 py-1 bg-surface-container-lowest/20 backdrop-blur-md rounded-full text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">stars</span>
+          Top 5% Patron
+        </div>
+</div>
+<div class="mt-space-md mb-space-sm">
+<p class="font-label-sm text-label-sm text-primary-fixed opacity-90">Current Stored Heat</p>
+<div class="flex items-baseline gap-1.5">
+<span class="font-display-lg-mobile text-display-lg-mobile font-extrabold tracking-tight">640</span>
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold">Ember Points</span>
+</div>
+</div>
+<!-- Point Progress Bar -->
+<div class="w-full bg-surface-container-lowest/25 h-2.5 rounded-full overflow-hidden p-0.5 mb-2">
+<div class="bg-surface-container-lowest h-full rounded-full transition-all duration-700 ease-out" style="width: 80%;"></div>
+</div>
+<div class="flex justify-between items-center text-on-primary/95 text-body-sm font-body-sm">
+<span class="text-primary-fixed font-medium">160 pts to next reward</span>
+<span class="font-bold">640 / 800</span>
+</div>
+<p class="font-label-sm text-label-sm text-surface-container-highest mt-1 mb-space-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">local_pizza</span>
+        Next unlock: Free 12" Artisan Pizza ($18 value)
+      </p>
+<div class="flex gap-space-sm pt-space-xs">
+<button class="flex-1 py-2.5 px-4 bg-surface-container-lowest text-primary hover:bg-surface-container-high active:scale-95 font-label-md text-label-md rounded-lg flex items-center justify-center gap-1.5 shadow-sm transition-transform" id="redeemCatalogBtn">
+<span class="material-symbols-outlined text-[18px]">redeem</span>
+          Redeem Rewards Catalog
+        </button>
+</div>
+</div>
+</section>
+<!-- Quick Action Badges / Stat Counters -->
+<section class="grid grid-cols-3 gap-space-xs mb-space-md">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex flex-col items-center justify-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[22px] mb-1">dinner_dining</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">18</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Feasts Enjoyed</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex flex-col items-center justify-center text-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] mb-1">pin_drop</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Saved Drops</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex flex-col items-center justify-center text-center shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-[22px] mb-1">confirmation_number</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Perks</span>
+</div>
+</section>
+<!-- Active Rewards & Vault -->
+<section class="mb-space-md">
+<div class="flex items-center justify-between mb-space-sm px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">workspace_premium</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Available Vault Perks</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">3 Ready</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-center gap-space-md shadow-sm">
+<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Artisanal wood-fired pizza with blistered crust, fresh basil, vibrant tomato sauce, and pulled smokehouse brisket shavings, rustic warm lighting, food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe5sPA5254NDhFCqMDRkTBkMm_foIFld8YyW714GknAszk_i8z1xKny2wwQRqfwPtBjqdQeBNwaiLThxxriVOGsOd0Dx6algY2DTHneRtOdEnr3bSCOLjE4OO0a36iaDOMXZoXsiN5rrTuTFFRLQEMY0jgubjnRCHOw1rQLmCp_WcYfoFG14uwdfYYdWldzp8mg7dODiOBnmQMf0J3_Q7ekuF7IKAYeFe6LX0mMpY"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h4 class="font-body-lg text-body-lg text-on-surface font-bold truncate">$5 Off Wood-Fired Pizza</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Valid on all 14" craft pies</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-[14px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">250 pts</span>
+</div>
+</div>
+<button class="px-3 py-1.5 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg active:scale-95 transition-all shadow-sm">
+          Claim
+        </button>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-center gap-space-md shadow-sm">
+<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Slow-smoked caramelized pork belly burnt ends in a matte stoneware dish, glazed with sticky sweet barbecue sauce, garnished with scallions, appetizing warm colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIoGXP15bxDMnmZMdztNdrjJcPILXQP3m4txn5Y8ILTfOjOtWtX7ICXKZe-J_HM2fKKQXaXrgWtumT3Fq12WRxTbVVGvVw8G3U8EIRpvdPIEgbMb-sASMsaG_1YhEY0pLUSCxDvZarj0Trr84gLfyjYpQ1z3MCYVSfXmpXKcubBSFphTQoxPnhJNT7PITmvnNmG7uGbw7QEODoHhSnIDlMoEfyr3uwciw6wT9_Ty8"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h4 class="font-body-lg text-body-lg text-on-surface font-bold truncate">Free Smoked Pork Belly Ends</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Signature applewood smoke bite</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-[14px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">450 pts</span>
+</div>
+</div>
+<button class="px-3 py-1.5 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg active:scale-95 transition-all shadow-sm">
+          Claim
+        </button>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-high/60 p-space-sm rounded-xl flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container opacity-80">
+<img class="w-full h-full object-cover" data-alt="Frosty tall mason jar with chilled honey-sweetened craft lemonade, crushed ice, fresh mint leaf garnish, rustic country restaurant counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABJCqZDUKUm3O_NhGqTD5BtzqWcFKZ7XbcNT7K8m82Q2cw7LE1JX3uvwFzkS-uCTNqcdjv4iSMt4daI_QdXZV-nptNv1-Gg4YJvfLWrW08bjK71zHXC1rentjoq6C3C8YLt2SCrDIfyqnpCSfSuzFCJmDDtSspVrebsB4j06u1n3v2azSdYGNa20tDTK-wjJnBe4RiRx5_nFzEErDs82TUvvdOUcc-debB3yzhvIU"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h4 class="font-body-lg text-body-lg text-on-surface font-bold truncate">Complimentary Craft Lemonade</h4>
+<span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> In Wallet (Expires in 4d)
+          </span>
+</div>
+<button class="px-3 py-1.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded-lg cursor-default opacity-90" disabled="">
+          Unlocked
+        </button>
+</div>
+</div>
+</section>
+<!-- Preferences & Account Menu -->
+<section class="mb-space-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm px-1">Account &amp; Hearth Settings</h3>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Item 1 -->
+<button class="w-full text-left p-space-md flex items-center gap-space-md hover:bg-surface-container-high transition-colors active:bg-surface-container">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Personal Information &amp; Contact</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Name, phone, and verification</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Item 2 -->
+<button class="w-full text-left p-space-md flex items-center gap-space-md hover:bg-surface-container-high transition-colors active:bg-surface-container">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Saved Delivery Addresses</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Home: 420 E Robinson St, Work: Downtown Loft</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Item 3 -->
+<button class="w-full text-left p-space-md flex items-center gap-space-md hover:bg-surface-container-high transition-colors active:bg-surface-container">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Payment Methods</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Visa ending in 8842 Default, Apple Pay</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Item 4 -->
+<button class="w-full text-left p-space-md flex items-center gap-space-md hover:bg-surface-container-high transition-colors active:bg-surface-container">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Order History &amp; Reorder</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Jump back to past savory feasts</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Item 5 -->
+<button class="w-full text-left p-space-md flex items-center gap-space-md hover:bg-surface-container-high transition-colors active:bg-surface-container">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">eco</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Dietary &amp; Allergen Preferences</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium truncate">Nut-free, Gluten-conscious active</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Item 6 -->
+<button class="w-full text-left p-space-md flex items-center gap-space-md hover:bg-surface-container-high transition-colors active:bg-surface-container">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Push &amp; SMS Notifications</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Live smokehouse tracker alerts on</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+<!-- Item 7 -->
+<button class="w-full text-left p-space-md flex items-center gap-space-md hover:bg-surface-container-high transition-colors active:bg-surface-container">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Help &amp; Hearthside Support</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Chat with pitmaster concierge 24/7</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Sign Out Trigger -->
+<div class="flex flex-col items-center justify-center pt-space-xs pb-space-lg">
+<button class="flex items-center gap-2 py-2 px-6 rounded-full text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors font-label-md text-label-md" id="signOutBtn">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+      Sign Out of Crust &amp; Q
+    </button>
+<p class="font-label-sm text-label-sm text-outline-variant mt-2">App Version 4.12.0 • Smokehouse Edition</p>
+</div>
+</div>
+<script>
+  (function() {
+    // Interactive feedback for redemption button
+    const redeemBtn = document.getElementById('redeemCatalogBtn');
+    if (redeemBtn) {
+      redeemBtn.addEventListener('click', () => {
+        const originalText = redeemBtn.innerHTML;
+        redeemBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Opening Vault...';
+        setTimeout(() => {
+          redeemBtn.innerHTML = originalText;
+        }, 800);
+      });
+    }
+
+    // Interactive confirmation on Sign Out
+    const signOutBtn = document.getElementById('signOutBtn');
+    if (signOutBtn) {
+      signOutBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to sign out of your Crust & Q VIP account?')) {
+          signOutBtn.innerText = 'Signing out...';
+        }
+      });
+    }
+
+    // Set Profile tab as active in bottom shell navigation if available
+    const navLinks = document.querySelectorAll('nav a[data-path="customer-profile"]');
+    navLinks.forEach(link => {
+      link.classList.remove('text-on-surface-variant');
+      link.classList.add('text-primary', 'font-bold');
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-sm flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="delivery-hub" href="#"><span class="material-symbols-outlined text-[24px]">outdoor_grill</span><span class="font-label-sm text-label-sm">Delivery</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="active-orders" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-sm text-label-sm">Orders</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="smokehouse-rewards" href="#"><span class="material-symbols-outlined text-[24px]">loyalty</span><span class="font-label-sm text-label-sm">Rewards</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 transition-colors text-primary font-bold" data-path="customer-profile" href="#"><span class="material-symbols-outlined text-[24px]">person</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

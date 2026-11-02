@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crust &amp; Q - Artisanal Smokehouse &amp; Oven Hub</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom theme -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#fff0ed",
+            "surface-container-high": "#F5ECE0",
+            "secondary-container": "#ECFDF5",
+            "on-surface": "#292824",
+            "error": "#DC2626",
+            "secondary-fixed": "#b2f0d0",
+            "on-secondary-container": "#356f56",
+            "on-background": "#271814",
+            "error-container": "#FEE2E2",
+            "inverse-surface": "#3e2c28",
+            "surface-variant": "#FAF6F0",
+            "surface-tint": "#b72400",
+            "tertiary-fixed": "#d3e4ff",
+            "on-primary-fixed": "#3d0600",
+            "outline": "#EAE0D2",
+            "tertiary-fixed-dim": "#a2c9ff",
+            "inverse-on-surface": "#FFFFFF",
+            "tertiary-container": "#0078d1",
+            "on-tertiary": "#FFFFFF",
+            "surface-bright": "#FFFFFF",
+            "primary-container": "#d93b18",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container-highest": "#EFE5D6",
+            "on-secondary-fixed": "#002114",
+            "primary-fixed": "#ffdad2",
+            "on-primary": "#FFFFFF",
+            "on-error-container": "#7F1D1D",
+            "tertiary": "#D97706",
+            "surface": "#FFFFFF",
+            "on-primary-container": "#991B1B",
+            "surface-dim": "#FAF6F0",
+            "outline-variant": "#D6C7B2",
+            "on-tertiary-container": "#ffffff",
+            "on-tertiary-fixed-variant": "#004881",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#001c38",
+            "secondary-fixed-dim": "#97d3b5",
+            "on-primary-fixed-variant": "#8c1900",
+            "surface-container": "#ffe9e5",
+            "secondary": "#2e6950",
+            "background": "#FFF8F0",
+            "on-surface-variant": "#57534E",
+            "inverse-primary": "#ffb4a3",
+            "primary": "#b42300",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#125139",
+            "primary-fixed-dim": "#ffb4a3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "3rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "display-lg-mobile": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "display-lg": ["Manrope"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Manrope"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["0.8125rem", { "lineHeight": "1.125rem", "letterSpacing": "0.02em", "fontWeight": "700" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-sm": ["1.05rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "700" }],
+            "display-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "display-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-md": ["0.9375rem", { "lineHeight": "1.375rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "500" }],
+            "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<meta content="mobile_tab" name="shell-type"/><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen selection:bg-primary selection:text-white">
+<!-- Mobile Screen Container -->
+<div class="max-w-md mx-auto min-h-screen relative flex flex-col bg-background">
+<!-- 1. Top Location Bar (Adheres to TopAppBar Shared Component logic) -->
+<header class="docked full-width top-0 sticky z-40 bg-surface shadow-sm transition-all duration-150">
+<div class="flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<!-- Delivery Location Selector Pill -->
+<button class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-left max-w-[70%]">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" data-icon="location_on">location_on</span>
+<div class="flex flex-col truncate">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase font-bold">DELIVERING TO</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate leading-none">420 E Robinson St, Orlando FL</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0" data-icon="expand_more">expand_more</span>
+</button>
+<!-- Right Quick Action Bar (Cart & Notifications) -->
+<div class="flex items-center gap-2 shrink-0">
+<button class="relative w-10 h-10 rounded-full flex items-center justify-center bg-surface hover:bg-surface-container-low text-on-surface transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full ring-2 ring-surface"></span>
+</button>
+<button aria-label="Shopping Cart" class="relative w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary hover:bg-primary-container transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-surface text-primary border-2 border-primary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold leading-none shadow">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 px-margin-mobile pt-3 space-y-4"><div class="flex flex-col w-full pb-28 space-y-5">
+<!-- Search & Filter Controls -->
+<div class="flex flex-col space-y-2.5">
+<div class="flex items-center gap-2">
+<div class="flex-1 flex items-center bg-surface-container-low px-3.5 py-2.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px] shrink-0" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none p-0 ml-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-0" placeholder="Search pizzas, pitmaster BBQ, sides..." type="text"/>
+<button aria-label="Voice search" class="text-on-surface-variant/70 hover:text-primary transition-colors p-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="mic">mic</span>
+</button>
+</div>
+<button aria-label="Filter menu options" class="w-11 h-11 rounded-xl bg-surface-container-low text-on-surface flex items-center justify-center shadow-sm hover:bg-surface-container transition-all active:scale-95 shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Live Hearth Context Pill -->
+<div class="flex items-center justify-between bg-surface px-3 py-2 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse shrink-0"></span>
+<div class="truncate">
+<span class="font-label-md text-label-md text-on-surface font-bold">Hearth #1 Active</span>
+<span class="text-on-surface-variant text-xs"> • Est. 25–35 min</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-2.5 py-0.5 rounded-full shrink-0 font-bold">
+        $0 Fee &gt; $30
+      </span>
+</div>
+</div>
+<!-- Primary Categories Tab Rail -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile py-0.5">
+<button class="shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md bg-surface text-on-surface shadow-sm hover:bg-surface-container transition-all">
+      All Feast (28)
+    </button>
+<button class="shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_pizza">local_pizza</span>
+      Wood-Fired Pizza (9)
+    </button>
+<button class="shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md bg-surface text-on-surface shadow-sm hover:bg-surface-container transition-all">
+      Texas BBQ (6)
+    </button>
+<button class="shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md bg-surface text-on-surface shadow-sm hover:bg-surface-container transition-all">
+      Smash Burgers (4)
+    </button>
+<button class="shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md bg-surface text-on-surface shadow-sm hover:bg-surface-container transition-all">
+      Steaks &amp; Ribs (3)
+    </button>
+<button class="shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md bg-surface text-on-surface shadow-sm hover:bg-surface-container transition-all">
+      Oven Sides (6)
+    </button>
+<button class="shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md bg-surface text-on-surface shadow-sm hover:bg-surface-container transition-all">
+      Craft Drinks (5)
+    </button>
+</div>
+<!-- Quick Filter Tags -->
+<div class="flex gap-1.5 overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile">
+<button class="shrink-0 px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-primary-container font-semibold shadow-xs flex items-center gap-1 active:scale-95">
+<span>🔥</span> Pitmaster Pick
+    </button>
+<button class="shrink-0 px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface text-on-surface-variant font-semibold shadow-xs flex items-center gap-1 active:scale-95">
+<span>🌱</span> Vegetarian
+    </button>
+<button class="shrink-0 px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface text-on-surface-variant font-semibold shadow-xs flex items-center gap-1 active:scale-95">
+<span>🌾</span> GF Crust Available
+    </button>
+<button class="shrink-0 px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface text-on-surface-variant font-semibold shadow-xs flex items-center gap-1 active:scale-95">
+<span>🌶️</span> Spicy
+    </button>
+<button class="shrink-0 px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface text-on-surface-variant font-semibold shadow-xs flex items-center gap-1 active:scale-95">
+<span>⭐</span> 4.8+ Rating
+    </button>
+</div>
+<!-- Section 1: Wood-Fired Neapolitan Pizza -->
+<div class="space-y-3 pt-1">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight leading-tight">
+          Wood-Fired Pizza
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Fermented 72 hrs • Baked at 900°F on volcanic stone
+        </p>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold px-2 py-0.5 bg-surface-container-low rounded-md">9 Pies</span>
+</div>
+<!-- Spotlight Signature Card -->
+<div class="relative bg-surface rounded-2xl overflow-hidden shadow-md flex flex-col group">
+<div class="relative w-full h-44 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Artisanal Neapolitan pizza on rustic dark wooden peel hot from wood oven with charred bubbly crust topped with smoked brisket burnt ends curled cupped pepperoni melted buffalo mozzarella fresh basil and glossy hot honey drizzle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUAor31quEQHnvemvGBb02u2BJ7-9RHBs67KtZXmauTutKP3jx3yZ_WXeX_Yml9wKN4sfZOSe8K4bvkFozLPYXQOiB1XSgBGQmON1m7D03H8Akhz9YFT6_29vW42rEOX-qszLlDN0nSdW9frzn3dMEnvnf5eWOZzTBRg2KbIWD4pyVIreDoQJh0VWGZWn5XW4RGJHQhKp5UTZntBJrSFuD0cZtGwfXaJXGKWSxSFE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-md font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span> Chef's Signature
+          </span>
+<span class="bg-inverse-surface/85 backdrop-blur-xs text-inverse-on-surface font-label-sm text-label-sm px-2 py-1 rounded-full font-bold">
+            14-Hr Post Oak Smoke
+          </span>
+</div>
+<div class="absolute bottom-2.5 right-3 bg-surface/95 backdrop-blur-md px-2.5 py-1 rounded-xl shadow-md">
+<span class="font-headline-sm text-headline-sm text-primary font-extrabold">$27.00</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">
+            12" Smoked Brisket &amp; Cupped Pepperoni Masterpiece
+          </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          San Marzano DOP, fior di latte, crisp cup pepperoni, chopped Texas burnt ends, fresh oregano, habanero hot honey drizzle.
+        </p>
+<div class="pt-2 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>(142 reviews)</span>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container px-4 py-2 rounded-xl font-label-md text-label-md font-bold shadow-sm flex items-center gap-1.5 transition-all active:scale-95" onclick="triggerAddToast('12&quot; Smoked Brisket &amp; Cupped Pepperoni')">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>Customize</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 2-Column Pizza Grid -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<!-- Item 1: Margherita Verace -->
+<div class="bg-surface rounded-2xl p-2.5 shadow-sm flex flex-col justify-between space-y-2">
+<div class="space-y-2">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Authentic wood-fired Neapolitan Margherita pizza with charred leopard-spotted puffy cornicione, bright red crushed San Marzano tomato sauce, melted white mozzarella pools, and vibrant green basil leaves with olive oil sheen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvx9PT6zuZHFKBihGTJmzlzW-RZRF2-n5gEin2ke4PAMlJSqMc3VpTNSctHeFoHal2r7OGFOjVq2cRNIKJZXVsV9qL2fu9ZWAvmiCncyHvhZpuw9d6vF2QTLN7RSpJZ3QOC8BDOgBKdfWQ4rrS8jsALLRaufZazYUu2q991yHKZ5ER2dA0wIzoxe8LNM08jpNbY0ANHALFMwu8zlSk6EZAdmzkcMT99yLP8OtzS0A"/>
+<span class="absolute top-1.5 left-1.5 bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">
+              Award Winner
+            </span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight line-clamp-1">
+              Margherita Verace
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5 text-xs">
+              San Marzano, buffalo mozzarella, Genovese basil, cold-pressed EVOO.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$18.50</span>
+<button aria-label="Add Margherita Verace" class="w-8 h-8 rounded-full bg-surface-container text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all active:scale-90 shadow-xs" onclick="triggerAddToast('Margherita Verace')">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Spicy Calabrian Hot Honey -->
+<div class="bg-surface rounded-2xl p-2.5 shadow-sm flex flex-col justify-between space-y-2">
+<div class="space-y-2">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Artisanal hot honey wood-fired pizza with spicy calabrian soppressata salami crispy curled edges, dollops of creamy whipped ricotta, chili flakes, and glossy amber hot honey drizzle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkyVUFrubRGWMzd36eYjlyzoU29XWWLCBg0CCzm0OSW2lpUKnINngUsnGRnU96Ep5I6zm0-65r1PZUtDEKUSuwFLm_EIu7MwRz4TIte27gbHoRnvbK7kGtRqjldefV6ifc5FUZNl3RA_M-ICmL2yZF0IYuqxGkUL7hjJVbh0QR5oOUceHWtiNE51iAJQJIP0jOZZkBvLJVSm-y2nmXRzKuGS-U9C8-30x2R6thejY"/>
+<span class="absolute top-1.5 left-1.5 bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">
+              Popular
+            </span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight line-clamp-1">
+              Calabrian Hot Honey
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5 text-xs">
+              Soppressata, chili flakes, whipped ricotta, habanero honey.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$22.00</span>
+<button aria-label="Add Calabrian Hot Honey" class="w-8 h-8 rounded-full bg-surface-container text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all active:scale-90 shadow-xs" onclick="triggerAddToast('Calabrian Hot Honey')">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Smoked Wild Forest Mushroom -->
+<div class="bg-surface rounded-2xl p-2.5 shadow-sm flex flex-col justify-between space-y-2">
+<div class="space-y-2">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="White sauce artisanal pizza with roasted wild oyster and cremini mushrooms, caramelized shallots, fresh thyme, gooey melted fontina cheese, and roasted garlic crema baked in wood oven" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFEbWerTMAyLqwCnf8uSdAKr-4EoJntWM4ZSuOXWFwMnwBEWK8vjrrZEBHwBH-JtfZozR33it4_kNWA2_OJP9mcIOqeEkwL6IAYNJPyLaGYa4bOB0lZpjSs--aOR1gzOY9R8UZ84rqjFDnhOK_-2-5jT4khMOYfax6njd0v0qwUCbyXaOtec1oIksAXZLxqdbWbOotYGNx1E9kr4YSuEAV3u0Wtk0xHpsou-U4u8"/>
+<span class="absolute top-1.5 left-1.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">
+              Veggie
+            </span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight line-clamp-1">
+              Wild Forest Mushroom
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5 text-xs">
+              Confit garlic crema, fontina, roasted cremini &amp; oyster, thyme.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$21.00</span>
+<button aria-label="Add Wild Forest Mushroom" class="w-8 h-8 rounded-full bg-surface-container text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all active:scale-90 shadow-xs" onclick="triggerAddToast('Wild Forest Mushroom')">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Item 4: Carnivore Hearth Special -->
+<div class="bg-surface rounded-2xl p-2.5 shadow-sm flex flex-col justify-between space-y-2">
+<div class="space-y-2">
+<div class="relative w-full h-28 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Hearty carnivore pizza loaded with artisanal wood-smoked sausage crumbles, thick-cut bacon lardons, charred brisket bark pieces, and bubbling smoked provolone on rustic bubbly crust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbLcI0cg8HeXVVtDPDlPFmyXTwoJ9nFMnexKb4pdYwYM_9PaKJ0CKjcUwg5QnbkIL9Jw8Gpdt1GbVFRom0j8q6546t38uz8ClzDeVcLZotSOSKgSXXX1VZEcii0nS_Nye4VRTdNkWL8yJU8OnysC2baln6PBcdgJb1aaQYqz-ryVFTH5BEsp7dfX60RiFy-sGc-Gi6nRPbsJyb8iyQPELbx3hWEN4-WKeEzEHQqt8"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight line-clamp-1">
+              Carnivore Special
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5 text-xs">
+              Smoked sausage, bacon lardons, brisket bark, smoked provolone.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$25.50</span>
+<button aria-label="Add Carnivore Special" class="w-8 h-8 rounded-full bg-surface-container text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all active:scale-90 shadow-xs" onclick="triggerAddToast('Carnivore Special')">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Pitmaster Texas Craft BBQ -->
+<div class="space-y-3 pt-2">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight leading-tight">
+        Pitmaster Texas Craft BBQ
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Smoked low &amp; slow with Texas post oak logs
+      </p>
+</div>
+<div class="space-y-2.5">
+<!-- BBQ Item 1: Prime Brisket Platter -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm flex gap-3 items-center">
+<div class="relative w-24 h-24 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Authentic Texas prime beef brisket platter showing thick moist slices with distinct peppery black bark and pink smoke ring served with sliced dill pickles and pickled red onions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyM4U8XcUKaIgHgRTmYp6KgBx9VzZGNSZvogBFvjiB9WFeelo4LulbL9HRWPFeAoFeu940O3IptwOsdyy1rRFtDLGlPUZgZrSuJRnQU9AISmJm9BRjoTw5arWtphKGXFTaRvZ4oQpjG51FS3X2OODgg8MyTzvROx5YZWdE0G3SZeWvZj5b491xlJC_ogL3v8QakDz4UtBde-iMPvR9DynVW-0bfMtQIczwPfYMnI4"/>
+<span class="absolute bottom-1 left-1 bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded font-bold text-[10px]">
+            Best Seller
+          </span>
+</div>
+<div class="flex-1 min-w-0 space-y-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">
+              14-Hour Prime Brisket
+            </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 text-xs">
+            1/2 lb sliced moist brisket, house pickles, charred jalapeño cheddar cornbread.
+          </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$24.00</span>
+<button class="bg-primary text-on-primary px-3 py-1 rounded-lg font-label-sm text-label-sm font-bold shadow-xs hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95" onclick="triggerAddToast('14-Hour Prime Brisket')">
+              + Add
+            </button>
+</div>
+</div>
+</div>
+<!-- BBQ Item 2: St. Louis Ribs -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm flex gap-3 items-center">
+<div class="relative w-24 h-24 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Glazed half rack of St Louis style pork spare ribs with glistening sticky brown sugar barbecue mop sauce smoked to tender perfection alongside pit baked beans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwGjvLUoXeNK3xGjSGmHwUpz8hABLjj2pWd_T4fciW3bkVQIpnbfNCS0OMKdmBXtw6M-WMkok6iPePnTeN1G0Bog1fIZtljOmJ9t_oIc_TkP5xypPZ2vXo3rFz3pdDMrQDiTvKhiapVd2fqWG6JDKqRj5e6fedvxYIv9Ttx_G28K-MRG14wPK9STQioSBFSxO6embCxPJdmcTI2T7dx24yBtvfQ36MpVfDMgoP4FA"/>
+</div>
+<div class="flex-1 min-w-0 space-y-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">
+            St. Louis Applewood Ribs
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 text-xs">
+            Brown sugar dry rub, cider vinegar mop sauce, tangy pit beans.
+          </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$21.50</span>
+<button class="bg-primary text-on-primary px-3 py-1 rounded-lg font-label-sm text-label-sm font-bold shadow-xs hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95" onclick="triggerAddToast('St. Louis Applewood Ribs')">
+              + Add
+            </button>
+</div>
+</div>
+</div>
+<!-- BBQ Item 3: Pulled Pork Sandwich -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm flex gap-3 items-center">
+<div class="relative w-24 h-24 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Gourmet pulled pork sandwich piled high on toasted brioche bun topped with creamy cider coleslaw and barbecue drizzle with crispy seasoned waffle fries" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDovaoObqZwarSMnPvQofGKWnnkMzg4UWd_-Qb8ThRcBkMPkeqoCZbHMfHy6YqKk9ujU29HevvVWF81WvNWWiWSk-gXaUyfoYrFX6SbCMfTr3ATHoP3_ttRjNqTHwVvEUTua71xZI-ypHYdOC95MoYgE5fejLlTfxlk7CLbD_I-dKj5fkloUkgIW7d1B3FljKKDdORNTZwyznNps4xbRKpIl9pUXfA7f-K1hXLL9yo"/>
+</div>
+<div class="flex-1 min-w-0 space-y-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">
+            Smoked Pulled Pork Bun
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 text-xs">
+            Carolina vinegar mop, house slaw, toasted brioche, seasoned fries.
+          </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$16.00</span>
+<button class="bg-primary text-on-primary px-3 py-1 rounded-lg font-label-sm text-label-sm font-bold shadow-xs hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95" onclick="triggerAddToast('Smoked Pulled Pork Bun')">
+              + Add
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Wood-Oven Sides & Bites -->
+<div class="space-y-3 pt-2">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight leading-tight">
+        Wood-Oven Sides &amp; Bites
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Fired alongside pizzas in our oak-burning hearth
+      </p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Side 1 -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm flex flex-col justify-between space-y-2">
+<div class="space-y-2">
+<div class="w-full h-24 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Oven baked garlic butter breadsticks brushed with herb butter parmesan dust and served with warm San Marzano tomato dipping marinara" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUF--JX0pj1F0HWvOGpGkjZfBDB_YIwb4raD8TBJklbTlHr-sktWMjs7teHYbR5o81VtivzIeNbwtHBT3yMBHqSopoj1GjnPSbgKLTvNJSml4_Humoec6ZPx1QVA5kqioia3DBh1MLsrGVvbAmv4MSzV_Zc764-9HLwognyA0vhXsBORhh3eDzlEFrWOgOhpcI-sfsJZqw3IompolriX1Pkj7UhuMfZ_0HuhtXQB0"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
+              Garlic Hearth Breadsticks
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-0.5">
+              Rosemary sea salt, whipped garlic butter, marinara dip.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$8.00</span>
+<button aria-label="Add Garlic Breadsticks" class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" onclick="triggerAddToast('Garlic Hearth Breadsticks')">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Side 2 -->
+<div class="bg-surface rounded-2xl p-3 shadow-sm flex flex-col justify-between space-y-2">
+<div class="space-y-2">
+<div class="w-full h-24 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cast iron skillet mac and cheese with smoked gouda cheese pull blistered charred jalapeno slices and crispy golden panko breadcrumb topping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuzUZtBlVzoxZjSrI_Cs81gNc41--sl5tKSNq3kr7jcX-z-iq9yWQMSTTkkABmlnuENIfPnM47FwiP4m-8uDjn_Z6NJxCTji9NtZoqoafcPJiNu-scBlPnq_VGmHj_EK3ofmP0ZYYnFpGyVRS_bH15aayTg2FHOm4uSb_eLzdNwEXKToo3cnB-EqeMkNajF8RSH4DVoKONXkIt18zRROfVqjSjVBx13ctz22CQyYA"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
+              Jalapeño Gouda Mac
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-0.5">
+              Smoked gouda Mornay, blistered jalapeño, skillet crust.
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$9.50</span>
+<button aria-label="Add Jalapeno Gouda Mac" class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" onclick="triggerAddToast('Jalapeño Gouda Mac')">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Toast Notification Element -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full shadow-xl flex items-center gap-2 font-label-md text-label-md opacity-0 pointer-events-none transition-all duration-300 z-50 max-w-[90%]" id="menu-toast">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="truncate" id="toast-text">Added to feast</span>
+</div>
+</div>
+<script>
+  function triggerAddToast(itemName) {
+    const toast = document.getElementById('menu-toast');
+    const toastText = document.getElementById('toast-text');
+    if (!toast || !toastText) return;
+    
+    toastText.textContent = `Added "${itemName}"`;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100', '-translate-y-1');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', '-translate-y-1');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2200);
+  }
+</script></main>
+<!-- Floating Dock Contextual Quick Cart Preview Strip -->
+<div class="fixed left-0 w-full z-40 px-4 pointer-events-none bottom-16"><div class="max-w-md mx-auto pointer-events-auto"><div class="bg-inverse-surface/95 backdrop-blur-md text-surface rounded-2xl p-3 shadow-xl border border-outline/20 space-y-2.5 transition-all"><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-outline/30 relative shadow-sm"><img alt="Order preview: Margherita &amp; Brisket" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XfxuSsnhSipkLkBOCBp8HsAFuZ3mqMW0mx6gWvkgHdFS60HrYhRNzSJn9nTZAergEAsDS4_t-rhOZXzAHHQDAAezGoGtN2Bdu5l0jjK0u9TgGD8tx2q4TmjHol3jzy6-_UnwROfNqKEaiE4DE4yzlFUNBWmJZF_YmlETlhqtw1Np3rCN4UoHPIR9WZyBMiX5gxC_nFDDoYsWJSEm4eWbQvdoj3hbbPiGGj8z_O6X9KZ0TyM0v4zoMPuA"/></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between gap-2"><h4 class="font-label-md text-label-md text-surface font-bold truncate">Order #2841 • Margherita &amp; Smoked Brisket</h4><button class="bg-primary text-on-primary hover:bg-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 font-bold shadow shrink-0 transition-all active:scale-95"><span class="">Track</span><span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span></button></div><div class="flex items-center gap-2 mt-0.5 text-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-primary-fixed font-bold uppercase tracking-wider">In Hearth &amp; Smoker</span><span class="text-surface-variant/80 text-xs">• Est. 20-25 min</span><span class="ml-auto font-bold text-surface">$42.50</span></div></div></div><div class="space-y-1 pt-1"><div class="grid grid-cols-3 gap-1.5"><div class="h-1.5 rounded-full bg-primary"></div><div class="h-1.5 rounded-full bg-primary relative overflow-hidden"><span class="absolute inset-0 bg-white/30 animate-pulse"></span></div><div class="h-1.5 rounded-full bg-surface/20"></div></div><div class="flex justify-between text-[11px] font-medium text-surface-variant/80"><span class="text-primary-fixed font-bold">Received</span><span class="text-primary-fixed font-bold text-center">In Smoker</span><span class="text-right">On the Way</span></div></div></div></div></div>
+<!-- 7. Floating Bottom Navigation Dock (Executes BottomNavBar from Shared Components JSON) -->
+<!-- JSON Specs: label_texts: ["Delivery", "Orders", "History"], icons: ["local_shipping", "receipt_long", "history"] -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs bg-surface shadow-lg">
+<div class="max-w-md w-full mx-auto flex justify-around items-center py-1">
+<!-- Tab 1: Delivery (Active - Intent matches current Delivery Hub screen) -->
+<button class="flex flex-col items-center justify-center bg-primary-fixed text-on-primary-fixed rounded-full px-space-md py-space-xs font-bold transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_shipping" data-weight="fill" style='font-variation-settings: "FILL" 1;'>local_shipping</span>
+<span class="font-label-sm text-label-sm">Delivery</span>
+</button>
+<!-- Tab 2: Orders (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs hover:bg-surface-container transition-colors duration-150 active:scale-95 relative">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm">Orders</span>
+<span class="absolute top-1 right-3 w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</button>
+<!-- Tab 3: History (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs hover:bg-surface-container transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+<span class="font-label-sm text-label-sm">History</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>
