@@ -1,0 +1,102 @@
+{
+  "projectName": "crust-and-q",
+  "status": "AWAITING_USER_REVIEW",
+  "lifecycle": {
+    "state": "AWAITING_USER_REVIEW",
+    "history": [
+      {
+        "from": "INITIALIZED",
+        "to": "DISCOVERING",
+        "timestamp": "2026-11-02T07:49:00.005Z",
+        "note": "Project scaffolded from neutral template"
+      },
+      {
+        "from": "DISCOVERING",
+        "to": "RESEARCHING",
+        "timestamp": "2026-11-02T07:50:00.000Z",
+        "note": "Competitive food delivery benchmarking (DoorDash, Uber Eats, Domino's, Sweetgreen) and HIG/M3 touch target analysis"
+      },
+      {
+        "from": "RESEARCHING",
+        "to": "READY_FOR_DESIGN",
+        "timestamp": "2026-11-02T07:51:00.000Z",
+        "note": "Screen architecture, confirmed/proposed/TBD requirements matrix, and design tokens established"
+      },
+      {
+        "from": "READY_FOR_DESIGN",
+        "to": "DESIGN_IN_PROGRESS",
+        "timestamp": "2026-11-02T07:52:00.000Z",
+        "note": "Official clean Figma file created (bNSKseBgPp7vjoK0wszJwA); executing customer and delivery partner screens"
+      },
+      {
+        "from": "DESIGN_IN_PROGRESS",
+        "to": "AWAITING_USER_REVIEW",
+        "timestamp": "2026-11-02T08:08:37.306Z",
+        "note": "Generated and uploaded 7 Light Theme master artboards featuring 17 photorealistic mobile screens, zero emojis, daylight cartography, and user reference UI patterns"
+      }
+    ],
+    "userSignOff": null
+  },
+  "projectType": "mobile-app",
+  "targetPlatform": "Cross-Platform (iOS + Android)",
+  "platformDetails": {
+    "type": "mobile",
+    "canonicalViewport": "390x844 pt (Canonical mobile, responsive to 360x800 dp Android)",
+    "safeAreaInsets": {
+      "top": "47 pt (Dynamic Island / Status Bar)",
+      "bottom": "34 pt (Home Indicator)"
+    },
+    "minTouchTarget": "44x44 pt (iOS) / 48x48 dp (Android)",
+    "guidelines": "Apple Human Interface Guidelines & Google Material Design 3"
+  },
+  "productDescription": "Premier US restaurant food ordering & delivery platform for artisanal wood-fired crusts (pizza) and slow-smoked craft BBQ with integrated customer ordering and delivery-partner operational workflows.",
+  "targetUsers": [
+    "Dine-at-home restaurant customers seeking fast discovery, customization, pizza building, and live delivery tracking",
+    "Delivery partners accepting dispatches, navigating turn-by-turn to pickup/dropoff, and tracking earnings"
+  ],
+  "brandIdentity": {
+    "name": "Crust & Q",
+    "voice": "Warm, appetizing, bold, fresh, premium casual American dining",
+    "personality": "Artisanal wood-fired pizzaiolo meets slow-smoked craft pitmaster"
+  },
+  "visualDirection": {
+    "style": "Bright Warm Casual Dining Light Theme (strictly zero dark mode)",
+    "primaryColor": "#D93B18",
+    "secondaryColor": "#3F795F",
+    "accentColor": "#D97706",
+    "surfaceColor": "#FFFFFF",
+    "groundColor": "#FFF8F0",
+    "textColor": "#292824",
+    "typography": {
+      "displayFamily": "Manrope, sans-serif",
+      "bodyFamily": "Inter, -apple-system, sans-serif",
+      "displaySize": "32px",
+      "headlineSize": "20px",
+      "bodySize": "15px",
+      "captionSize": "12px"
+    },
+    "spatialGrid": "8pt"
+  },
+  "figma": {
+    "fileUrl": "https://www.figma.com/design/bNSKseBgPp7vjoK0wszJwA",
+    "fileKey": "bNSKseBgPp7vjoK0wszJwA",
+    "activeNodeId": "0:1",
+    "pages": {
+      "cover": "00 — Cover & Index",
+      "research": "01 — Research & Product Architecture",
+      "foundations": "02 — Foundations",
+      "components": "03 — Components",
+      "assets": "04 — Assets",
+      "customerApp": "05 — Customer App",
+      "deliveryPartnerApp": "06 — Delivery Partner App",
+      "prototypeFlows": "07 — Prototype Flows",
+      "specifications": "08 — Specifications & Handoff"
+    }
+  },
+  "development": {
+    "framework": "react-native",
+    "language": "TypeScript",
+    "externalRepoUrl": ""
+  },
+  "projectStatus": "AWAITING_USER_REVIEW"
+}
